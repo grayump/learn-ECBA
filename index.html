@@ -262,6 +262,9 @@
   .flashcard .fc-back-block { margin-bottom: 12px; }
   .flashcard .fc-back-block .field-label { font-size: 11.5px; font-weight: 700; text-transform: uppercase; color: var(--accent); margin-bottom: 3px; }
   .flashcard .fc-back-block .field-body { font-size: 14px; line-height: 1.5; }
+  .flashcard .fc-answer .field-body { white-space: pre-wrap; }
+  .flashcard .fc-answer-actions { margin-top: 4px; }
+  .flashcard .fc-note-edit { font: inherit; font-size: 14px; width: 100%; box-sizing: border-box; min-height: 88px; padding: 8px 10px; border: 1px solid var(--border); border-radius: 6px; background: var(--bg); color: inherit; resize: vertical; line-height: 1.5; }
   .flashcard .fc-hint { font-size: 12px; color: var(--muted); margin-top: 12px; text-align: center; }
 
   .deck-controls { display: flex; gap: 8px; align-items: center; margin-bottom: 12px; flex-wrap: wrap; }
@@ -355,7 +358,7 @@
 
   // ---------- persisted state ----------
   function defaultStore() {
-    return { version: 1, missed: [], flashcardFamiliarity: {}, mockHistory: [], settings: { mockTimerEnabled: true } };
+    return { version: 1, missed: [], flashcardFamiliarity: {}, flashcardNotes: {}, mockHistory: [], settings: { mockTimerEnabled: true } };
   }
   let store = defaultStore();
   let missedSet = new Set();
@@ -382,6 +385,12 @@
 
   function setFlashcardFamiliarity(key, val) {
     store.flashcardFamiliarity[key] = val;
+    saveStore();
+  }
+
+  function setFlashcardNote(key, val) {
+    const v = (val || "").trim();
+    if (v) store.flashcardNotes[key] = v; else delete store.flashcardNotes[key];
     saveStore();
   }
 
@@ -588,7 +597,7 @@
       ? DB.techniques.map((t) => ({ key: "technique:" + t.name, name: t.name, ref: t.babok_ref, page: t.page, category: null, item: t }))
       : [...IDX.competencyByName.values()].map((c) => ({ key: "competency:" + c.name, name: c.name, ref: c.babok_ref, page: c.page, category: c.category, item: c }));
 
-    const st = { deck: shuffleArray(deck), i: 0, flipped: false, learningOnly: false };
+    const st = { deck: shuffleArray(deck), i: 0, flipped: false, learningOnly: false, editing: false };
 
     main.innerHTML = `
       <h2>Flashcards: ${kind === "technique" ? "Techniques" : "Competencies"}</h2>
@@ -643,10 +652,29 @@
             <span class="muted">Not yet added &mdash; see BABOK Guide p.${c.page}, &sect;${escapeHtml(c.ref)} (${escapeHtml(c.category)}).</span>
           </div></div>`;
         }
+        const note = store.flashcardNotes[c.key] || "";
+        let answerHtml;
+        if (st.editing) {
+          answerHtml = `<div class="fc-back-block fc-answer" id="fc-answer-block">
+            <div class="field-label">Answer</div>
+            <textarea id="fc-note" class="fc-note-edit" placeholder="Type the answer&hellip; (saves automatically)">${escapeHtml(note)}</textarea>
+          </div>`;
+        } else if (note) {
+          answerHtml = `<div class="fc-back-block fc-answer" id="fc-answer-block">
+            <div class="field-label">Answer</div>
+            <div class="field-body">${escapeHtml(note)}</div>
+            <div class="fc-answer-actions"><button class="btn secondary" id="fc-note-edit-btn">Edit answer</button></div>
+          </div>`;
+        } else {
+          answerHtml = `<div class="fc-back-block fc-answer" id="fc-answer-block">
+            <div class="fc-answer-actions"><button class="btn secondary" id="fc-note-edit-btn">Add answer</button></div>
+          </div>`;
+        }
         box.innerHTML = `
           <div class="flashcard" id="fc-card">
             <div class="fc-label">${escapeHtml(c.name)}</div>
             ${backHtml}
+            ${answerHtml}
             <div class="fc-hint">Click to flip back</div>
           </div>
           <div class="deck-controls">
@@ -656,14 +684,25 @@
         `;
         $("fc-learning").addEventListener("click", () => { setFlashcardFamiliarity(c.key, "learning"); renderCard(); });
         $("fc-known").addEventListener("click", () => { setFlashcardFamiliarity(c.key, "known"); renderCard(); });
+        // Answer block lives inside #fc-card (which flips on click); stop clicks here from flipping.
+        $("fc-answer-block").addEventListener("click", (e) => e.stopPropagation());
+        const editBtn = $("fc-note-edit-btn");
+        if (editBtn) editBtn.addEventListener("click", () => { st.editing = true; renderCard(); });
+        const noteEl = $("fc-note");
+        if (noteEl) {
+          noteEl.addEventListener("blur", (e) => { setFlashcardNote(c.key, e.target.value); st.editing = false; renderCard(); });
+          noteEl.focus();
+          const len = noteEl.value.length;
+          noteEl.setSelectionRange(len, len);
+        }
       }
       $("fc-card").addEventListener("click", () => { st.flipped = !st.flipped; renderCard(); });
     }
 
-    $("fc-prev").addEventListener("click", () => { st.flipped = false; st.i = Math.max(0, st.i - 1); renderCard(); });
-    $("fc-next").addEventListener("click", () => { st.flipped = false; st.i = st.i + 1; renderCard(); });
-    $("fc-shuffle").addEventListener("click", () => { st.deck = shuffleArray(st.deck); st.i = 0; st.flipped = false; renderCard(); });
-    $("fc-learning-only").addEventListener("change", (e) => { st.learningOnly = e.target.checked; st.i = 0; st.flipped = false; renderCard(); });
+    $("fc-prev").addEventListener("click", () => { st.flipped = false; st.editing = false; st.i = Math.max(0, st.i - 1); renderCard(); });
+    $("fc-next").addEventListener("click", () => { st.flipped = false; st.editing = false; st.i = st.i + 1; renderCard(); });
+    $("fc-shuffle").addEventListener("click", () => { st.deck = shuffleArray(st.deck); st.i = 0; st.flipped = false; st.editing = false; renderCard(); });
+    $("fc-learning-only").addEventListener("change", (e) => { st.learningOnly = e.target.checked; st.i = 0; st.flipped = false; st.editing = false; renderCard(); });
 
     renderCard();
   }
