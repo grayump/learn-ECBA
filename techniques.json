@@ -1,0 +1,29 @@
+{
+  "source": "BABOK Guide Chapter 10, as scoped by IIBA ECBA Exam Blueprint V1.1",
+  "note": "ECBA tests purpose, description, and usage considerations for each technique — not deep mechanics or step-by-step execution.",
+  "page_reference_note": "Page numbers below are from the standard BABOK Guide v3 pagination (consistent across the official print/PDF edition), cross-checked against multiple independent tables of contents. They're locators only, pointing you to where each technique starts in your own copy — no BABOK text is reproduced here.",
+  "techniques": [
+    { "babok_ref": "10.2", "name": "Backlog Management", "page": 220 },
+    { "babok_ref": "10.5", "name": "Brainstorming", "page": 227 },
+    { "babok_ref": "10.6", "name": "Business Capability Analysis", "page": 230 },
+    { "babok_ref": "10.9", "name": "Business Rules Analysis", "page": 240 },
+    { "babok_ref": "10.10", "name": "Collaborative Games", "page": 243 },
+    { "babok_ref": "10.15", "name": "Data Modelling", "page": 256 },
+    { "babok_ref": "10.18", "name": "Document Analysis", "page": 269 },
+    { "babok_ref": "10.25", "name": "Interviews", "page": 290 },
+    { "babok_ref": "10.27", "name": "Lessons Learned", "page": 296 },
+    { "babok_ref": "10.28", "name": "Metrics and Key Performance Indicators (KPIs)", "page": 297 },
+    { "babok_ref": "10.32", "name": "Organizational Modelling", "page": 308 },
+    { "babok_ref": "10.34", "name": "Process Analysis", "page": 314 },
+    { "babok_ref": "10.35", "name": "Process Modelling", "page": 318 },
+    { "babok_ref": "10.38", "name": "Risk Analysis and Management", "page": 329 },
+    { "babok_ref": "10.40", "name": "Root Cause Analysis", "page": 335 },
+    { "babok_ref": "10.41", "name": "Scope Modelling", "page": 338 },
+    { "babok_ref": "10.43", "name": "Stakeholder List, Map, or Personas", "page": 344 },
+    { "babok_ref": "10.46", "name": "SWOT Analysis", "page": 353 },
+    { "babok_ref": "10.48", "name": "User Stories", "page": 359 },
+    { "babok_ref": "10.50", "name": "Workshops", "page": 363 }
+  ],
+  "fields_to_study_per_technique": ["purpose", "description", "usage_considerations"],
+  "content_status": "IDs, names, and page numbers confirmed from official IIBA blueprint and cross-checked tables of contents. Purpose/description/usage_considerations fields still need to be populated from your own BABOK Guide v3 copy at the page listed (not included here to avoid reproducing copyrighted BABOK content) — or paste the relevant passage to me and I'll help turn it into original, exam-ready study notes."
+}

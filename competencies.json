@@ -1,0 +1,45 @@
+{
+  "source": "BABOK Guide Chapter 9, as scoped by IIBA ECBA Exam Blueprint V1.1",
+  "note": "All 29 competencies are in scope. Study purpose, definition, and effectiveness measures for each.",
+  "page_reference_note": "Page numbers are BABOK Guide v3 Chapter 9 section start pages, cross-checked against multiple independent tables of contents. Locators only — no BABOK text reproduced here.",
+  "categories": [
+    {
+      "category": "Analytical Thinking and Problem Solving",
+      "babok_ref": "9.1",
+      "page": 188,
+      "competencies": ["Creative Thinking", "Decision Making", "Learning", "Problem Solving", "Systems Thinking", "Conceptual Thinking", "Visual Thinking"]
+    },
+    {
+      "category": "Behavioural Characteristics",
+      "babok_ref": "9.2",
+      "page": 194,
+      "competencies": ["Ethics", "Personal Accountability", "Trustworthiness", "Organization and Time Management", "Adaptability"]
+    },
+    {
+      "category": "Business Knowledge",
+      "babok_ref": "9.3",
+      "page": 199,
+      "competencies": ["Business Acumen", "Industry Knowledge", "Organization Knowledge", "Solution Knowledge", "Methodology Knowledge"]
+    },
+    {
+      "category": "Communication Skills",
+      "babok_ref": "9.4",
+      "page": 203,
+      "competencies": ["Verbal Communication", "Non-Verbal Communication", "Written Communication", "Listening"]
+    },
+    {
+      "category": "Interaction Skills",
+      "babok_ref": "9.5",
+      "page": 207,
+      "competencies": ["Facilitation", "Leadership and Influencing", "Teamwork", "Negotiation and Conflict Resolution", "Teaching"]
+    },
+    {
+      "category": "Tools and Technology",
+      "babok_ref": "9.6",
+      "page": 211,
+      "competencies": ["Office Productivity Tools and Technology", "Business Analysis Tools and Technology", "Communication Tools and Technology"]
+    }
+  ],
+  "total_count": 29,
+  "content_status": "Category names, groupings, and page numbers confirmed from official IIBA blueprint and cross-checked tables of contents. Individual competency definitions/effectiveness measures still need to be populated from your own BABOK Guide v3 copy (not included here due to copyright) — or paste the relevant passage to me and I'll help turn it into original, exam-ready study notes."
+}

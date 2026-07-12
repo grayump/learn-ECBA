@@ -1,0 +1,129 @@
+{
+  "source": "IIBA ECBA Exam Blueprint V1.1",
+  "exam_format": {
+    "duration_minutes": 75,
+    "question_count": 50,
+    "question_types": ["situation-based", "standard multiple-choice"],
+    "delivery": "Online remote proctored (PSI)",
+    "scoring": "Pass/fail with performance indicators (no published cut score)"
+  },
+  "domains": [
+    {
+      "id": 1,
+      "name": "Understanding Business Analysis",
+      "weight_pct": 20,
+      "source_material": "Business Analysis Standard",
+      "tier": "foundational",
+      "activity_statements": [
+        { "id": "1.1", "text": "Define business analysis, describe its role in enabling change, and outline key activities across contexts." },
+        { "id": "1.2", "text": "Describe the six BACCM concepts, explain how they relate, and use them to support structured thinking." },
+        { "id": "1.3", "text": "Explain how business analysis supports value creation and benefits organizations in various industries." },
+        { "id": "1.4", "text": "Define value in business analysis and explain how outcomes are assessed to support value realization." }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Mindset for Effective Business Analysis",
+      "weight_pct": 14,
+      "source_material": "Business Analysis Standard",
+      "tier": "foundational",
+      "activity_statements": [
+        { "id": "2.1", "text": "Explain how mindset influences your effectiveness and identify ways to adopt an empowering mindset." },
+        { "id": "2.2", "text": "Recognize the shared values that drive work and explain how those values support the work to be done." },
+        { "id": "2.3", "text": "Identify core business analysis principles and apply them to guide your work and improve outcomes." },
+        { "id": "2.4", "text": "Recognize foundational competencies and assess when to apply them in your work." }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Implementing Business Analysis",
+      "weight_pct": 6,
+      "source_material": "Business Analysis Standard",
+      "tier": "foundational",
+      "activity_statements": [
+        { "id": "3.1", "text": "Identify roles that perform business analysis and describe how responsibilities vary across contexts." },
+        { "id": "3.2", "text": "Compare business analysis approaches and explain how to choose an approach based on the situation." },
+        { "id": "3.3", "text": "Identify organizational considerations that influence your work and explain their potential impact." },
+        { "id": "3.4", "text": "Describe the difference between requirements and designs and explain how they evolve throughout the initiative." }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Change",
+      "weight_pct": 10,
+      "source_material": "BABOK Guide (BACCM)",
+      "tier": "baccm",
+      "activity_statements": [
+        { "id": "4.1", "text": "Recognize how key organizational, environmental, and stakeholder factors can influence your work." },
+        { "id": "4.2", "text": "Describe processes and systems to identify areas impacted by changes, and evaluate the impacts." },
+        { "id": "4.3", "text": "Track progress toward goals and support teams in adapting to changes, under direction." },
+        { "id": "4.4", "text": "Suggest and help implement simple improvements, working within clear guidelines." }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Need",
+      "weight_pct": 10,
+      "source_material": "BABOK Guide (BACCM)",
+      "tier": "baccm",
+      "activity_statements": [
+        { "id": "5.1", "text": "Use basic elicitation methods and build positive rapport with stakeholders to elicit information." },
+        { "id": "5.2", "text": "Document requirements clearly and collaborate with stakeholders to validate needs, under guidance." },
+        { "id": "5.3", "text": "Compare stakeholder needs with outcomes to check alignment and flag conflicts for review." },
+        { "id": "5.4", "text": "Support stakeholders in prioritizing needs, considering business value and urgency." }
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Solution",
+      "weight_pct": 10,
+      "source_material": "BABOK Guide (BACCM)",
+      "tier": "baccm",
+      "activity_statements": [
+        { "id": "6.1", "text": "Explain basic solution validation concepts and record findings." },
+        { "id": "6.2", "text": "Assist in evaluating solution options, considering feasibility and risks, and contribute to preparing recommendations." },
+        { "id": "6.3", "text": "Support defining scope and collaborate on planning and monitoring implementation activities." },
+        { "id": "6.4", "text": "Support preparation and updating of design artifacts to maintain clarity." }
+      ]
+    },
+    {
+      "id": 7,
+      "name": "Stakeholder",
+      "weight_pct": 10,
+      "source_material": "BABOK Guide (BACCM)",
+      "tier": "baccm",
+      "activity_statements": [
+        { "id": "7.1", "text": "Communicate with stakeholders using tailored messages to maintain engagement." },
+        { "id": "7.2", "text": "Identify stakeholder roles and interests, and support analysis of their impact." },
+        { "id": "7.3", "text": "Facilitate stakeholder collaboration and feedback throughout the initiative." },
+        { "id": "7.4", "text": "Identify key stakeholder motivations, drivers, and concerns to understand their decisions." }
+      ]
+    },
+    {
+      "id": 8,
+      "name": "Value",
+      "weight_pct": 10,
+      "source_material": "BABOK Guide (BACCM)",
+      "tier": "baccm",
+      "activity_statements": [
+        { "id": "8.1", "text": "Confirm understanding of desired outcomes aligned with business objectives." },
+        { "id": "8.2", "text": "Support identification of value opportunities and help address barriers to delivery." },
+        { "id": "8.3", "text": "Describe how solutions meet business goals and relay information effectively for stakeholders." },
+        { "id": "8.4", "text": "Support defining key performance indicators (KPIs) aligned with value to measure success." }
+      ]
+    },
+    {
+      "id": 9,
+      "name": "Context",
+      "weight_pct": 10,
+      "source_material": "BABOK Guide (BACCM)",
+      "tier": "baccm",
+      "activity_statements": [
+        { "id": "9.1", "text": "Assist in validating information quality and alignment to your situation, and document those validation outcomes." },
+        { "id": "9.2", "text": "Support recognizing constraints and adapt plans to maintain alignment." },
+        { "id": "9.3", "text": "Assist in analyzing technology trends and support technology integration." },
+        { "id": "9.4", "text": "Apply relevant industry standards and frameworks to guide the work to be done." }
+      ]
+    }
+  ]
+}

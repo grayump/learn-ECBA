@@ -1,0 +1,1051 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>ECBA Exam Prep</title>
+<style>
+  :root {
+    --bg: #f4f6f9;
+    --panel: #ffffff;
+    --ink: #1b2430;
+    --muted: #64748b;
+    --accent: #1e3a5f;
+    --accent-soft: #eaf1f8;
+    --accent-border: #b9cfe3;
+    --green: #15803d;
+    --green-soft: #ecfdf3;
+    --red: #b91c1c;
+    --red-soft: #fef2f2;
+    --blue-soft: #eff6ff;
+    --blue-border: #bfdbfe;
+    --amber-soft: #fefce8;
+    --amber-border: #ca8a04;
+    --border: #dbe1ea;
+    --radius: 12px;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    display: flex;
+    min-height: 100vh;
+  }
+  #sidebar {
+    width: 300px;
+    flex: none;
+    background: var(--panel);
+    border-right: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow-y: auto;
+    padding: 20px 16px;
+  }
+  #sidebar h1 {
+    font-size: 18px;
+    margin: 0 0 2px;
+    color: var(--accent);
+  }
+  #sidebar .subtitle {
+    font-size: 12.5px;
+    color: var(--muted);
+    margin: 0 0 16px;
+  }
+  .stats-strip {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 18px;
+    flex-wrap: wrap;
+  }
+  .stat-pill {
+    background: var(--accent-soft);
+    border: 1px solid var(--accent-border);
+    color: var(--accent);
+    font-size: 12px;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 999px;
+  }
+  .mode-group-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin: 18px 0 6px;
+  }
+  .mode-group-label:first-of-type { margin-top: 0; }
+  .nav-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    width: 100%;
+    text-align: left;
+    background: none;
+    border: none;
+    border-radius: 8px;
+    padding: 9px 10px;
+    font-size: 14px;
+    color: var(--ink);
+    cursor: pointer;
+  }
+  .nav-item:hover:not(:disabled) { background: var(--bg); }
+  .nav-item.active { background: var(--accent-soft); color: var(--accent); font-weight: 600; }
+  .nav-item:disabled { color: #b7bfca; cursor: not-allowed; }
+  .nav-badge {
+    background: var(--red);
+    color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+    border-radius: 999px;
+    padding: 1px 7px;
+    min-width: 18px;
+    text-align: center;
+  }
+  .nav-badge.zero { background: #cbd5e1; }
+
+  #main {
+    flex: 1;
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 32px 24px 80px;
+  }
+  h2 { margin-top: 0; }
+  .card {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 18px 20px;
+    margin-bottom: 16px;
+  }
+  .muted { color: var(--muted); }
+  .badge {
+    display: inline-block;
+    font-size: 11.5px;
+    font-weight: 700;
+    padding: 3px 9px;
+    border-radius: 999px;
+    margin-right: 6px;
+  }
+  .badge.weight { background: var(--accent-soft); color: var(--accent); border: 1px solid var(--accent-border); }
+  .badge.tier-foundational { background: var(--blue-soft); color: #1d4ed8; border: 1px solid var(--blue-border); }
+  .badge.tier-baccm { background: #f3e8ff; color: #7c3aed; border: 1px solid #ddd6fe; }
+  .badge.easy { background: var(--green-soft); color: var(--green); }
+  .badge.medium { background: var(--amber-soft); color: #92400e; }
+  .badge.hard { background: var(--red-soft); color: var(--red); }
+
+  .domain-card h3 { margin: 0 0 6px; font-size: 16px; }
+  .domain-card .meta-row { margin-bottom: 8px; }
+  .domain-card .avail { font-size: 13px; margin-bottom: 10px; }
+  .domain-card .avail.none { color: var(--muted); font-style: italic; }
+  .domain-card details { margin-top: 8px; border-top: 1px solid var(--border); padding-top: 8px; }
+  .domain-card summary { cursor: pointer; font-size: 13.5px; color: var(--accent); font-weight: 600; }
+  .activity-list { list-style: none; margin: 8px 0 0; padding: 0; }
+  .activity-list li {
+    font-size: 13.5px;
+    padding: 6px 0;
+    border-bottom: 1px dashed var(--border);
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+  }
+  .activity-list li:last-child { border-bottom: none; }
+  .activity-list .act-count { color: var(--muted); white-space: nowrap; font-size: 12px; }
+
+  button.btn {
+    background: var(--accent);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 9px 16px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  button.btn:disabled { background: #cbd5e1; cursor: not-allowed; }
+  button.btn.secondary {
+    background: var(--panel);
+    color: var(--accent);
+    border: 1px solid var(--accent-border);
+  }
+  button.btn.secondary:hover:not(:disabled) { background: var(--accent-soft); }
+
+  .picker-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 12px 14px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    margin-bottom: 8px;
+    background: var(--panel);
+  }
+  .picker-row.disabled { opacity: 0.55; }
+  .picker-row .name { font-weight: 600; font-size: 14.5px; }
+
+  .quiz-stem { font-size: 17px; font-weight: 600; margin: 0 0 16px; line-height: 1.4; }
+  .quiz-meta { display: flex; gap: 6px; margin-bottom: 14px; flex-wrap: wrap; align-items: center; }
+  .quiz-progress { font-size: 12.5px; color: var(--muted); margin-bottom: 6px; }
+  .option-btn {
+    display: block;
+    width: 100%;
+    text-align: left;
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 12px 14px;
+    margin-bottom: 8px;
+    font-size: 14.5px;
+    cursor: pointer;
+    color: var(--ink);
+  }
+  .option-btn:hover:not(:disabled) { border-color: var(--accent-border); background: var(--accent-soft); }
+  .option-btn:disabled { cursor: default; }
+  .option-btn.correct { background: var(--green-soft); border-color: var(--green); color: var(--green); font-weight: 600; }
+  .option-btn.incorrect { background: var(--red-soft); border-color: var(--red); color: var(--red); font-weight: 600; }
+  .option-btn.chosen-marker::after { content: " (your answer)"; font-weight: 400; font-size: 12px; }
+
+  .explain-box {
+    background: var(--blue-soft);
+    border: 1px solid var(--blue-border);
+    border-left: 4px solid #1d4ed8;
+    border-radius: 8px;
+    padding: 12px 14px;
+    margin: 14px 0;
+    font-size: 13.5px;
+    line-height: 1.5;
+  }
+  .tip {
+    background: var(--amber-soft);
+    border-left: 4px solid var(--amber-border);
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-size: 13px;
+    color: #713f12;
+    margin: 12px 0;
+  }
+
+  .tag-chip {
+    display: inline-block;
+    font-size: 11.5px;
+    padding: 3px 9px;
+    border-radius: 999px;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    color: var(--muted);
+    margin-right: 6px;
+  }
+  .tag-chip.technique { background: var(--blue-soft); border-color: var(--blue-border); color: #1d4ed8; }
+  .tag-chip.competency { background: var(--accent-soft); border-color: var(--accent-border); color: var(--accent); }
+  .tag-chip.unknown { border-style: dashed; }
+
+  .flashcard {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 28px 24px;
+    min-height: 220px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    cursor: pointer;
+    margin-bottom: 16px;
+  }
+  .flashcard .fc-label { font-size: 11.5px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 10px; }
+  .flashcard .fc-name { font-size: 20px; font-weight: 700; margin-bottom: 6px; }
+  .flashcard .fc-ref { font-size: 13px; color: var(--muted); }
+  .flashcard .fc-back-block { margin-bottom: 12px; }
+  .flashcard .fc-back-block .field-label { font-size: 11.5px; font-weight: 700; text-transform: uppercase; color: var(--accent); margin-bottom: 3px; }
+  .flashcard .fc-back-block .field-body { font-size: 14px; line-height: 1.5; }
+  .flashcard .fc-hint { font-size: 12px; color: var(--muted); margin-top: 12px; text-align: center; }
+
+  .deck-controls { display: flex; gap: 8px; align-items: center; margin-bottom: 12px; flex-wrap: wrap; }
+  .deck-controls label { font-size: 13px; color: var(--muted); display: flex; align-items: center; gap: 6px; }
+
+  table.breakdown { width: 100%; border-collapse: collapse; font-size: 13.5px; margin: 12px 0; }
+  table.breakdown th, table.breakdown td { text-align: left; padding: 7px 8px; border-bottom: 1px solid var(--border); }
+  table.breakdown th { color: var(--muted); font-weight: 600; font-size: 12px; text-transform: uppercase; }
+
+  .timer { font-variant-numeric: tabular-nums; font-weight: 700; font-size: 15px; color: var(--accent); }
+  .timer.low { color: var(--red); }
+
+  .mock-progress { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 16px; }
+  .mock-dot {
+    width: 22px; height: 22px; border-radius: 6px;
+    background: var(--bg); border: 1px solid var(--border);
+    font-size: 10px; display: flex; align-items: center; justify-content: center;
+    color: var(--muted); cursor: pointer;
+  }
+  .mock-dot.current { border-color: var(--accent); background: var(--accent-soft); color: var(--accent); font-weight: 700; }
+  .mock-dot.answered { background: #e2e8f0; color: var(--ink); }
+
+  .empty-state { text-align: center; padding: 50px 20px; color: var(--muted); }
+  .empty-state .big { font-size: 32px; margin-bottom: 10px; }
+
+  #loading, #fetch-error {
+    position: fixed; inset: 0; display: flex; flex-direction: column;
+    align-items: center; justify-content: center; background: var(--bg); gap: 10px;
+    padding: 20px; text-align: center;
+  }
+  #fetch-error { display: none; }
+  #fetch-error .box {
+    background: var(--panel); border: 1px solid var(--border); border-radius: var(--radius);
+    padding: 24px; max-width: 480px;
+  }
+  #fetch-error code { background: var(--bg); padding: 2px 6px; border-radius: 4px; }
+  #app { display: none; }
+  #app.ready { display: flex; width: 100%; }
+
+  @media (max-width: 760px) {
+    body { flex-direction: column; }
+    #sidebar { position: static; width: 100%; height: auto; }
+    #main { max-width: none; }
+  }
+</style>
+</head>
+<body>
+
+<div id="loading">
+  <div class="badge weight" style="font-size:14px;">Loading ECBA content&hellip;</div>
+</div>
+
+<div id="fetch-error">
+  <div class="box">
+    <h2 style="margin-top:0;">Can&rsquo;t load content</h2>
+    <p>This app fetches its question bank from local JSON files, which browsers block when a page is opened directly via <code>file://</code>.</p>
+    <p>Serve this folder over local HTTP instead, e.g.:</p>
+    <p><code>npx serve</code> &nbsp;or&nbsp; <code>python -m http.server</code></p>
+    <p>then open the printed <code>localhost</code> URL.</p>
+  </div>
+</div>
+
+<div id="app">
+  <div id="sidebar"></div>
+  <div id="main"></div>
+</div>
+
+<script>
+(function () {
+  "use strict";
+  const $ = (id) => document.getElementById(id);
+  const STORE_KEY = "ecba-study-state-v1";
+
+  const MOCK_COMPOSITION = { 1: 10, 2: 7, 3: 3, 4: 5, 5: 5, 6: 5, 7: 5, 8: 5, 9: 5 };
+
+  const DB = { meta: null, domains: [], techniques: [], competencies: [], questionsByDomain: {} };
+  const IDX = {
+    domainById: new Map(),
+    activityById: new Map(),
+    techniqueByName: new Map(),
+    competencyByName: new Map(),
+    allQuestions: [],
+    questionById: new Map(),
+  };
+
+  let state = {
+    mode: "browse",
+    session: null,   // practice/review session
+    mock: null,      // in-progress mock exam session
+  };
+
+  // ---------- persisted state ----------
+  function defaultStore() {
+    return { version: 1, missed: [], flashcardFamiliarity: {}, mockHistory: [], settings: { mockTimerEnabled: true } };
+  }
+  let store = defaultStore();
+  let missedSet = new Set();
+
+  function loadStore() {
+    try {
+      const raw = JSON.parse(localStorage.getItem(STORE_KEY)) || {};
+      store = Object.assign(defaultStore(), raw);
+    } catch (e) {
+      store = defaultStore();
+    }
+    missedSet = new Set(store.missed || []);
+  }
+  function saveStore() {
+    store.missed = [...missedSet];
+    localStorage.setItem(STORE_KEY, JSON.stringify(store));
+  }
+
+  function markMissed(id) { missedSet.add(id); saveStore(); }
+  function clearMissed(id) { if (missedSet.has(id)) { missedSet.delete(id); saveStore(); } }
+  function recordAnswer(questionId, wasCorrect) {
+    if (wasCorrect) clearMissed(questionId); else markMissed(questionId);
+  }
+
+  function setFlashcardFamiliarity(key, val) {
+    store.flashcardFamiliarity[key] = val;
+    saveStore();
+  }
+
+  // ---------- data loading ----------
+  async function fetchJson(path) {
+    const res = await fetch(path);
+    if (!res.ok) throw new Error("HTTP " + res.status + " for " + path);
+    return res.json();
+  }
+  async function fetchJsonOrNull(path) {
+    try {
+      const res = await fetch(path);
+      if (!res.ok) return null;
+      return await res.json();
+    } catch (e) {
+      return null;
+    }
+  }
+
+  async function boot() {
+    let core;
+    try {
+      core = await Promise.all([
+        fetchJson("domains.json"),
+        fetchJson("techniques.json"),
+        fetchJson("competencies.json"),
+      ]);
+    } catch (e) {
+      $("loading").style.display = "none";
+      $("fetch-error").style.display = "flex";
+      return;
+    }
+
+    const [domainsFile, techniquesFile, competenciesFile] = core;
+    DB.meta = { source: domainsFile.source, exam_format: domainsFile.exam_format };
+    DB.domains = domainsFile.domains;
+    DB.techniques = techniquesFile.techniques;
+    DB.competencies = competenciesFile.categories;
+
+    const domainFetches = [];
+    for (let d = 1; d <= 9; d++) domainFetches.push(fetchJsonOrNull("questions_domain" + d + ".json"));
+    const domainResults = await Promise.all(domainFetches);
+    domainResults.forEach((qs, i) => {
+      const d = i + 1;
+      if (qs) DB.questionsByDomain[d] = qs;
+    });
+
+    buildIndexes();
+    loadStore();
+
+    $("loading").style.display = "none";
+    $("app").classList.add("ready");
+    renderSidebar();
+    setMode("browse");
+  }
+
+  function buildIndexes() {
+    DB.domains.forEach((d) => IDX.domainById.set(d.id, d));
+    DB.domains.forEach((d) => {
+      d.activity_statements.forEach((a) => {
+        IDX.activityById.set(a.id, { domainId: d.id, text: a.text, domain: d });
+      });
+    });
+    DB.techniques.forEach((t) => IDX.techniqueByName.set(t.name, t));
+    DB.competencies.forEach((cat) => {
+      cat.competencies.forEach((name) => {
+        IDX.competencyByName.set(name, { name, category: cat.category, babok_ref: cat.babok_ref, page: cat.page });
+      });
+    });
+    Object.keys(DB.questionsByDomain).forEach((d) => {
+      DB.questionsByDomain[d].forEach((q) => {
+        IDX.allQuestions.push(q);
+        IDX.questionById.set(q.id, q);
+      });
+    });
+  }
+
+  function questionsAvailableForDomain(domainId) {
+    return (DB.questionsByDomain[domainId] || []).length;
+  }
+  function resolveTag(name) {
+    if (!name) return null;
+    if (IDX.techniqueByName.has(name)) return { kind: "technique", item: IDX.techniqueByName.get(name) };
+    if (IDX.competencyByName.has(name)) return { kind: "competency", item: IDX.competencyByName.get(name) };
+    return { kind: "unknown", item: { name } };
+  }
+
+  // ---------- utils ----------
+  function shuffleQuestionOptions(q) {
+    const indexed = q.options.map((opt, i) => ({ opt, wasAnswer: i === q.correct_index }));
+    for (let i = indexed.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [indexed[i], indexed[j]] = [indexed[j], indexed[i]];
+    }
+    return {
+      ...q,
+      options: indexed.map((x) => x.opt),
+      correct_index: indexed.findIndex((x) => x.wasAnswer),
+    };
+  }
+  function shuffleArray(arr) {
+    const a = arr.slice();
+    for (let i = a.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [a[i], a[j]] = [a[j], a[i]];
+    }
+    return a;
+  }
+  function escapeHtml(s) {
+    const div = document.createElement("div");
+    div.textContent = s;
+    return div.innerHTML;
+  }
+
+  // ---------- sidebar ----------
+  function renderSidebar() {
+    const sb = $("sidebar");
+    const missedCount = missedSet.size;
+    sb.innerHTML = `
+      <h1>ECBA Exam Prep</h1>
+      <p class="subtitle">${escapeHtml(DB.meta.source)}</p>
+      <div class="stats-strip">
+        <span class="stat-pill">${IDX.allQuestions.length} questions</span>
+        <span class="stat-pill">${DB.techniques.length} techniques</span>
+        <span class="stat-pill">${IDX.competencyByName.size} competencies</span>
+      </div>
+      <div class="mode-group-label">Study</div>
+      <button class="nav-item" data-mode="browse">Browse Domains</button>
+      <button class="nav-item" data-mode="flash-tech">Flashcards: Techniques</button>
+      <button class="nav-item" data-mode="flash-comp">Flashcards: Competencies</button>
+      <div class="mode-group-label">Practice</div>
+      <button class="nav-item" data-mode="practice">Practice by Domain</button>
+      <button class="nav-item" data-mode="review" ${missedCount === 0 ? "disabled" : ""}>
+        <span>Review Missed</span>
+        <span class="nav-badge ${missedCount === 0 ? "zero" : ""}">${missedCount}</span>
+      </button>
+      <div class="mode-group-label">Exam</div>
+      <button class="nav-item" data-mode="mock">Mock Exam</button>
+      <button class="nav-item" data-mode="history">Exam History</button>
+    `;
+    sb.querySelectorAll(".nav-item[data-mode]").forEach((btn) => {
+      btn.addEventListener("click", () => setMode(btn.dataset.mode));
+    });
+    sb.querySelectorAll(".nav-item").forEach((btn) => {
+      btn.classList.toggle("active", btn.dataset.mode === state.mode);
+    });
+  }
+
+  function setMode(mode, params) {
+    state.mode = mode;
+    state.modeParams = params || null;
+    renderSidebar();
+    render();
+    window.scrollTo(0, 0);
+  }
+
+  function render() {
+    const main = $("main");
+    main.innerHTML = "";
+    if (state.mode === "browse") return renderBrowse(main);
+    if (state.mode === "flash-tech") return renderFlashcards(main, "technique");
+    if (state.mode === "flash-comp") return renderFlashcards(main, "competency");
+    if (state.mode === "practice") return renderPracticePicker(main);
+    if (state.mode === "practice-quiz") return renderQuizEngine(main);
+    if (state.mode === "review") return renderReview(main);
+    if (state.mode === "mock") return renderMockSetup(main);
+    if (state.mode === "mock-quiz") return renderMockQuiz(main);
+    if (state.mode === "mock-result") return renderMockResult(main);
+    if (state.mode === "history") return renderHistory(main);
+  }
+
+  // ---------- Browse Domains ----------
+  function renderBrowse(main) {
+    main.innerHTML = `<h2>Browse Domains</h2><p class="muted">${escapeHtml(DB.meta.exam_format.question_count)} questions, ${DB.meta.exam_format.duration_minutes} minutes on the real exam.</p>`;
+    DB.domains.forEach((d) => {
+      const count = questionsAvailableForDomain(d.id);
+      const card = document.createElement("div");
+      card.className = "card domain-card";
+      const actRows = d.activity_statements.map((a) => {
+        const n = IDX.allQuestions.filter((q) => q.activity_statement_id === a.id).length;
+        return `<li><span>${escapeHtml(a.id)} &mdash; ${escapeHtml(a.text)}</span><span class="act-count">${n} q</span></li>`;
+      }).join("");
+      card.innerHTML = `
+        <h3>${d.id}. ${escapeHtml(d.name)}</h3>
+        <div class="meta-row">
+          <span class="badge weight">${d.weight_pct}%</span>
+          <span class="badge tier-${d.tier}">${d.tier === "foundational" ? "Foundational" : "BACCM"}</span>
+        </div>
+        <div class="avail ${count === 0 ? "none" : ""}">${count === 0 ? "No questions yet" : count + " questions available"}</div>
+        <button class="btn" ${count === 0 ? "disabled" : ""} data-domain="${d.id}">Practice this domain</button>
+        <details>
+          <summary>${d.activity_statements.length} activity statements</summary>
+          <ul class="activity-list">${actRows}</ul>
+        </details>
+      `;
+      card.querySelector("button[data-domain]").addEventListener("click", () => startPracticeSession(d.id));
+      main.appendChild(card);
+    });
+  }
+
+  // ---------- Flashcards ----------
+  function renderFlashcards(main, kind) {
+    const deck = kind === "technique"
+      ? DB.techniques.map((t) => ({ key: "technique:" + t.name, name: t.name, ref: t.babok_ref, page: t.page, category: null, item: t }))
+      : [...IDX.competencyByName.values()].map((c) => ({ key: "competency:" + c.name, name: c.name, ref: c.babok_ref, page: c.page, category: c.category, item: c }));
+
+    const st = { deck: shuffleArray(deck), i: 0, flipped: false, learningOnly: false };
+
+    main.innerHTML = `
+      <h2>Flashcards: ${kind === "technique" ? "Techniques" : "Competencies"}</h2>
+      <div class="deck-controls">
+        <label><input type="checkbox" id="fc-learning-only"> Show &ldquo;Still learning&rdquo; only</label>
+      </div>
+      <div id="fc-slot"></div>
+      <div class="deck-controls">
+        <button class="btn secondary" id="fc-prev">&larr; Prev</button>
+        <button class="btn secondary" id="fc-shuffle">Shuffle</button>
+        <button class="btn secondary" id="fc-next">Next &rarr;</button>
+      </div>
+    `;
+
+    function activeDeck() {
+      return st.learningOnly
+        ? st.deck.filter((c) => store.flashcardFamiliarity[c.key] !== "known")
+        : st.deck;
+    }
+
+    function renderCard() {
+      const deckNow = activeDeck();
+      if (deckNow.length === 0) {
+        $("fc-slot").innerHTML = `<div class="empty-state"><div class="big">&#127881;</div>All cards marked &ldquo;Got it&rdquo;.</div>`;
+        return;
+      }
+      if (st.i >= deckNow.length) st.i = 0;
+      const c = deckNow[st.i];
+      const fam = store.flashcardFamiliarity[c.key];
+      const box = $("fc-slot");
+      if (!st.flipped) {
+        box.innerHTML = `
+          <div class="flashcard" id="fc-card">
+            <div class="fc-label">${st.i + 1} of ${deckNow.length}${c.category ? " &middot; " + escapeHtml(c.category) : ""}</div>
+            <div class="fc-name">${escapeHtml(c.name)}</div>
+            <div class="fc-ref">BABOK &sect;${escapeHtml(c.ref)}, p.${c.page}</div>
+            <div class="fc-hint">Click to flip</div>
+          </div>
+        `;
+      } else {
+        let backHtml = "";
+        if (kind === "technique") {
+          const fields = [["purpose", "Purpose"], ["description", "Description"], ["usage_considerations", "Usage considerations"]];
+          fields.forEach(([field, label]) => {
+            const val = c.item[field];
+            backHtml += `<div class="fc-back-block"><div class="field-label">${label}</div><div class="field-body">${
+              val ? escapeHtml(val) : `<span class="muted">Not yet added &mdash; see BABOK Guide p.${c.page}, &sect;${escapeHtml(c.ref)}.</span>`
+            }</div></div>`;
+          });
+        } else {
+          backHtml = `<div class="fc-back-block"><div class="field-label">Definition</div><div class="field-body">
+            <span class="muted">Not yet added &mdash; see BABOK Guide p.${c.page}, &sect;${escapeHtml(c.ref)} (${escapeHtml(c.category)}).</span>
+          </div></div>`;
+        }
+        box.innerHTML = `
+          <div class="flashcard" id="fc-card">
+            <div class="fc-label">${escapeHtml(c.name)}</div>
+            ${backHtml}
+            <div class="fc-hint">Click to flip back</div>
+          </div>
+          <div class="deck-controls">
+            <button class="btn secondary" id="fc-learning">Still learning</button>
+            <button class="btn" id="fc-known">Got it${fam === "known" ? " &#10003;" : ""}</button>
+          </div>
+        `;
+        $("fc-learning").addEventListener("click", () => { setFlashcardFamiliarity(c.key, "learning"); renderCard(); });
+        $("fc-known").addEventListener("click", () => { setFlashcardFamiliarity(c.key, "known"); renderCard(); });
+      }
+      $("fc-card").addEventListener("click", () => { st.flipped = !st.flipped; renderCard(); });
+    }
+
+    $("fc-prev").addEventListener("click", () => { st.flipped = false; st.i = Math.max(0, st.i - 1); renderCard(); });
+    $("fc-next").addEventListener("click", () => { st.flipped = false; st.i = st.i + 1; renderCard(); });
+    $("fc-shuffle").addEventListener("click", () => { st.deck = shuffleArray(st.deck); st.i = 0; st.flipped = false; renderCard(); });
+    $("fc-learning-only").addEventListener("change", (e) => { st.learningOnly = e.target.checked; st.i = 0; st.flipped = false; renderCard(); });
+
+    renderCard();
+  }
+
+  // ---------- Practice picker ----------
+  function renderPracticePicker(main) {
+    main.innerHTML = `<h2>Practice by Domain</h2><p class="muted">Pick a domain to drill. Options are shuffled, feedback is immediate.</p><div id="picker-rows"></div>`;
+    const rows = $("picker-rows");
+    DB.domains.forEach((d) => {
+      const count = questionsAvailableForDomain(d.id);
+      const row = document.createElement("div");
+      row.className = "picker-row" + (count === 0 ? " disabled" : "");
+      row.innerHTML = `
+        <div>
+          <div class="name">${d.id}. ${escapeHtml(d.name)}</div>
+          <div class="muted" style="font-size:12.5px;">${d.weight_pct}% weight &middot; ${count} questions</div>
+        </div>
+        <button class="btn" ${count === 0 ? "disabled" : ""}>Start</button>
+      `;
+      row.querySelector("button").addEventListener("click", () => startPracticeSession(d.id));
+      rows.appendChild(row);
+    });
+  }
+
+  function startPracticeSession(domainId) {
+    const pool = shuffleArray(DB.questionsByDomain[domainId] || []);
+    state.session = { pool, index: 0, correctCount: 0, missedThisSession: [], sourceLabel: "Domain " + domainId, onComplete: () => setMode("practice") };
+    state.mode = "practice-quiz";
+    renderSidebar();
+    render();
+  }
+
+  function startReviewSession() {
+    const pool = shuffleArray(IDX.allQuestions.filter((q) => missedSet.has(q.id)));
+    state.session = { pool, index: 0, correctCount: 0, missedThisSession: [], sourceLabel: "Review Missed", onComplete: () => setMode("review") };
+    state.mode = "practice-quiz";
+    renderSidebar();
+    render();
+  }
+
+  function renderReview(main) {
+    if (missedSet.size === 0) {
+      main.innerHTML = `<h2>Review Missed Questions</h2><div class="empty-state"><div class="big">&#9989;</div>No missed questions right now &mdash; nice work.<br>Practice or take a mock exam to build this list.</div>`;
+      return;
+    }
+    main.innerHTML = `<h2>Review Missed Questions</h2><p class="muted">${missedSet.size} question(s) currently missed.</p>`;
+    const btn = document.createElement("button");
+    btn.className = "btn";
+    btn.textContent = "Start review session";
+    btn.addEventListener("click", startReviewSession);
+    main.appendChild(btn);
+  }
+
+  // shared single-question-at-a-time quiz engine (used by Practice + Review)
+  function renderQuizEngine(main) {
+    const s = state.session;
+    if (s.index >= s.pool.length) return renderSessionSummary(main);
+
+    const raw = s.pool[s.index];
+    const q = shuffleQuestionOptions(raw);
+
+    main.innerHTML = `
+      <div class="quiz-progress">${escapeHtml(s.sourceLabel)} &middot; Question ${s.index + 1} of ${s.pool.length}</div>
+      <div class="card">
+        <p class="quiz-stem">${escapeHtml(q.stem)}</p>
+        <div id="q-options"></div>
+        <div id="q-feedback"></div>
+      </div>
+    `;
+    const optionsBox = $("q-options");
+    let answered = false;
+
+    q.options.forEach((opt, i) => {
+      const btn = document.createElement("button");
+      btn.className = "option-btn";
+      btn.textContent = opt;
+      btn.addEventListener("click", () => {
+        if (answered) return;
+        answered = true;
+        const wasCorrect = i === q.correct_index;
+        [...optionsBox.children].forEach((b, bi) => {
+          b.disabled = true;
+          if (bi === q.correct_index) b.classList.add("correct");
+          if (bi === i && !wasCorrect) b.classList.add("incorrect");
+          if (bi === i) b.classList.add("chosen-marker");
+        });
+        recordAnswer(raw.id, wasCorrect);
+        if (wasCorrect) s.correctCount++;
+        else s.missedThisSession.push(raw.id);
+        renderSidebar();
+
+        const tagsHtml = [q.technique_tag, q.competency_tag].filter(Boolean).map((tagName) => {
+          const r = resolveTag(tagName);
+          return `<span class="tag-chip ${r.kind}${r.kind === "unknown" ? " unknown" : ""}">${escapeHtml(tagName)}</span>`;
+        }).join("");
+
+        $("q-feedback").innerHTML = `
+          <div class="quiz-meta" style="margin-top:12px;">
+            <span class="badge ${q.difficulty}">${q.difficulty}</span>
+            ${tagsHtml}
+          </div>
+          <div class="explain-box"><strong>${wasCorrect ? "Correct." : "Not quite."}</strong> ${escapeHtml(q.explanation)}</div>
+          <button class="btn" id="q-next">Next question &rarr;</button>
+        `;
+        $("q-next").addEventListener("click", () => { s.index++; render(); });
+      });
+      optionsBox.appendChild(btn);
+    });
+  }
+
+  function renderSessionSummary(main) {
+    const s = state.session;
+    main.innerHTML = `
+      <h2>Session complete</h2>
+      <div class="card">
+        <p><strong>${s.correctCount} / ${s.pool.length}</strong> correct &mdash; ${s.sourceLabel}</p>
+        ${s.missedThisSession.length ? `<p>${s.missedThisSession.length} missed this session.</p>` : `<p>No misses this session &mdash; nice work.</p>`}
+      </div>
+      <button class="btn" id="s-again">Practice again</button>
+      <button class="btn secondary" id="s-back">Back</button>
+      ${s.missedThisSession.length ? `<button class="btn secondary" id="s-review">Review these now</button>` : ""}
+    `;
+    $("s-again").addEventListener("click", () => {
+      state.session = { ...s, pool: shuffleArray(s.pool), index: 0, correctCount: 0, missedThisSession: [] };
+      render();
+    });
+    $("s-back").addEventListener("click", s.onComplete);
+    const reviewBtn = $("s-review");
+    if (reviewBtn) reviewBtn.addEventListener("click", () => {
+      const pool = shuffleArray(IDX.allQuestions.filter((q) => s.missedThisSession.includes(q.id)));
+      state.session = { pool, index: 0, correctCount: 0, missedThisSession: [], sourceLabel: "Review Missed", onComplete: () => setMode("review") };
+      render();
+    });
+  }
+
+  // ---------- Mock Exam ----------
+  function buildMockPool() {
+    const taken = {};
+    const perDomain = {};
+    let shortfall = 0;
+    Object.keys(MOCK_COMPOSITION).forEach((dStr) => {
+      const d = Number(dStr);
+      const target = MOCK_COMPOSITION[d];
+      const available = shuffleArray(DB.questionsByDomain[d] || []);
+      const take = Math.min(target, available.length);
+      perDomain[d] = available.slice(0, take);
+      taken[d] = new Set(perDomain[d].map((q) => q.id));
+      shortfall += target - take;
+    });
+
+    if (shortfall > 0) {
+      const surplusDomains = Object.keys(MOCK_COMPOSITION)
+        .map(Number)
+        .filter((d) => (DB.questionsByDomain[d] || []).length > perDomain[d].length)
+        .sort((a, b) => DB.domains.find((x) => x.id === b).weight_pct - DB.domains.find((x) => x.id === a).weight_pct);
+
+      let guard = 0;
+      while (shortfall > 0 && surplusDomains.length && guard < 1000) {
+        guard++;
+        for (const d of surplusDomains) {
+          if (shortfall <= 0) break;
+          const remaining = (DB.questionsByDomain[d] || []).filter((q) => !taken[d].has(q.id));
+          if (remaining.length === 0) continue;
+          const pick = remaining[Math.floor(Math.random() * remaining.length)];
+          perDomain[d].push(pick);
+          taken[d].add(pick.id);
+          shortfall--;
+        }
+        if (surplusDomains.every((d) => (DB.questionsByDomain[d] || []).filter((q) => !taken[d].has(q.id)).length === 0)) break;
+      }
+    }
+
+    const breakdown = Object.keys(MOCK_COMPOSITION).map(Number).map((d) => ({
+      domainId: d,
+      name: DB.domains.find((x) => x.id === d).name,
+      target: MOCK_COMPOSITION[d],
+      realized: perDomain[d].length,
+    }));
+    const pool = shuffleArray(Object.values(perDomain).flat());
+    return { pool, breakdown };
+  }
+
+  function renderMockSetup(main) {
+    const { pool, breakdown } = buildMockPool();
+    const rows = breakdown.map((b) => `
+      <tr>
+        <td>${b.domainId}. ${escapeHtml(b.name)}</td>
+        <td>${b.target}</td>
+        <td>${b.realized}</td>
+      </tr>
+    `).join("");
+    const isFull = pool.length === 50;
+    main.innerHTML = `
+      <h2>Mock Exam</h2>
+      <div class="card">
+        <p>${isFull
+          ? "Full 50-question mock exam, proportional to real exam weighting."
+          : `Full 50-question mock isn't available yet &mdash; this mock will use <strong>${pool.length}</strong> questions (target composition, scaled to available content).`
+        }</p>
+        <table class="breakdown">
+          <thead><tr><th>Domain</th><th>Target</th><th>Realized</th></tr></thead>
+          <tbody>${rows}</tbody>
+        </table>
+        <label style="font-size:13px;display:flex;gap:6px;align-items:center;margin-bottom:14px;">
+          <input type="checkbox" id="mock-timer" ${store.settings.mockTimerEnabled ? "checked" : ""}>
+          75-minute countdown timer (cosmetic &mdash; does not auto-submit)
+        </label>
+        <button class="btn" id="mock-start" ${pool.length === 0 ? "disabled" : ""}>Start mock exam</button>
+      </div>
+    `;
+    $("mock-timer").addEventListener("change", (e) => {
+      store.settings.mockTimerEnabled = e.target.checked;
+      saveStore();
+    });
+    $("mock-start").addEventListener("click", () => startMockExam(pool));
+  }
+
+  function startMockExam(pool) {
+    state.mock = {
+      pool,
+      answers: new Array(pool.length).fill(null), // chosen option index into pool[i].options (unshuffled order at build time)
+      shuffled: pool.map((q) => shuffleQuestionOptions(q)),
+      index: 0,
+      startedAt: Date.now(),
+      durationSec: 75 * 60,
+      timerEnabled: store.settings.mockTimerEnabled,
+    };
+    state.mode = "mock-quiz";
+    renderSidebar();
+    render();
+  }
+
+  let mockTimerHandle = null;
+  function renderMockQuiz(main) {
+    const m = state.mock;
+    const q = m.shuffled[m.index];
+    const chosen = m.answers[m.index];
+
+    const dots = m.pool.map((_, i) => {
+      const cls = ["mock-dot"];
+      if (i === m.index) cls.push("current");
+      else if (m.answers[i] !== null) cls.push("answered");
+      return `<div class="${cls.join(" ")}" data-i="${i}">${i + 1}</div>`;
+    }).join("");
+
+    main.innerHTML = `
+      <h2>Mock Exam</h2>
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
+        <div class="quiz-progress" style="margin:0;">Question ${m.index + 1} of ${m.pool.length}</div>
+        ${m.timerEnabled ? `<div class="timer" id="mock-timer-display"></div>` : ""}
+      </div>
+      <div class="mock-progress">${dots}</div>
+      <div class="card">
+        <p class="quiz-stem">${escapeHtml(q.stem)}</p>
+        <div id="mq-options"></div>
+      </div>
+      <div class="deck-controls">
+        <button class="btn secondary" id="mq-prev" ${m.index === 0 ? "disabled" : ""}>&larr; Prev</button>
+        <button class="btn secondary" id="mq-next" ${m.index === m.pool.length - 1 ? "disabled" : ""}>Next &rarr;</button>
+        <button class="btn" id="mq-submit">Submit Exam</button>
+      </div>
+    `;
+
+    const optBox = $("mq-options");
+    q.options.forEach((opt, i) => {
+      const btn = document.createElement("button");
+      btn.className = "option-btn" + (chosen === i ? " chosen-marker" : "");
+      if (chosen === i) btn.style.borderColor = "var(--accent)";
+      btn.textContent = opt;
+      btn.addEventListener("click", () => {
+        m.answers[m.index] = i;
+        render();
+      });
+      optBox.appendChild(btn);
+    });
+
+    main.querySelectorAll(".mock-dot").forEach((d) => {
+      d.addEventListener("click", () => { m.index = Number(d.dataset.i); render(); });
+    });
+    $("mq-prev").addEventListener("click", () => { m.index = Math.max(0, m.index - 1); render(); });
+    $("mq-next").addEventListener("click", () => { m.index = Math.min(m.pool.length - 1, m.index + 1); render(); });
+    $("mq-submit").addEventListener("click", submitMockExam);
+
+    if (m.timerEnabled) {
+      if (mockTimerHandle) clearInterval(mockTimerHandle);
+      const tick = () => {
+        const elapsed = Math.floor((Date.now() - m.startedAt) / 1000);
+        const remaining = Math.max(0, m.durationSec - elapsed);
+        const mm = String(Math.floor(remaining / 60)).padStart(2, "0");
+        const ss = String(remaining % 60).padStart(2, "0");
+        const el = $("mock-timer-display");
+        if (el) {
+          el.textContent = mm + ":" + ss;
+          el.classList.toggle("low", remaining < 300);
+        } else {
+          clearInterval(mockTimerHandle);
+        }
+      };
+      tick();
+      mockTimerHandle = setInterval(tick, 1000);
+    }
+  }
+
+  function submitMockExam() {
+    if (mockTimerHandle) { clearInterval(mockTimerHandle); mockTimerHandle = null; }
+    const m = state.mock;
+    let correctCount = 0;
+    const byDomain = {};
+    m.shuffled.forEach((q, i) => {
+      const domainId = q.domain_id;
+      byDomain[domainId] = byDomain[domainId] || { correct: 0, total: 0 };
+      byDomain[domainId].total++;
+      const wasCorrect = m.answers[i] === q.correct_index;
+      if (wasCorrect) { correctCount++; byDomain[domainId].correct++; }
+      recordAnswer(m.pool[i].id, wasCorrect);
+    });
+    renderSidebar();
+
+    const entry = {
+      date: new Date().toISOString(),
+      totalQuestions: m.pool.length,
+      targetQuestions: 50,
+      correctCount,
+      scorePct: Math.round((correctCount / m.pool.length) * 100),
+      byDomain,
+    };
+    store.mockHistory.push(entry);
+    saveStore();
+
+    state.mode = "mock-result";
+    state.lastMockResult = entry;
+    renderSidebar();
+    render();
+  }
+
+  function renderMockResult(main) {
+    const r = state.lastMockResult;
+    const rows = Object.keys(r.byDomain).map(Number).sort((a, b) => a - b).map((d) => {
+      const b = r.byDomain[d];
+      const dom = DB.domains.find((x) => x.id === d);
+      return `<tr><td>${d}. ${escapeHtml(dom.name)}</td><td>${b.correct} / ${b.total}</td></tr>`;
+    }).join("");
+    main.innerHTML = `
+      <h2>Mock Exam Results</h2>
+      <div class="card">
+        <p style="font-size:28px;font-weight:700;margin:0 0 4px;">${r.scorePct}%</p>
+        <p class="muted" style="margin-top:0;">${r.correctCount} / ${r.totalQuestions} correct${r.totalQuestions < r.targetQuestions ? ` (scaled mock, target was ${r.targetQuestions})` : ""}</p>
+        <table class="breakdown">
+          <thead><tr><th>Domain</th><th>Score</th></tr></thead>
+          <tbody>${rows}</tbody>
+        </table>
+      </div>
+      <button class="btn" id="mr-review">Review missed from this exam</button>
+      <button class="btn secondary" id="mr-back">Back to Mock Exam</button>
+    `;
+    $("mr-review").addEventListener("click", startReviewSession);
+    $("mr-back").addEventListener("click", () => setMode("mock"));
+  }
+
+  function renderHistory(main) {
+    if (store.mockHistory.length === 0) {
+      main.innerHTML = `<h2>Exam History</h2><div class="empty-state"><div class="big">&#128202;</div>No mock exams taken yet.</div>`;
+      return;
+    }
+    const rows = store.mockHistory.slice().reverse().map((h) => `
+      <tr>
+        <td>${new Date(h.date).toLocaleString()}</td>
+        <td>${h.correctCount} / ${h.totalQuestions}</td>
+        <td>${h.scorePct}%</td>
+      </tr>
+    `).join("");
+    main.innerHTML = `
+      <h2>Exam History</h2>
+      <table class="breakdown">
+        <thead><tr><th>Date</th><th>Score</th><th>%</th></tr></thead>
+        <tbody>${rows}</tbody>
+      </table>
+    `;
+  }
+
+  boot();
+})();
+</script>
+</body>
+</html>
