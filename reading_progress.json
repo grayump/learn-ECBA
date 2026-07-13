@@ -1,0 +1,643 @@
+{
+  "page_title": "Reading Progress Tracker",
+  "page_description": "Checklist of every domain and activity statement, with book/chapter/page references, for tracking which source material you've actually read.",
+  "storage_note": "Each item's checked state should persist across sessions. In the Claude Code build, use window.storage (personal, not shared) with key pattern 'reading-progress:{activity_statement_id}' -> boolean, or a single combined key 'reading-progress-all' -> {id: bool} object to minimize storage calls.",
+  "page_reference_confidence": "All page numbers (BABOK Guide v3 Member Copy and The Business Analysis Standard v2.0, ISBN 978-1927584378) are confirmed directly from the user's own PDF copies -- full confidence.",
+  "domains": [
+    {
+      "domain_id": 1,
+      "domain_name": "Understanding Business Analysis",
+      "weight_pct": 20,
+      "activity_statements": [
+        {
+          "activity_statement_id": "1.1",
+          "text": "Define business analysis, describe its role in enabling change, and outline key activities across contexts.",
+          "references": [
+            {
+              "book": "Business Analysis Standard",
+              "chapter_section": "2.1 Defining Business Analysis",
+              "page": 5
+            }
+          ],
+          "read": false
+        },
+        {
+          "activity_statement_id": "1.2",
+          "text": "Describe the six BACCM concepts, explain how they relate, and use them to support structured thinking.",
+          "references": [
+            {
+              "book": "Business Analysis Standard",
+              "chapter_section": "2.2 A Model for Effective Analysis \u2014 BACCM\u2122 / 2.3 Using the BACCM\u2122",
+              "page": 5
+            }
+          ],
+          "read": false
+        },
+        {
+          "activity_statement_id": "1.3",
+          "text": "Explain how business analysis supports value creation and benefits organizations in various industries.",
+          "references": [
+            {
+              "book": "Business Analysis Standard",
+              "chapter_section": "2.4 The Importance of Business Analysis",
+              "page": 7
+            }
+          ],
+          "read": false
+        },
+        {
+          "activity_statement_id": "1.4",
+          "text": "Define value in business analysis and explain how outcomes are assessed to support value realization.",
+          "references": [
+            {
+              "book": "Business Analysis Standard",
+              "chapter_section": "2.5 Outcomes and Value Creation",
+              "page": 7
+            }
+          ],
+          "read": false
+        }
+      ]
+    },
+    {
+      "domain_id": 2,
+      "domain_name": "Mindset for Effective Business Analysis",
+      "weight_pct": 14,
+      "activity_statements": [
+        {
+          "activity_statement_id": "2.1",
+          "text": "Explain how mindset influences your effectiveness and identify ways to adopt an empowering mindset.",
+          "references": [
+            {
+              "book": "Business Analysis Standard",
+              "chapter_section": "3.1 The Importance of Mindset",
+              "page": 9
+            }
+          ],
+          "read": false
+        },
+        {
+          "activity_statement_id": "2.2",
+          "text": "Recognize the shared values that drive work and explain how those values support the work to be done.",
+          "references": [
+            {
+              "book": "Business Analysis Standard",
+              "chapter_section": "3.2 The Way to Think About Business Analysis",
+              "page": 9
+            }
+          ],
+          "read": false
+        },
+        {
+          "activity_statement_id": "2.3",
+          "text": "Identify core business analysis principles and apply them to guide your work and improve outcomes.",
+          "references": [
+            {
+              "book": "Business Analysis Standard",
+              "chapter_section": "3.3 Business Analysis Principles",
+              "page": 10
+            }
+          ],
+          "read": false
+        },
+        {
+          "activity_statement_id": "2.4",
+          "text": "Recognize foundational competencies and assess when to apply them in your work.",
+          "references": [
+            {
+              "book": "Business Analysis Standard",
+              "chapter_section": "3.4 Foundational Competencies",
+              "page": 11
+            }
+          ],
+          "read": false
+        }
+      ]
+    },
+    {
+      "domain_id": 3,
+      "domain_name": "Implementing Business Analysis",
+      "weight_pct": 6,
+      "activity_statements": [
+        {
+          "activity_statement_id": "3.1",
+          "text": "Identify roles that perform business analysis and describe how responsibilities vary across contexts.",
+          "references": [
+            {
+              "book": "Business Analysis Standard",
+              "chapter_section": "4.1 Who Performs Business Analysis",
+              "page": 13
+            }
+          ],
+          "read": false
+        },
+        {
+          "activity_statement_id": "3.2",
+          "text": "Compare business analysis approaches and explain how to choose an approach based on the situation.",
+          "references": [
+            {
+              "book": "Business Analysis Standard",
+              "chapter_section": "4.2 Approaches to Business Analysis Work",
+              "page": 13
+            }
+          ],
+          "read": false
+        },
+        {
+          "activity_statement_id": "3.3",
+          "text": "Identify organizational considerations that influence your work and explain their potential impact.",
+          "references": [
+            {
+              "book": "Business Analysis Standard",
+              "chapter_section": "4.5 Organizational Considerations",
+              "page": 18
+            }
+          ],
+          "read": false
+        },
+        {
+          "activity_statement_id": "3.4",
+          "text": "Describe the difference between requirements and designs and explain how they evolve throughout the initiative.",
+          "references": [
+            {
+              "book": "Business Analysis Standard",
+              "chapter_section": "4.4 Understanding Requirements and Designs",
+              "page": 16
+            }
+          ],
+          "read": false
+        }
+      ]
+    },
+    {
+      "domain_id": 4,
+      "domain_name": "Change",
+      "weight_pct": 10,
+      "activity_statements": [
+        {
+          "activity_statement_id": "4.1",
+          "text": "Recognize how key organizational, environmental, and stakeholder factors can influence your work.",
+          "references": [
+            {
+              "book": "BABOK Guide",
+              "chapter_section": "3.1 Plan Business Analysis Approach",
+              "page": 24
+            },
+            {
+              "book": "BABOK Guide",
+              "chapter_section": "6.1 Analyze Current State",
+              "page": 103
+            },
+            {
+              "book": "BABOK Guide",
+              "chapter_section": "8.4 Assess Enterprise Limitations",
+              "page": 177
+            }
+          ],
+          "read": false
+        },
+        {
+          "activity_statement_id": "4.2",
+          "text": "Describe processes and systems to identify areas impacted by changes, and evaluate the impacts.",
+          "references": [
+            {
+              "book": "BABOK Guide",
+              "chapter_section": "3.3 Plan Business Analysis Governance",
+              "page": 37
+            },
+            {
+              "book": "BABOK Guide",
+              "chapter_section": "6.4 Define Change Strategy",
+              "page": 124
+            }
+          ],
+          "read": false
+        },
+        {
+          "activity_statement_id": "4.3",
+          "text": "Track progress toward goals and support teams in adapting to changes, under direction.",
+          "references": [
+            {
+              "book": "BABOK Guide",
+              "chapter_section": "3.5 Identify Business Analysis Performance Improvements",
+              "page": 47
+            },
+            {
+              "book": "BABOK Guide",
+              "chapter_section": "5.1 Trace Requirements",
+              "page": 79
+            },
+            {
+              "book": "BABOK Guide",
+              "chapter_section": "8.2 Analyze Performance Measures",
+              "page": 170
+            }
+          ],
+          "read": false
+        },
+        {
+          "activity_statement_id": "4.4",
+          "text": "Suggest and help implement simple improvements, working within clear guidelines.",
+          "references": [
+            {
+              "book": "BABOK Guide",
+              "chapter_section": "3.3 Plan Business Analysis Governance",
+              "page": 37
+            },
+            {
+              "book": "BABOK Guide",
+              "chapter_section": "5.4 Assess Requirements Changes",
+              "page": 91
+            }
+          ],
+          "read": false
+        }
+      ]
+    },
+    {
+      "domain_id": 5,
+      "domain_name": "Need",
+      "weight_pct": 10,
+      "activity_statements": [
+        {
+          "activity_statement_id": "5.1",
+          "text": "Use basic elicitation methods and build positive rapport with stakeholders to elicit information.",
+          "references": [
+            {
+              "book": "BABOK Guide",
+              "chapter_section": "4.1 Prepare for Elicitation",
+              "page": 56
+            }
+          ],
+          "read": false
+        },
+        {
+          "activity_statement_id": "5.2",
+          "text": "Document requirements clearly and collaborate with stakeholders to validate needs, under guidance.",
+          "references": [
+            {
+              "book": "BABOK Guide",
+              "chapter_section": "4.3 Confirm Elicitation Results",
+              "page": 65
+            },
+            {
+              "book": "BABOK Guide",
+              "chapter_section": "7.1 Specify and Model Requirements",
+              "page": 136
+            }
+          ],
+          "read": false
+        },
+        {
+          "activity_statement_id": "5.3",
+          "text": "Compare stakeholder needs with outcomes to check alignment and flag conflicts for review.",
+          "references": [
+            {
+              "book": "BABOK Guide",
+              "chapter_section": "4.3 Confirm Elicitation Results",
+              "page": 65
+            },
+            {
+              "book": "BABOK Guide",
+              "chapter_section": "7.3 Validate Requirements",
+              "page": 144
+            }
+          ],
+          "read": false
+        },
+        {
+          "activity_statement_id": "5.4",
+          "text": "Support stakeholders in prioritizing needs, considering business value and urgency.",
+          "references": [
+            {
+              "book": "BABOK Guide",
+              "chapter_section": "5.3 Prioritize Requirements",
+              "page": 86
+            }
+          ],
+          "read": false
+        }
+      ]
+    },
+    {
+      "domain_id": 6,
+      "domain_name": "Solution",
+      "weight_pct": 10,
+      "activity_statements": [
+        {
+          "activity_statement_id": "6.1",
+          "text": "Explain basic solution validation concepts and record findings.",
+          "references": [
+            {
+              "book": "BABOK Guide",
+              "chapter_section": "5.1 Trace Requirements",
+              "page": 79
+            }
+          ],
+          "read": false
+        },
+        {
+          "activity_statement_id": "6.2",
+          "text": "Assist in evaluating solution options, considering feasibility and risks, and contribute to preparing recommendations.",
+          "references": [
+            {
+              "book": "BABOK Guide",
+              "chapter_section": "6.2 Define Future State",
+              "page": 110
+            },
+            {
+              "book": "BABOK Guide",
+              "chapter_section": "6.3 Assess Risks",
+              "page": 120
+            },
+            {
+              "book": "BABOK Guide",
+              "chapter_section": "7.5 Define Design Options",
+              "page": 152
+            },
+            {
+              "book": "BABOK Guide",
+              "chapter_section": "8.5 Recommend Actions to Increase Solution Value",
+              "page": 182
+            }
+          ],
+          "read": false
+        },
+        {
+          "activity_statement_id": "6.3",
+          "text": "Support defining scope and collaborate on planning and monitoring implementation activities.",
+          "references": [
+            {
+              "book": "BABOK Guide",
+              "chapter_section": "5.4 Assess Requirements Changes",
+              "page": 91
+            },
+            {
+              "book": "BABOK Guide",
+              "chapter_section": "7.4 Define Requirements Architecture",
+              "page": 148
+            }
+          ],
+          "read": false
+        },
+        {
+          "activity_statement_id": "6.4",
+          "text": "Support preparation and updating of design artifacts to maintain clarity.",
+          "references": [
+            {
+              "book": "BABOK Guide",
+              "chapter_section": "3.4 Plan Business Analysis Information Management",
+              "page": 42
+            },
+            {
+              "book": "BABOK Guide",
+              "chapter_section": "5.2 Maintain Requirements",
+              "page": 83
+            },
+            {
+              "book": "BABOK Guide",
+              "chapter_section": "7.1 Specify and Model Requirements",
+              "page": 136
+            }
+          ],
+          "read": false
+        }
+      ]
+    },
+    {
+      "domain_id": 7,
+      "domain_name": "Stakeholder",
+      "weight_pct": 10,
+      "activity_statements": [
+        {
+          "activity_statement_id": "7.1",
+          "text": "Communicate with stakeholders using tailored messages to maintain engagement.",
+          "references": [
+            {
+              "book": "BABOK Guide",
+              "chapter_section": "4.2 Conduct Elicitation",
+              "page": 61
+            },
+            {
+              "book": "BABOK Guide",
+              "chapter_section": "4.4 Communicate Business Analysis Information",
+              "page": 67
+            }
+          ],
+          "read": false
+        },
+        {
+          "activity_statement_id": "7.2",
+          "text": "Identify stakeholder roles and interests, and support analysis of their impact.",
+          "references": [
+            {
+              "book": "BABOK Guide",
+              "chapter_section": "3.2 Plan Stakeholder Engagement",
+              "page": 31
+            }
+          ],
+          "read": false
+        },
+        {
+          "activity_statement_id": "7.3",
+          "text": "Facilitate stakeholder collaboration and feedback throughout the initiative.",
+          "references": [
+            {
+              "book": "BABOK Guide",
+              "chapter_section": "4.2 Conduct Elicitation",
+              "page": 61
+            },
+            {
+              "book": "BABOK Guide",
+              "chapter_section": "4.5 Manage Stakeholder Collaboration",
+              "page": 71
+            }
+          ],
+          "read": false
+        },
+        {
+          "activity_statement_id": "7.4",
+          "text": "Identify key stakeholder motivations, drivers, and concerns to understand their decisions.",
+          "references": [
+            {
+              "book": "BABOK Guide",
+              "chapter_section": "3.2 Plan Stakeholder Engagement",
+              "page": 31
+            },
+            {
+              "book": "BABOK Guide",
+              "chapter_section": "4.5 Manage Stakeholder Collaboration",
+              "page": 71
+            },
+            {
+              "book": "BABOK Guide",
+              "chapter_section": "5.5 Approve Requirements",
+              "page": 95
+            }
+          ],
+          "read": false
+        }
+      ]
+    },
+    {
+      "domain_id": 8,
+      "domain_name": "Value",
+      "weight_pct": 10,
+      "activity_statements": [
+        {
+          "activity_statement_id": "8.1",
+          "text": "Confirm understanding of desired outcomes aligned with business objectives.",
+          "references": [
+            {
+              "book": "BABOK Guide",
+              "chapter_section": "6.2 Define Future State",
+              "page": 110
+            }
+          ],
+          "read": false
+        },
+        {
+          "activity_statement_id": "8.2",
+          "text": "Support identification of value opportunities and help address barriers to delivery.",
+          "references": [
+            {
+              "book": "BABOK Guide",
+              "chapter_section": "5.3 Prioritize Requirements",
+              "page": 86
+            },
+            {
+              "book": "BABOK Guide",
+              "chapter_section": "6.4 Define Change Strategy",
+              "page": 124
+            },
+            {
+              "book": "BABOK Guide",
+              "chapter_section": "7.6 Analyze Potential Value and Recommend Solution",
+              "page": 157
+            },
+            {
+              "book": "BABOK Guide",
+              "chapter_section": "8.5 Recommend Actions to Increase Solution Value",
+              "page": 182
+            }
+          ],
+          "read": false
+        },
+        {
+          "activity_statement_id": "8.3",
+          "text": "Describe how solutions meet business goals and relay information effectively for stakeholders.",
+          "references": [
+            {
+              "book": "BABOK Guide",
+              "chapter_section": "4.4 Communicate Business Analysis Information",
+              "page": 67
+            },
+            {
+              "book": "BABOK Guide",
+              "chapter_section": "7.3 Validate Requirements",
+              "page": 144
+            }
+          ],
+          "read": false
+        },
+        {
+          "activity_statement_id": "8.4",
+          "text": "Support defining key performance indicators (KPIs) aligned with value to measure success.",
+          "references": [
+            {
+              "book": "BABOK Guide",
+              "chapter_section": "3.5 Identify Business Analysis Performance Improvements",
+              "page": 47
+            },
+            {
+              "book": "BABOK Guide",
+              "chapter_section": "8.1 Measure Solution Performance",
+              "page": 166
+            }
+          ],
+          "read": false
+        }
+      ]
+    },
+    {
+      "domain_id": 9,
+      "domain_name": "Context",
+      "weight_pct": 10,
+      "activity_statements": [
+        {
+          "activity_statement_id": "9.1",
+          "text": "Assist in validating information quality and alignment to your situation, and document those validation outcomes.",
+          "references": [
+            {
+              "book": "BABOK Guide",
+              "chapter_section": "3.4 Plan Business Analysis Information Management",
+              "page": 42
+            },
+            {
+              "book": "BABOK Guide",
+              "chapter_section": "5.2 Maintain Requirements",
+              "page": 83
+            },
+            {
+              "book": "BABOK Guide",
+              "chapter_section": "5.5 Approve Requirements",
+              "page": 95
+            }
+          ],
+          "read": false
+        },
+        {
+          "activity_statement_id": "9.2",
+          "text": "Support recognizing constraints and adapt plans to maintain alignment.",
+          "references": [
+            {
+              "book": "BABOK Guide",
+              "chapter_section": "6.1 Analyze Current State",
+              "page": 103
+            },
+            {
+              "book": "BABOK Guide",
+              "chapter_section": "8.3 Assess Solution Limitations",
+              "page": 173
+            },
+            {
+              "book": "BABOK Guide",
+              "chapter_section": "8.4 Assess Enterprise Limitations",
+              "page": 177
+            }
+          ],
+          "read": false
+        },
+        {
+          "activity_statement_id": "9.3",
+          "text": "Assist in analyzing technology trends and support technology integration.",
+          "references": [
+            {
+              "book": "BABOK Guide",
+              "chapter_section": "7.4 Define Requirements Architecture",
+              "page": 148
+            }
+          ],
+          "read": false
+        },
+        {
+          "activity_statement_id": "9.4",
+          "text": "Apply relevant industry standards and frameworks to guide the work to be done.",
+          "references": [
+            {
+              "book": "BABOK Guide",
+              "chapter_section": "3.1 Plan Business Analysis Approach",
+              "page": 24
+            },
+            {
+              "book": "BABOK Guide",
+              "chapter_section": "7.2 Verify Requirements",
+              "page": 141
+            }
+          ],
+          "read": false
+        }
+      ]
+    }
+  ]
+}

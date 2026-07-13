@@ -3,7 +3,10 @@
   "exam_format": {
     "duration_minutes": 75,
     "question_count": 50,
-    "question_types": ["situation-based", "standard multiple-choice"],
+    "question_types": [
+      "situation-based",
+      "standard multiple-choice"
+    ],
     "delivery": "Online remote proctored (PSI)",
     "scoring": "Pass/fail with performance indicators (no published cut score)"
   },
@@ -15,10 +18,50 @@
       "source_material": "Business Analysis Standard",
       "tier": "foundational",
       "activity_statements": [
-        { "id": "1.1", "text": "Define business analysis, describe its role in enabling change, and outline key activities across contexts." },
-        { "id": "1.2", "text": "Describe the six BACCM concepts, explain how they relate, and use them to support structured thinking." },
-        { "id": "1.3", "text": "Explain how business analysis supports value creation and benefits organizations in various industries." },
-        { "id": "1.4", "text": "Define value in business analysis and explain how outcomes are assessed to support value realization." }
+        {
+          "id": "1.1",
+          "text": "Define business analysis, describe its role in enabling change, and outline key activities across contexts.",
+          "babok_source_refs": [
+            {
+              "source": "Business Analysis Standard",
+              "page": 5,
+              "section": "2.1 Defining Business Analysis"
+            }
+          ]
+        },
+        {
+          "id": "1.2",
+          "text": "Describe the six BACCM concepts, explain how they relate, and use them to support structured thinking.",
+          "babok_source_refs": [
+            {
+              "source": "Business Analysis Standard",
+              "page": 5,
+              "section": "2.2 A Model for Effective Analysis \u2014 BACCM\u2122 / 2.3 Using the BACCM\u2122"
+            }
+          ]
+        },
+        {
+          "id": "1.3",
+          "text": "Explain how business analysis supports value creation and benefits organizations in various industries.",
+          "babok_source_refs": [
+            {
+              "source": "Business Analysis Standard",
+              "page": 7,
+              "section": "2.4 The Importance of Business Analysis"
+            }
+          ]
+        },
+        {
+          "id": "1.4",
+          "text": "Define value in business analysis and explain how outcomes are assessed to support value realization.",
+          "babok_source_refs": [
+            {
+              "source": "Business Analysis Standard",
+              "page": 7,
+              "section": "2.5 Outcomes and Value Creation"
+            }
+          ]
+        }
       ]
     },
     {
@@ -28,10 +71,50 @@
       "source_material": "Business Analysis Standard",
       "tier": "foundational",
       "activity_statements": [
-        { "id": "2.1", "text": "Explain how mindset influences your effectiveness and identify ways to adopt an empowering mindset." },
-        { "id": "2.2", "text": "Recognize the shared values that drive work and explain how those values support the work to be done." },
-        { "id": "2.3", "text": "Identify core business analysis principles and apply them to guide your work and improve outcomes." },
-        { "id": "2.4", "text": "Recognize foundational competencies and assess when to apply them in your work." }
+        {
+          "id": "2.1",
+          "text": "Explain how mindset influences your effectiveness and identify ways to adopt an empowering mindset.",
+          "babok_source_refs": [
+            {
+              "source": "Business Analysis Standard",
+              "page": 9,
+              "section": "3.1 The Importance of Mindset"
+            }
+          ]
+        },
+        {
+          "id": "2.2",
+          "text": "Recognize the shared values that drive work and explain how those values support the work to be done.",
+          "babok_source_refs": [
+            {
+              "source": "Business Analysis Standard",
+              "page": 9,
+              "section": "3.2 The Way to Think About Business Analysis"
+            }
+          ]
+        },
+        {
+          "id": "2.3",
+          "text": "Identify core business analysis principles and apply them to guide your work and improve outcomes.",
+          "babok_source_refs": [
+            {
+              "source": "Business Analysis Standard",
+              "page": 10,
+              "section": "3.3 Business Analysis Principles"
+            }
+          ]
+        },
+        {
+          "id": "2.4",
+          "text": "Recognize foundational competencies and assess when to apply them in your work.",
+          "babok_source_refs": [
+            {
+              "source": "Business Analysis Standard",
+              "page": 11,
+              "section": "3.4 Foundational Competencies"
+            }
+          ]
+        }
       ]
     },
     {
@@ -41,10 +124,50 @@
       "source_material": "Business Analysis Standard",
       "tier": "foundational",
       "activity_statements": [
-        { "id": "3.1", "text": "Identify roles that perform business analysis and describe how responsibilities vary across contexts." },
-        { "id": "3.2", "text": "Compare business analysis approaches and explain how to choose an approach based on the situation." },
-        { "id": "3.3", "text": "Identify organizational considerations that influence your work and explain their potential impact." },
-        { "id": "3.4", "text": "Describe the difference between requirements and designs and explain how they evolve throughout the initiative." }
+        {
+          "id": "3.1",
+          "text": "Identify roles that perform business analysis and describe how responsibilities vary across contexts.",
+          "babok_source_refs": [
+            {
+              "source": "Business Analysis Standard",
+              "page": 13,
+              "section": "4.1 Who Performs Business Analysis"
+            }
+          ]
+        },
+        {
+          "id": "3.2",
+          "text": "Compare business analysis approaches and explain how to choose an approach based on the situation.",
+          "babok_source_refs": [
+            {
+              "source": "Business Analysis Standard",
+              "page": 13,
+              "section": "4.2 Approaches to Business Analysis Work"
+            }
+          ]
+        },
+        {
+          "id": "3.3",
+          "text": "Identify organizational considerations that influence your work and explain their potential impact.",
+          "babok_source_refs": [
+            {
+              "source": "Business Analysis Standard",
+              "page": 18,
+              "section": "4.5 Organizational Considerations"
+            }
+          ]
+        },
+        {
+          "id": "3.4",
+          "text": "Describe the difference between requirements and designs and explain how they evolve throughout the initiative.",
+          "babok_source_refs": [
+            {
+              "source": "Business Analysis Standard",
+              "page": 16,
+              "section": "4.4 Understanding Requirements and Designs"
+            }
+          ]
+        }
       ]
     },
     {
@@ -54,10 +177,90 @@
       "source_material": "BABOK Guide (BACCM)",
       "tier": "baccm",
       "activity_statements": [
-        { "id": "4.1", "text": "Recognize how key organizational, environmental, and stakeholder factors can influence your work." },
-        { "id": "4.2", "text": "Describe processes and systems to identify areas impacted by changes, and evaluate the impacts." },
-        { "id": "4.3", "text": "Track progress toward goals and support teams in adapting to changes, under direction." },
-        { "id": "4.4", "text": "Suggest and help implement simple improvements, working within clear guidelines." }
+        {
+          "id": "4.1",
+          "text": "Recognize how key organizational, environmental, and stakeholder factors can influence your work.",
+          "babok_source_refs": [
+            {
+              "source": "BABOK Guide",
+              "babok_ref": "3.1",
+              "babok_task": "Plan Business Analysis Approach",
+              "page": 24
+            },
+            {
+              "source": "BABOK Guide",
+              "babok_ref": "6.1",
+              "babok_task": "Analyze Current State",
+              "page": 103
+            },
+            {
+              "source": "BABOK Guide",
+              "babok_ref": "8.4",
+              "babok_task": "Assess Enterprise Limitations",
+              "page": 177
+            }
+          ]
+        },
+        {
+          "id": "4.2",
+          "text": "Describe processes and systems to identify areas impacted by changes, and evaluate the impacts.",
+          "babok_source_refs": [
+            {
+              "source": "BABOK Guide",
+              "babok_ref": "3.3",
+              "babok_task": "Plan Business Analysis Governance",
+              "page": 37
+            },
+            {
+              "source": "BABOK Guide",
+              "babok_ref": "6.4",
+              "babok_task": "Define Change Strategy",
+              "page": 124
+            }
+          ]
+        },
+        {
+          "id": "4.3",
+          "text": "Track progress toward goals and support teams in adapting to changes, under direction.",
+          "babok_source_refs": [
+            {
+              "source": "BABOK Guide",
+              "babok_ref": "3.5",
+              "babok_task": "Identify Business Analysis Performance Improvements",
+              "page": 47
+            },
+            {
+              "source": "BABOK Guide",
+              "babok_ref": "5.1",
+              "babok_task": "Trace Requirements",
+              "page": 79
+            },
+            {
+              "source": "BABOK Guide",
+              "babok_ref": "8.2",
+              "babok_task": "Analyze Performance Measures",
+              "page": 170
+            }
+          ]
+        },
+        {
+          "id": "4.4",
+          "text": "Suggest and help implement simple improvements, working within clear guidelines.",
+          "babok_source_refs": [
+            {
+              "source": "BABOK Guide",
+              "babok_ref": "3.3",
+              "babok_task": "Plan Business Analysis Governance",
+              "page": 37
+            },
+            {
+              "source": "BABOK Guide",
+              "babok_ref": "5.4",
+              "babok_task": "Assess Requirements Changes",
+              "page": 91
+            }
+          ]
+        }
       ]
     },
     {
@@ -67,10 +270,66 @@
       "source_material": "BABOK Guide (BACCM)",
       "tier": "baccm",
       "activity_statements": [
-        { "id": "5.1", "text": "Use basic elicitation methods and build positive rapport with stakeholders to elicit information." },
-        { "id": "5.2", "text": "Document requirements clearly and collaborate with stakeholders to validate needs, under guidance." },
-        { "id": "5.3", "text": "Compare stakeholder needs with outcomes to check alignment and flag conflicts for review." },
-        { "id": "5.4", "text": "Support stakeholders in prioritizing needs, considering business value and urgency." }
+        {
+          "id": "5.1",
+          "text": "Use basic elicitation methods and build positive rapport with stakeholders to elicit information.",
+          "babok_source_refs": [
+            {
+              "source": "BABOK Guide",
+              "babok_ref": "4.1",
+              "babok_task": "Prepare for Elicitation",
+              "page": 56
+            }
+          ]
+        },
+        {
+          "id": "5.2",
+          "text": "Document requirements clearly and collaborate with stakeholders to validate needs, under guidance.",
+          "babok_source_refs": [
+            {
+              "source": "BABOK Guide",
+              "babok_ref": "4.3",
+              "babok_task": "Confirm Elicitation Results",
+              "page": 65
+            },
+            {
+              "source": "BABOK Guide",
+              "babok_ref": "7.1",
+              "babok_task": "Specify and Model Requirements",
+              "page": 136
+            }
+          ]
+        },
+        {
+          "id": "5.3",
+          "text": "Compare stakeholder needs with outcomes to check alignment and flag conflicts for review.",
+          "babok_source_refs": [
+            {
+              "source": "BABOK Guide",
+              "babok_ref": "4.3",
+              "babok_task": "Confirm Elicitation Results",
+              "page": 65
+            },
+            {
+              "source": "BABOK Guide",
+              "babok_ref": "7.3",
+              "babok_task": "Validate Requirements",
+              "page": 144
+            }
+          ]
+        },
+        {
+          "id": "5.4",
+          "text": "Support stakeholders in prioritizing needs, considering business value and urgency.",
+          "babok_source_refs": [
+            {
+              "source": "BABOK Guide",
+              "babok_ref": "5.3",
+              "babok_task": "Prioritize Requirements",
+              "page": 86
+            }
+          ]
+        }
       ]
     },
     {
@@ -80,10 +339,90 @@
       "source_material": "BABOK Guide (BACCM)",
       "tier": "baccm",
       "activity_statements": [
-        { "id": "6.1", "text": "Explain basic solution validation concepts and record findings." },
-        { "id": "6.2", "text": "Assist in evaluating solution options, considering feasibility and risks, and contribute to preparing recommendations." },
-        { "id": "6.3", "text": "Support defining scope and collaborate on planning and monitoring implementation activities." },
-        { "id": "6.4", "text": "Support preparation and updating of design artifacts to maintain clarity." }
+        {
+          "id": "6.1",
+          "text": "Explain basic solution validation concepts and record findings.",
+          "babok_source_refs": [
+            {
+              "source": "BABOK Guide",
+              "babok_ref": "5.1",
+              "babok_task": "Trace Requirements",
+              "page": 79
+            }
+          ]
+        },
+        {
+          "id": "6.2",
+          "text": "Assist in evaluating solution options, considering feasibility and risks, and contribute to preparing recommendations.",
+          "babok_source_refs": [
+            {
+              "source": "BABOK Guide",
+              "babok_ref": "6.2",
+              "babok_task": "Define Future State",
+              "page": 110
+            },
+            {
+              "source": "BABOK Guide",
+              "babok_ref": "6.3",
+              "babok_task": "Assess Risks",
+              "page": 120
+            },
+            {
+              "source": "BABOK Guide",
+              "babok_ref": "7.5",
+              "babok_task": "Define Design Options",
+              "page": 152
+            },
+            {
+              "source": "BABOK Guide",
+              "babok_ref": "8.5",
+              "babok_task": "Recommend Actions to Increase Solution Value",
+              "page": 182
+            }
+          ]
+        },
+        {
+          "id": "6.3",
+          "text": "Support defining scope and collaborate on planning and monitoring implementation activities.",
+          "babok_source_refs": [
+            {
+              "source": "BABOK Guide",
+              "babok_ref": "5.4",
+              "babok_task": "Assess Requirements Changes",
+              "page": 91
+            },
+            {
+              "source": "BABOK Guide",
+              "babok_ref": "7.4",
+              "babok_task": "Define Requirements Architecture",
+              "page": 148
+            }
+          ]
+        },
+        {
+          "id": "6.4",
+          "text": "Support preparation and updating of design artifacts to maintain clarity.",
+          "babok_source_refs": [
+            {
+              "source": "BABOK Guide",
+              "babok_ref": "3.4",
+              "babok_task": "Plan Business Analysis Information Management",
+              "page": 42
+            },
+            {
+              "source": "BABOK Guide",
+              "babok_ref": "5.2",
+              "babok_task": "Maintain Requirements",
+              "page": 83
+            },
+            {
+              "source": "BABOK Guide",
+              "babok_ref": "7.1",
+              "babok_task": "Specify and Model Requirements",
+              "page": 136
+            }
+          ]
+        }
       ]
     },
     {
@@ -93,10 +432,78 @@
       "source_material": "BABOK Guide (BACCM)",
       "tier": "baccm",
       "activity_statements": [
-        { "id": "7.1", "text": "Communicate with stakeholders using tailored messages to maintain engagement." },
-        { "id": "7.2", "text": "Identify stakeholder roles and interests, and support analysis of their impact." },
-        { "id": "7.3", "text": "Facilitate stakeholder collaboration and feedback throughout the initiative." },
-        { "id": "7.4", "text": "Identify key stakeholder motivations, drivers, and concerns to understand their decisions." }
+        {
+          "id": "7.1",
+          "text": "Communicate with stakeholders using tailored messages to maintain engagement.",
+          "babok_source_refs": [
+            {
+              "source": "BABOK Guide",
+              "babok_ref": "4.2",
+              "babok_task": "Conduct Elicitation",
+              "page": 61
+            },
+            {
+              "source": "BABOK Guide",
+              "babok_ref": "4.4",
+              "babok_task": "Communicate Business Analysis Information",
+              "page": 67
+            }
+          ]
+        },
+        {
+          "id": "7.2",
+          "text": "Identify stakeholder roles and interests, and support analysis of their impact.",
+          "babok_source_refs": [
+            {
+              "source": "BABOK Guide",
+              "babok_ref": "3.2",
+              "babok_task": "Plan Stakeholder Engagement",
+              "page": 31
+            }
+          ]
+        },
+        {
+          "id": "7.3",
+          "text": "Facilitate stakeholder collaboration and feedback throughout the initiative.",
+          "babok_source_refs": [
+            {
+              "source": "BABOK Guide",
+              "babok_ref": "4.2",
+              "babok_task": "Conduct Elicitation",
+              "page": 61
+            },
+            {
+              "source": "BABOK Guide",
+              "babok_ref": "4.5",
+              "babok_task": "Manage Stakeholder Collaboration",
+              "page": 71
+            }
+          ]
+        },
+        {
+          "id": "7.4",
+          "text": "Identify key stakeholder motivations, drivers, and concerns to understand their decisions.",
+          "babok_source_refs": [
+            {
+              "source": "BABOK Guide",
+              "babok_ref": "3.2",
+              "babok_task": "Plan Stakeholder Engagement",
+              "page": 31
+            },
+            {
+              "source": "BABOK Guide",
+              "babok_ref": "4.5",
+              "babok_task": "Manage Stakeholder Collaboration",
+              "page": 71
+            },
+            {
+              "source": "BABOK Guide",
+              "babok_ref": "5.5",
+              "babok_task": "Approve Requirements",
+              "page": 95
+            }
+          ]
+        }
       ]
     },
     {
@@ -106,10 +513,84 @@
       "source_material": "BABOK Guide (BACCM)",
       "tier": "baccm",
       "activity_statements": [
-        { "id": "8.1", "text": "Confirm understanding of desired outcomes aligned with business objectives." },
-        { "id": "8.2", "text": "Support identification of value opportunities and help address barriers to delivery." },
-        { "id": "8.3", "text": "Describe how solutions meet business goals and relay information effectively for stakeholders." },
-        { "id": "8.4", "text": "Support defining key performance indicators (KPIs) aligned with value to measure success." }
+        {
+          "id": "8.1",
+          "text": "Confirm understanding of desired outcomes aligned with business objectives.",
+          "babok_source_refs": [
+            {
+              "source": "BABOK Guide",
+              "babok_ref": "6.2",
+              "babok_task": "Define Future State",
+              "page": 110
+            }
+          ]
+        },
+        {
+          "id": "8.2",
+          "text": "Support identification of value opportunities and help address barriers to delivery.",
+          "babok_source_refs": [
+            {
+              "source": "BABOK Guide",
+              "babok_ref": "5.3",
+              "babok_task": "Prioritize Requirements",
+              "page": 86
+            },
+            {
+              "source": "BABOK Guide",
+              "babok_ref": "6.4",
+              "babok_task": "Define Change Strategy",
+              "page": 124
+            },
+            {
+              "source": "BABOK Guide",
+              "babok_ref": "7.6",
+              "babok_task": "Analyze Potential Value and Recommend Solution",
+              "page": 157
+            },
+            {
+              "source": "BABOK Guide",
+              "babok_ref": "8.5",
+              "babok_task": "Recommend Actions to Increase Solution Value",
+              "page": 182
+            }
+          ]
+        },
+        {
+          "id": "8.3",
+          "text": "Describe how solutions meet business goals and relay information effectively for stakeholders.",
+          "babok_source_refs": [
+            {
+              "source": "BABOK Guide",
+              "babok_ref": "4.4",
+              "babok_task": "Communicate Business Analysis Information",
+              "page": 67
+            },
+            {
+              "source": "BABOK Guide",
+              "babok_ref": "7.3",
+              "babok_task": "Validate Requirements",
+              "page": 144
+            }
+          ]
+        },
+        {
+          "id": "8.4",
+          "text": "Support defining key performance indicators (KPIs) aligned with value to measure success.",
+          "babok_source_refs": [
+            {
+              "source": "BABOK Guide",
+              "babok_ref": "3.5",
+              "babok_task": "Identify Business Analysis Performance Improvements",
+              "page": 47
+            },
+            {
+              "source": "BABOK Guide",
+              "babok_ref": "8.1",
+              "babok_task": "Measure Solution Performance",
+              "page": 166
+            }
+          ]
+        }
       ]
     },
     {
@@ -119,11 +600,87 @@
       "source_material": "BABOK Guide (BACCM)",
       "tier": "baccm",
       "activity_statements": [
-        { "id": "9.1", "text": "Assist in validating information quality and alignment to your situation, and document those validation outcomes." },
-        { "id": "9.2", "text": "Support recognizing constraints and adapt plans to maintain alignment." },
-        { "id": "9.3", "text": "Assist in analyzing technology trends and support technology integration." },
-        { "id": "9.4", "text": "Apply relevant industry standards and frameworks to guide the work to be done." }
+        {
+          "id": "9.1",
+          "text": "Assist in validating information quality and alignment to your situation, and document those validation outcomes.",
+          "babok_source_refs": [
+            {
+              "source": "BABOK Guide",
+              "babok_ref": "3.4",
+              "babok_task": "Plan Business Analysis Information Management",
+              "page": 42
+            },
+            {
+              "source": "BABOK Guide",
+              "babok_ref": "5.2",
+              "babok_task": "Maintain Requirements",
+              "page": 83
+            },
+            {
+              "source": "BABOK Guide",
+              "babok_ref": "5.5",
+              "babok_task": "Approve Requirements",
+              "page": 95
+            }
+          ]
+        },
+        {
+          "id": "9.2",
+          "text": "Support recognizing constraints and adapt plans to maintain alignment.",
+          "babok_source_refs": [
+            {
+              "source": "BABOK Guide",
+              "babok_ref": "6.1",
+              "babok_task": "Analyze Current State",
+              "page": 103
+            },
+            {
+              "source": "BABOK Guide",
+              "babok_ref": "8.3",
+              "babok_task": "Assess Solution Limitations",
+              "page": 173
+            },
+            {
+              "source": "BABOK Guide",
+              "babok_ref": "8.4",
+              "babok_task": "Assess Enterprise Limitations",
+              "page": 177
+            }
+          ]
+        },
+        {
+          "id": "9.3",
+          "text": "Assist in analyzing technology trends and support technology integration.",
+          "babok_source_refs": [
+            {
+              "source": "BABOK Guide",
+              "babok_ref": "7.4",
+              "babok_task": "Define Requirements Architecture",
+              "page": 148
+            }
+          ]
+        },
+        {
+          "id": "9.4",
+          "text": "Apply relevant industry standards and frameworks to guide the work to be done.",
+          "babok_source_refs": [
+            {
+              "source": "BABOK Guide",
+              "babok_ref": "3.1",
+              "babok_task": "Plan Business Analysis Approach",
+              "page": 24
+            },
+            {
+              "source": "BABOK Guide",
+              "babok_ref": "7.2",
+              "babok_task": "Verify Requirements",
+              "page": 141
+            }
+          ]
+        }
       ]
     }
-  ]
+  ],
+  "reference_map_note": "babok_source_refs are drawn directly from IIBA's official ECBA Reference Map. babok_ref uses the BABOK Guide's own chapter.task numbering (e.g. BABOK task '3.1 Plan Business Analysis Approach'), which is a DIFFERENT numbering system from this file's activity_statement id (e.g. ECBA '9.4'). The two numbering systems coincidentally overlap in places (both start counting near '3.1') but are otherwise unrelated -- do not assume any pattern between an activity_statement id and a babok_ref.",
+  "page_reference_note_babok_tasks": "BABOK Guide task page numbers (chapters 3-8) and Business Analysis Standard section page numbers are both confirmed directly from the user's own PDF copies (BABOK Guide v3 Member Copy, 514 pages; The Business Analysis Standard v2.0, ISBN 978-1927584378) -- full confidence, not web-estimated."
 }

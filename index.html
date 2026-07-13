@@ -134,6 +134,7 @@
   .badge.weight { background: var(--accent-soft); color: var(--accent); border: 1px solid var(--accent-border); }
   .badge.tier-foundational { background: var(--blue-soft); color: #1d4ed8; border: 1px solid var(--blue-border); }
   .badge.tier-baccm { background: #f3e8ff; color: #7c3aed; border: 1px solid #ddd6fe; }
+  .badge.counter { background: var(--bg); color: var(--muted); border: 1px solid var(--border); }
   .badge.easy { background: var(--green-soft); color: var(--green); }
   .badge.medium { background: var(--amber-soft); color: #92400e; }
   .badge.hard { background: var(--red-soft); color: var(--red); }
@@ -242,7 +243,22 @@
   }
   .tag-chip.technique { background: var(--blue-soft); border-color: var(--blue-border); color: #1d4ed8; }
   .tag-chip.competency { background: var(--accent-soft); border-color: var(--accent-border); color: var(--accent); }
+  .tag-chip.babok { background: #f3e8ff; border-color: #ddd6fe; color: #7c3aed; }
   .tag-chip.unknown { border-style: dashed; }
+
+  .babok-refs { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 4px; }
+  .reading-list li.reading-item { display: block; padding: 8px 0; }
+  .reading-check { display: flex; align-items: flex-start; gap: 10px; cursor: pointer; }
+  .reading-check input[type="checkbox"] { margin-top: 3px; flex: none; width: 16px; height: 16px; cursor: pointer; }
+  .reading-text { display: flex; flex-direction: column; gap: 4px; }
+  .reading-text.read > span:first-child { text-decoration: line-through; color: var(--muted); }
+  .activity-list .act-main { display: flex; flex-direction: column; gap: 2px; }
+  .refmap-acts { list-style: none; margin: 0; padding: 0; }
+  .refmap-acts li { padding: 4px 0; font-size: 13px; }
+  .refmap-acts .act-id { font-weight: 600; color: var(--accent); }
+  .refmap-acts button.act-link { background: none; border: none; padding: 0; font: inherit; color: inherit; text-align: left; cursor: pointer; }
+  .refmap-acts button.act-link:hover .act-id { text-decoration: underline; }
+  table.breakdown td.refmap-task { font-weight: 600; white-space: nowrap; vertical-align: top; }
 
   .flashcard {
     background: var(--panel);
@@ -340,7 +356,7 @@
 
   const MOCK_COMPOSITION = { 1: 10, 2: 7, 3: 3, 4: 5, 5: 5, 6: 5, 7: 5, 8: 5, 9: 5 };
 
-  const DB = { meta: null, domains: [], techniques: [], competencies: [], questionsByDomain: {} };
+  const DB = { meta: null, domains: [], techniques: [], competencies: [], questionsByDomain: {}, referenceMap: null, readingProgress: null };
   const IDX = {
     domainById: new Map(),
     activityById: new Map(),
@@ -358,7 +374,7 @@
 
   // ---------- persisted state ----------
   function defaultStore() {
-    return { version: 1, missed: [], flashcardFamiliarity: {}, flashcardNotes: {}, mockHistory: [], settings: { mockTimerEnabled: true } };
+    return { version: 1, missed: [], flashcardFamiliarity: {}, flashcardNotes: {}, readingProgress: {}, mockHistory: [], settings: { mockTimerEnabled: true } };
   }
   let store = defaultStore();
   let missedSet = new Set();
@@ -391,6 +407,12 @@
   function setFlashcardNote(key, val) {
     const v = (val || "").trim();
     if (v) store.flashcardNotes[key] = v; else delete store.flashcardNotes[key];
+    saveStore();
+  }
+
+  function setReadingRead(activityId, isRead) {
+    if (isRead) store.readingProgress[activityId] = true;
+    else delete store.readingProgress[activityId];
     saveStore();
   }
 
@@ -438,6 +460,13 @@
       if (qs) DB.questionsByDomain[d] = qs;
     });
 
+    // Optional reference map (BABOK task -> activity statement reverse lookup).
+    // Missing file must never break the app.
+    DB.referenceMap = await fetchJsonOrNull("reference_map.json");
+
+    // Optional reading-progress tracker data. Missing file must never break the app.
+    DB.readingProgress = await fetchJsonOrNull("reading_progress.json");
+
     buildIndexes();
     loadStore();
 
@@ -451,7 +480,7 @@
     DB.domains.forEach((d) => IDX.domainById.set(d.id, d));
     DB.domains.forEach((d) => {
       d.activity_statements.forEach((a) => {
-        IDX.activityById.set(a.id, { domainId: d.id, text: a.text, domain: d });
+        IDX.activityById.set(a.id, { domainId: d.id, text: a.text, domain: d, babokRefs: a.babok_source_refs || [] });
       });
     });
     DB.techniques.forEach((t) => IDX.techniqueByName.set(t.name, t));
@@ -476,6 +505,22 @@
     if (IDX.techniqueByName.has(name)) return { kind: "technique", item: IDX.techniqueByName.get(name) };
     if (IDX.competencyByName.has(name)) return { kind: "competency", item: IDX.competencyByName.get(name) };
     return { kind: "unknown", item: { name } };
+  }
+  function formatBabokRef(ref) {
+    const page = ref.page ? ", p." + ref.page : "";
+    if (ref.source === "BABOK Guide" && ref.babok_ref) {
+      return "BABOK §" + ref.babok_ref + (ref.babok_task ? " " + ref.babok_task : "") + page;
+    }
+    if (ref.source === "Business Analysis Standard" && ref.section) {
+      return "BA Standard §" + ref.section + page;
+    }
+    return (ref.source || "Reference") + page;
+  }
+  function babokRefChips(refs) {
+    if (!refs || !refs.length) return "";
+    return `<div class="babok-refs">${refs.map((r) =>
+      `<span class="tag-chip babok">${escapeHtml(formatBabokRef(r))}</span>`
+    ).join("")}</div>`;
   }
 
   // ---------- utils ----------
@@ -519,6 +564,8 @@
       </div>
       <div class="mode-group-label">Study</div>
       <button class="nav-item" data-mode="browse">Browse Domains</button>
+      <button class="nav-item" data-mode="refmap">Reference Map</button>
+      ${DB.readingProgress ? `<button class="nav-item" data-mode="reading">Reading Progress</button>` : ""}
       <button class="nav-item" data-mode="flash-tech">Flashcards: Techniques</button>
       <button class="nav-item" data-mode="flash-comp">Flashcards: Competencies</button>
       <div class="mode-group-label">Practice</div>
@@ -551,6 +598,8 @@
     const main = $("main");
     main.innerHTML = "";
     if (state.mode === "browse") return renderBrowse(main);
+    if (state.mode === "refmap") return renderReferenceMap(main);
+    if (state.mode === "reading") return renderReadingProgress(main);
     if (state.mode === "flash-tech") return renderFlashcards(main, "technique");
     if (state.mode === "flash-comp") return renderFlashcards(main, "competency");
     if (state.mode === "practice") return renderPracticePicker(main);
@@ -571,7 +620,13 @@
       card.className = "card domain-card";
       const actRows = d.activity_statements.map((a) => {
         const n = IDX.allQuestions.filter((q) => q.activity_statement_id === a.id).length;
-        return `<li><span>${escapeHtml(a.id)} &mdash; ${escapeHtml(a.text)}</span><span class="act-count">${n} q</span></li>`;
+        return `<li>
+          <span class="act-main">
+            <span>${escapeHtml(a.id)} &mdash; ${escapeHtml(a.text)}</span>
+            ${babokRefChips(a.babok_source_refs)}
+          </span>
+          <span class="act-count">${n} q</span>
+        </li>`;
       }).join("");
       card.innerHTML = `
         <h3>${d.id}. ${escapeHtml(d.name)}</h3>
@@ -588,6 +643,123 @@
       `;
       card.querySelector("button[data-domain]").addEventListener("click", () => startPracticeSession(d.id));
       main.appendChild(card);
+    });
+  }
+
+  // ---------- Reference Map ----------
+  function renderReferenceMap(main) {
+    const rm = DB.referenceMap;
+    if (!rm || !Array.isArray(rm.babok_task_map)) {
+      main.innerHTML = `<h2>Reference Map</h2>
+        <div class="empty-state"><div class="big">&#128218;</div>
+        <code>reference_map.json</code> isn&rsquo;t loaded.<br>Add it to this folder to see the BABOK task &rarr; activity statement map.</div>`;
+      return;
+    }
+
+    const rows = rm.babok_task_map.map((t) => {
+      const acts = (t.activity_statement_ids || []).map((aid) => {
+        const a = IDX.activityById.get(aid);
+        if (!a) return `<li><span class="act-id">${escapeHtml(aid)}</span> <span class="muted">(unknown)</span></li>`;
+        return `<li>
+          <button class="act-link" data-domain="${a.domainId}" title="Practice Domain ${a.domainId}">
+            <span class="act-id">${escapeHtml(aid)}</span> &mdash; ${escapeHtml(a.text)}
+          </button>
+        </li>`;
+      }).join("");
+      return `<tr>
+        <td class="refmap-task">&sect;${escapeHtml(t.babok_ref)} ${escapeHtml(t.babok_task)}</td>
+        <td><ul class="refmap-acts">${acts}</ul></td>
+      </tr>`;
+    }).join("");
+
+    main.innerHTML = `
+      <h2>Reference Map</h2>
+      <p class="muted">How each BABOK Guide task maps to the ECBA activity statements it supports (from IIBA&rsquo;s official reference map).</p>
+      ${rm.numbering_warning ? `<div class="tip">${escapeHtml(rm.numbering_warning)}</div>` : ""}
+      ${rm.domains_1_to_3_note ? `<div class="tip">${escapeHtml(rm.domains_1_to_3_note)}</div>` : ""}
+      <table class="breakdown">
+        <thead><tr><th>BABOK task</th><th>Supports activity statement(s)</th></tr></thead>
+        <tbody>${rows}</tbody>
+      </table>
+    `;
+    main.querySelectorAll(".act-link[data-domain]").forEach((btn) => {
+      btn.addEventListener("click", () => startPracticeSession(Number(btn.dataset.domain)));
+    });
+  }
+
+  // ---------- Reading Progress Tracker ----------
+  function readingRefChips(refs) {
+    if (!refs || !refs.length) return "";
+    return `<div class="babok-refs">${refs.map((r) => {
+      const isBabok = r.book === "BABOK Guide";
+      const label = r.page
+        ? `${escapeHtml(r.book)} ${escapeHtml(r.chapter_section)}, p.${r.page}`
+        : `${escapeHtml(r.book)} ${escapeHtml(r.chapter_section)}`;
+      return `<span class="tag-chip ${isBabok ? "babok" : "competency"}">${label}</span>`;
+    }).join("")}</div>`;
+  }
+
+  function renderReadingProgress(main) {
+    const rp = DB.readingProgress;
+    if (!rp || !Array.isArray(rp.domains)) {
+      main.innerHTML = `<h2>Reading Progress</h2>
+        <div class="empty-state"><div class="big">&#128214;</div>
+        <code>reading_progress.json</code> isn&rsquo;t loaded.<br>Add it to this folder to track which source material you&rsquo;ve read.</div>`;
+      return;
+    }
+
+    const totalItems = rp.domains.reduce((n, d) => n + d.activity_statements.length, 0);
+    const totalRead = rp.domains.reduce((n, d) =>
+      n + d.activity_statements.filter((a) => store.readingProgress[a.activity_statement_id]).length, 0);
+
+    main.innerHTML = `
+      <h2>Reading Progress</h2>
+      <p class="muted">${escapeHtml(rp.page_description || "")}</p>
+      <div class="tip">Page numbers use BABOK&nbsp;Guide v3 pagination. If your copy paginates differently, the chapter.task number (e.g. &ldquo;3.1&rdquo;) is the reliable anchor. Business Analysis Standard references show the section name only (two differently-paginated versions exist).</div>
+      <div class="stats-strip"><span class="stat-pill">${totalRead} / ${totalItems} read</span></div>
+      <div id="reading-cards"></div>
+    `;
+
+    const container = $("reading-cards");
+    rp.domains.forEach((d) => {
+      const card = document.createElement("div");
+      card.className = "card domain-card";
+      const total = d.activity_statements.length;
+      const readCount = () => d.activity_statements.filter((a) => store.readingProgress[a.activity_statement_id]).length;
+
+      const items = d.activity_statements.map((a) => {
+        const checked = !!store.readingProgress[a.activity_statement_id];
+        return `<li class="reading-item">
+          <label class="reading-check">
+            <input type="checkbox" data-act="${escapeHtml(a.activity_statement_id)}" ${checked ? "checked" : ""}>
+            <span class="reading-text ${checked ? "read" : ""}">
+              <span><strong>${escapeHtml(a.activity_statement_id)}</strong> &mdash; ${escapeHtml(a.text)}</span>
+              ${readingRefChips(a.references)}
+            </span>
+          </label>
+        </li>`;
+      }).join("");
+
+      card.innerHTML = `
+        <h3>${d.domain_id}. ${escapeHtml(d.domain_name)}</h3>
+        <div class="meta-row">
+          <span class="badge weight">${d.weight_pct}%</span>
+          <span class="badge counter" data-domain-counter="${d.domain_id}">${readCount()} / ${total} read</span>
+        </div>
+        <ul class="activity-list reading-list">${items}</ul>
+      `;
+
+      card.querySelectorAll('input[type="checkbox"][data-act]').forEach((cb) => {
+        cb.addEventListener("change", () => {
+          setReadingRead(cb.dataset.act, cb.checked);
+          cb.closest(".reading-check").querySelector(".reading-text").classList.toggle("read", cb.checked);
+          card.querySelector(`[data-domain-counter="${d.domain_id}"]`).textContent = `${readCount()} / ${total} read`;
+          const grandTotal = rp.domains.reduce((n, dd) =>
+            n + dd.activity_statements.filter((a) => store.readingProgress[a.activity_statement_id]).length, 0);
+          main.querySelector(".stat-pill").textContent = `${grandTotal} / ${totalItems} read`;
+        });
+      });
+      container.appendChild(card);
     });
   }
 
@@ -799,12 +971,20 @@
           return `<span class="tag-chip ${r.kind}${r.kind === "unknown" ? " unknown" : ""}">${escapeHtml(tagName)}</span>`;
         }).join("");
 
+        const act = IDX.activityById.get(raw.activity_statement_id);
+        const actHtml = act ? `
+          <div class="explain-box" style="margin-top:0;">
+            <strong>${escapeHtml(raw.activity_statement_id)}</strong> &mdash; ${escapeHtml(act.text)}
+            ${babokRefChips(act.babokRefs)}
+          </div>` : "";
+
         $("q-feedback").innerHTML = `
           <div class="quiz-meta" style="margin-top:12px;">
             <span class="badge ${q.difficulty}">${q.difficulty}</span>
             ${tagsHtml}
           </div>
           <div class="explain-box"><strong>${wasCorrect ? "Correct." : "Not quite."}</strong> ${escapeHtml(q.explanation)}</div>
+          ${actHtml}
           <button class="btn" id="q-next">Next question &rarr;</button>
         `;
         $("q-next").addEventListener("click", () => { s.index++; render(); });

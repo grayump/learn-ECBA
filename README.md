@@ -6,7 +6,8 @@ built from IIBA's current (2025+) ECBA Exam Blueprint V1.1 — the new 9-domain,
 
 ## Files in this package
 
-- `domains.json` — all 9 exam domains, weightings, and activity statements (official, verbatim from IIBA blueprint)
+- `domains.json` — all 9 exam domains, weightings, and activity statements (official, verbatim from IIBA blueprint). Each activity statement now carries a `babok_source_refs` array pulled from IIBA's official ECBA Reference Map — the BABOK task(s) that statement draws from (domains 1–3 cite the Business Analysis Standard)
+- `reference_map.json` — the official reference map in its own structure (BABOK Guide task → which activity statement(s) it supports); the reverse lookup of the `babok_source_refs` above. Powers the app's Reference Map view
 - `techniques.json` — the 20 in-scope BABOK techniques (names/refs confirmed; purpose/description fields intentionally left for you to populate from the BABOK Guide directly, to respect BABOK copyright)
 - `competencies.json` — all 29 underlying competencies, grouped by category
 - `questions_schema.md` — data schema + target distribution for the question bank
@@ -21,8 +22,12 @@ built from IIBA's current (2025+) ECBA Exam Blueprint V1.1 — the new 9-domain,
   - Domain 8 (Value): 30
   - Domain 9 (Context): 30
   - **Total: 300**, each tagged with domain, activity statement, technique/competency (where relevant), question type, and difficulty
-- `index.html` — the study app: Browse Domains, Flashcards (techniques/competencies), Practice by Domain, Mock Exam, Review Missed Questions. Fetches the JSON files above at runtime, so it needs to be served over local HTTP to test (e.g. `npx serve` or `python -m http.server` in this folder — double-clicking the file won't work, browsers block `fetch()` on `file://`). Works natively on GitHub Pages.
+- `index.html` — the study app: Browse Domains, Reference Map, Flashcards (techniques/competencies), Practice by Domain, Mock Exam, Review Missed Questions. Browse Domains and quiz feedback surface each activity statement's `babok_source_refs`, and the Reference Map view renders `reference_map.json` (BABOK task → activity statement). Fetches the JSON files above at runtime, so it needs to be served over local HTTP to test (e.g. `npx serve` or `python -m http.server` in this folder — double-clicking the file won't work, browsers block `fetch()` on `file://`). Works natively on GitHub Pages.
 - `validate.js` — run `node validate.js` to check the question bank against the schema above (required-field/type checks, duplicate-id detection, `correct_index` bounds, domain/activity cross-references, technique/competency tag resolution) before adding new content
+
+## A note on numbering
+
+The `babok_ref` values in `domains.json`/`reference_map.json` use the BABOK Guide's own chapter.task numbering (e.g. task **3.1 Plan Business Analysis Approach**), which is a **completely separate** system from the ECBA blueprint's `activity_statement_id` (e.g. **9.4** = Domain 9 Context, statement 4). The two coincidentally overlap in places (both start counting near "3.1"), but a matching number implies no relationship. The Reference Map view carries this warning inline.
 
 ## 4-Week Study Plan
 
