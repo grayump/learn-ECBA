@@ -1,32 +1,542 @@
 [
-  {"id":"d9-001","domain_id":9,"activity_statement_id":"9.1","technique_tag":null,"competency_tag":null,"question_type":"situational","stem":"An analyst receives data from two different systems that report conflicting figures for the same metric. What is the appropriate first step?","options":["Use whichever figure is more convenient for the current analysis","Assist in validating the information's quality and accuracy before relying on it, documenting the validation outcome","Average the two conflicting figures without further investigation","Ignore both figures and proceed without any data"],"correct_index":1,"explanation":"Validating information quality before use, and documenting the outcome, is the appropriate foundational-level response to conflicting data.","difficulty":"medium"},
-  {"id":"d9-002","domain_id":9,"activity_statement_id":"9.1","technique_tag":"Document Analysis","competency_tag":null,"question_type":"situational","stem":"An analyst wants to verify that information gathered from an old process manual still reflects current practice before relying on it. Which technique supports this validation?","options":["Document Analysis, cross-checked against current practice","Financial Analysis, focused on cost only","Prototyping, focused on interface design","Backlog Management, focused on task sequencing"],"correct_index":0,"explanation":"Document Analysis, especially when cross-checked against current practice, supports validating whether older documentation still applies.","difficulty":"medium"},
-  {"id":"d9-003","domain_id":9,"activity_statement_id":"9.2","technique_tag":null,"competency_tag":null,"question_type":"situational","stem":"A budget constraint is discovered midway through solution planning that significantly limits the available options. What is the appropriate foundational-level response?","options":["Ignore the constraint and continue with the original plan unchanged","Support recognizing the constraint and help adapt the plan to remain realistic and aligned given the new limitation","Cancel the entire initiative immediately without further analysis","Proceed without informing stakeholders of the constraint"],"correct_index":1,"explanation":"Recognizing constraints and supporting plan adaptation is the appropriate foundational-level response to a newly discovered limitation.","difficulty":"medium"},
-  {"id":"d9-004","domain_id":9,"activity_statement_id":"9.3","technique_tag":null,"competency_tag":"Industry Knowledge","question_type":"situational","stem":"An analyst notices that a competitor has recently adopted a new technology trend that could affect their organization's competitiveness. Which competency helps them recognize and interpret this signal?","options":["Industry Knowledge","Data Modelling","Backlog Management","Business Rules Analysis"],"correct_index":0,"explanation":"Recognizing and interpreting industry and competitive trends draws directly on the Industry Knowledge competency.","difficulty":"medium"},
-  {"id":"d9-005","domain_id":9,"activity_statement_id":"9.4","technique_tag":null,"competency_tag":null,"question_type":"situational","stem":"An analyst is working on a healthcare initiative and needs to ensure the proposed solution aligns with relevant privacy regulations. What is the appropriate foundational-level action?","options":["Apply relevant industry standards and regulatory frameworks to guide the analysis and flag compliance considerations","Ignore regulatory considerations since they are outside BA scope entirely","Assume the solution automatically complies without verification","Delegate all regulatory considerations to the legal team with no further BA involvement"],"correct_index":0,"explanation":"Applying relevant industry standards and frameworks, and flagging compliance considerations, is an appropriate foundational-level BA contribution.","difficulty":"medium"},
-  {"id":"d9-006","domain_id":9,"activity_statement_id":"9.1","technique_tag":null,"competency_tag":null,"question_type":"definition","stem":"Which best describes why validating information quality matters before it's used to support analysis or decisions?","options":["Because decisions based on inaccurate or outdated information can lead to flawed recommendations and poor outcomes","Validation is a purely bureaucratic step with no real impact on outcomes","Information quality only matters for financial data","Validation is unnecessary once information is documented in any format"],"correct_index":0,"explanation":"Decisions based on inaccurate or outdated information risk flawed recommendations — validation protects against this.","difficulty":"medium"},
-  {"id":"d9-007","domain_id":9,"activity_statement_id":"9.2","technique_tag":null,"competency_tag":null,"question_type":"definition","stem":"Which of the following best exemplifies a 'constraint' in the Context domain?","options":["A stakeholder's personal communication preference","A limited implementation budget that restricts which solution options are viable","A minor formatting choice in a requirements document","A stakeholder's preferred meeting time"],"correct_index":1,"explanation":"A budget limitation that restricts viable solution options is a genuine constraint, unlike minor preferences or formatting choices.","difficulty":"easy"},
-  {"id":"d9-008","domain_id":9,"activity_statement_id":"9.3","technique_tag":null,"competency_tag":null,"question_type":"situational","stem":"An organization is considering adopting a new cloud-based platform. An analyst is asked to help assess how this technology trend might affect the initiative. What is the appropriate foundational-level contribution?","options":["Assist in analyzing the technology trend and supporting its integration into the initiative's planning, under guidance","Make the final technology adoption decision independently","Ignore the technology trend since it's outside BA scope","Assume the technology will work without any analysis"],"correct_index":0,"explanation":"Assisting in technology trend analysis and supporting integration under guidance reflects the correct foundational-level scope.","difficulty":"medium"},
-  {"id":"d9-009","domain_id":9,"activity_statement_id":"9.4","technique_tag":null,"competency_tag":null,"question_type":"definition","stem":"Which best describes why applying relevant industry standards matters in business analysis work?","options":["Industry standards and frameworks help ensure the work aligns with established best practices and regulatory or professional expectations relevant to the context","Industry standards are optional formalities with no real bearing on outcomes","Industry standards only apply to highly regulated industries like finance or healthcare","Applying industry standards eliminates the need for stakeholder input"],"correct_index":0,"explanation":"Industry standards help ensure alignment with established best practices and relevant expectations — they aren't limited to a narrow set of industries or purely optional.","difficulty":"medium"},
-  {"id":"d9-010","domain_id":9,"activity_statement_id":"9.1","technique_tag":null,"competency_tag":null,"question_type":"situational","stem":"An analyst receives anecdotal feedback from a single stakeholder claiming a widespread problem, without any supporting data. What is the appropriate next step?","options":["Immediately accept the claim as fact and act on it","Seek to validate the claim against broader data or additional stakeholder input before treating it as established fact","Dismiss the claim outright without any investigation","Escalate the claim as confirmed fact without validation"],"correct_index":1,"explanation":"Validating anecdotal claims against broader evidence is the appropriate response before treating them as established fact.","difficulty":"medium"},
-  {"id":"d9-011","domain_id":9,"activity_statement_id":"9.2","technique_tag":null,"competency_tag":null,"question_type":"situational","stem":"A key technical resource unexpectedly becomes unavailable partway through an initiative. Which domain of BACCM does this event most directly relate to?","options":["Context, since it represents a constraint affecting the surrounding circumstances of the initiative","Solution, since it directly changes the technical design","Value, since it changes the financial calculation only","Need, since it changes the underlying business problem"],"correct_index":0,"explanation":"An unexpected resource constraint is a Context factor — a circumstance affecting the initiative that requires adaptation.","difficulty":"medium"},
-  {"id":"d9-012","domain_id":9,"activity_statement_id":"9.3","technique_tag":null,"competency_tag":null,"question_type":"definition","stem":"Which best describes the foundational-level BA's role regarding emerging technology trends?","options":["Leading enterprise technology strategy independently","Staying reasonably aware of relevant trends and assisting in analyzing how they might affect the initiative, typically under guidance","Ignoring technology trends since they are IT's sole responsibility","Adopting every new technology trend regardless of relevance"],"correct_index":1,"explanation":"Foundational-level BAs stay aware of relevant trends and assist in analysis under guidance, rather than independently leading strategy.","difficulty":"medium"},
-  {"id":"d9-013","domain_id":9,"activity_statement_id":"9.4","technique_tag":null,"competency_tag":null,"question_type":"situational","stem":"An analyst working on a financial services initiative is unfamiliar with a specific regulatory framework relevant to the work. What is the most appropriate action?","options":["Proceed without addressing the gap, assuming it won't matter","Learn about and apply the relevant framework, consulting subject matter experts or compliance resources as needed","Avoid the initiative entirely due to unfamiliarity","Guess at compliance requirements without verification"],"correct_index":1,"explanation":"Learning the relevant framework and consulting appropriate experts is the sound approach to an unfamiliar regulatory context.","difficulty":"medium"},
-  {"id":"d9-014","domain_id":9,"activity_statement_id":"9.1","technique_tag":null,"competency_tag":null,"question_type":"definition","stem":"Which best describes 'alignment to your situation' when validating information, as referenced in the Context domain?","options":["Confirming that information is not only accurate but also relevant and applicable to the specific circumstances of the current initiative","Confirming information is grammatically correct only","Ensuring information matches a generic industry template regardless of context","Ensuring information was created within the last 24 hours only"],"correct_index":0,"explanation":"Alignment to situation means checking both accuracy and relevance/applicability to the specific current context, not just formal correctness.","difficulty":"medium"},
-  {"id":"d9-015","domain_id":9,"activity_statement_id":"9.2","technique_tag":null,"competency_tag":null,"question_type":"situational","stem":"An organizational policy change midway through a project restricts what data can be shared externally. How should the analyst respond?","options":["Ignore the policy change and continue as originally planned","Recognize the new constraint, assess its impact, and help adapt plans to remain compliant and aligned","Cancel the project immediately without exploring adaptation options","Proceed without informing the team about the new policy"],"correct_index":1,"explanation":"Recognizing new constraints and adapting plans accordingly is the appropriate foundational-level response, rather than ignoring or overreacting.","difficulty":"medium"},
-  {"id":"d9-016","domain_id":9,"activity_statement_id":"9.3","technique_tag":null,"competency_tag":null,"question_type":"situational","stem":"A proposed solution relies on a technology that is being phased out industry-wide within the next two years. What should the analyst flag?","options":["Nothing, since current functionality is what matters most","The risk that the chosen technology's declining industry support could affect the solution's longevity and should factor into the decision","This is irrelevant since the technology still currently works","This should only be raised if the vendor mentions it first"],"correct_index":1,"explanation":"Declining industry support for a technology is a relevant Context factor that should be flagged as a risk to the solution's longevity.","difficulty":"medium"},
-  {"id":"d9-017","domain_id":9,"activity_statement_id":"9.4","technique_tag":null,"competency_tag":null,"question_type":"situational","stem":"An analyst is comparing two possible solution designs, one of which aligns better with an established industry framework the organization has committed to following. How should this factor into the recommendation?","options":["It should be weighed as a meaningful factor supporting the framework-aligned option, alongside other relevant considerations","It should be ignored entirely since frameworks are optional","It should be the sole deciding factor, regardless of other considerations","Industry frameworks are irrelevant to solution comparison"],"correct_index":0,"explanation":"Framework alignment is a meaningful factor to weigh alongside others — neither ignored nor treated as the sole determinant.","difficulty":"medium"},
-  {"id":"d9-018","domain_id":9,"activity_statement_id":"9.1","technique_tag":null,"competency_tag":null,"question_type":"situational","stem":"An analyst documents the outcome of validating a dataset used in analysis, noting it was cross-checked against two independent sources. Why is this documentation valuable?","options":["It has no practical value beyond record-keeping","It creates a transparent, traceable record of how information quality was assessed, supporting confidence in later decisions","It slows down the project with no real benefit","It is only required if a stakeholder specifically requests it"],"correct_index":1,"explanation":"Documenting validation creates a transparent, traceable record that supports confidence in decisions built on that information.","difficulty":"medium"},
-  {"id":"d9-019","domain_id":9,"activity_statement_id":"9.2","technique_tag":null,"competency_tag":null,"question_type":"definition","stem":"Which best describes why recognizing constraints early in an initiative is valuable?","options":["Early recognition allows plans to be adapted proactively, rather than discovering the constraint too late to adjust effectively","Constraints only matter if discovered after implementation begins","Recognizing constraints early guarantees the constraint will be removed","Constraints have no bearing on planning decisions"],"correct_index":0,"explanation":"Early constraint recognition allows proactive plan adaptation, which is more effective than late discovery.","difficulty":"medium"},
-  {"id":"d9-020","domain_id":9,"activity_statement_id":"9.3","technique_tag":null,"competency_tag":null,"question_type":"situational","stem":"A team is excited about adopting a trendy new tool without evaluating whether it actually fits the organization's specific needs and constraints. What foundational-level contribution can the analyst make?","options":["Support a grounded analysis of how the trend or technology actually fits the organization's specific context, rather than adopting it purely because it's popular","Encourage adoption purely because it is trendy, to keep pace with competitors","Block adoption outright without any analysis","Remain silent to avoid dampening team enthusiasm"],"correct_index":0,"explanation":"Grounding technology trend analysis in the organization's actual context, rather than trend-following alone, is the sound foundational-level contribution.","difficulty":"medium"},
-  {"id":"d9-021","domain_id":9,"activity_statement_id":"9.4","technique_tag":null,"competency_tag":null,"question_type":"definition","stem":"Which best describes the risk of ignoring relevant industry standards when designing a solution?","options":["Potential non-compliance, rework, or reduced credibility if the solution later needs to align with standards it initially ignored","There is no risk, since industry standards are always optional","Ignoring standards guarantees faster and cheaper delivery with no downside","Standards only matter after a solution is already implemented"],"correct_index":0,"explanation":"Ignoring relevant standards risks non-compliance, rework, or credibility issues down the line — not a cost-free shortcut.","difficulty":"medium"},
-  {"id":"d9-022","domain_id":9,"activity_statement_id":"9.1","technique_tag":null,"competency_tag":null,"question_type":"situational","stem":"An analyst is handed a dataset from an unfamiliar source with no clear documentation of how it was collected. What should they do before using it in analysis?","options":["Use it immediately, assuming all data sources are equally reliable","Investigate the data's origin and reliability before relying on it for analysis or decisions","Discard it automatically without any investigation","Combine it with other datasets without checking for consistency first"],"correct_index":1,"explanation":"Investigating an unfamiliar data source's origin and reliability before use reflects sound information validation practice.","difficulty":"medium"},
-  {"id":"d9-023","domain_id":9,"activity_statement_id":"9.2","technique_tag":null,"competency_tag":null,"question_type":"situational","stem":"A change in leadership shifts organizational priorities midway through an initiative, deprioritizing a previously agreed scope item. What is the appropriate foundational-level response?","options":["Continue exactly as planned, ignoring the leadership shift","Recognize this as a relevant constraint/shift in context and support adapting plans in coordination with appropriate stakeholders","Cancel the entire initiative unilaterally in response","Assume the shift is temporary and requires no action"],"correct_index":1,"explanation":"Recognizing leadership-driven priority shifts as a context factor and supporting coordinated adaptation is the sound foundational-level response.","difficulty":"medium"},
-  {"id":"d9-024","domain_id":9,"activity_statement_id":"9.3","technique_tag":null,"competency_tag":null,"question_type":"definition","stem":"Which best describes how technology trend awareness supports foundational-level business analysis?","options":["It helps the analyst recognize when emerging technology might be relevant to a need or solution, supporting more informed contributions to analysis","It replaces the need for any technical subject matter expertise","It is only relevant for analysts working directly in technology companies","It has no practical application at the foundational level"],"correct_index":0,"explanation":"Trend awareness supports more informed contributions to analysis without replacing the need for deeper technical expertise.","difficulty":"medium"},
-  {"id":"d9-025","domain_id":9,"activity_statement_id":"9.4","technique_tag":null,"competency_tag":null,"question_type":"situational","stem":"An analyst is unsure which industry framework is most relevant to a new initiative in an unfamiliar sector. What is the most appropriate action?","options":["Guess based on frameworks used in a previous, unrelated sector","Research the sector and consult knowledgeable colleagues or resources to identify the genuinely relevant framework","Skip framework consideration entirely since the sector is unfamiliar","Apply every framework the analyst has ever encountered simultaneously"],"correct_index":1,"explanation":"Researching and consulting knowledgeable sources to identify the genuinely relevant framework is more sound than guessing or skipping the step.","difficulty":"medium"},
-  {"id":"d9-026","domain_id":9,"activity_statement_id":"9.1","technique_tag":null,"competency_tag":null,"question_type":"definition","stem":"Which best describes the connection between information validation and the Context domain overall?","options":["Validating information quality and relevance is part of ensuring analysis is grounded in an accurate understanding of the surrounding circumstances","Information validation is unrelated to Context and belongs solely to the Need domain","Context only concerns external factors, never internal data quality","Validating information is only relevant during the final stage of an initiative"],"correct_index":0,"explanation":"Validating information quality and relevance supports an accurate understanding of Context — the surrounding circumstances of the initiative.","difficulty":"medium"},
-  {"id":"d9-027","domain_id":9,"activity_statement_id":"9.2","technique_tag":null,"competency_tag":null,"question_type":"situational","stem":"An analyst notices that a planned solution assumes unlimited stakeholder availability for testing, but stakeholders actually have very limited capacity. What should the analyst do?","options":["Proceed with the original plan, assuming stakeholders will find the time regardless","Flag this capacity constraint and support adapting the testing plan to realistically fit stakeholder availability","Remove stakeholder testing from the plan entirely without discussion","Assume the constraint will resolve itself without any adjustment"],"correct_index":1,"explanation":"Flagging the capacity constraint and adapting the plan realistically is the correct foundational-level response.","difficulty":"medium"},
-  {"id":"d9-028","domain_id":9,"activity_statement_id":"9.3","technique_tag":null,"competency_tag":null,"question_type":"situational","stem":"An analyst supports a technology integration effort by helping map how a new tool will connect with existing systems. What is the primary value of this contribution?","options":["It has no real value, since integration is purely a technical concern outside BA scope","It helps ensure the technology trend or new tool is thoughtfully incorporated into the broader initiative, rather than adopted in isolation","It replaces the need for any technical implementation work","It guarantees the technology will function without any issues"],"correct_index":1,"explanation":"Supporting thoughtful integration ensures new technology fits into the broader initiative context, rather than being adopted in isolation.","difficulty":"medium"},
-  {"id":"d9-029","domain_id":9,"activity_statement_id":"9.4","technique_tag":null,"competency_tag":null,"question_type":"situational","stem":"An organization operates in a sector with both formal regulatory requirements and informal industry best practices. How should an analyst approach both?","options":["Only address the formal regulatory requirements, since best practices are optional and irrelevant","Address the formal regulatory requirements as mandatory, while also considering relevant best practices to strengthen the initiative's quality and credibility","Only follow informal best practices, since they are more current than regulations","Ignore both, since neither is directly enforceable within the specific initiative"],"correct_index":1,"explanation":"Formal regulatory requirements are mandatory, while best practices, though not mandatory, still add value and credibility worth considering.","difficulty":"medium"},
-  {"id":"d9-030","domain_id":9,"activity_statement_id":"9.1","technique_tag":null,"competency_tag":null,"question_type":"situational","stem":"An analyst is asked to quickly summarize findings for an urgent stakeholder request, but hasn't had time to fully validate all the underlying information. What is the most appropriate approach?","options":["Present the findings as fully validated and certain, regardless of the time constraint","Present the findings honestly, clearly noting which parts are validated and which still require further confirmation","Refuse to provide any summary until full validation is complete, regardless of urgency","Fabricate validation status to appear more thorough than the work actually was"],"correct_index":1,"explanation":"Transparently distinguishing validated from unvalidated information under time pressure reflects sound, honest foundational-level practice.","difficulty":"medium"}
+  {
+    "id": "d9-001",
+    "domain_id": 9,
+    "activity_statement_id": "9.1",
+    "technique_tag": null,
+    "competency_tag": null,
+    "question_type": "situational",
+    "stem": "Two systems report conflicting totals for the same monthly metric, and the figure will feed a stakeholder report. What should the analyst do before including either number?",
+    "options": [
+      "Choose whichever figure better fits the report's expected conclusion",
+      "Trace both figures to source data and document the resolution",
+      "Blend the two conflicting figures into a single averaged number",
+      "Present both figures side by side and let the reader pick one"
+    ],
+    "correct_index": 1,
+    "explanation": "Tracing conflicting figures to source and documenting the resolution is the correct validation response. Picking the convenient figure, averaging without investigation, or leaving the choice to the reader all skip the actual validation step.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "d9-002",
+    "domain_id": 9,
+    "activity_statement_id": "9.1",
+    "technique_tag": "Document Analysis",
+    "competency_tag": null,
+    "question_type": "situational",
+    "stem": "An analyst wants to confirm that an old process manual still reflects how work is actually performed today. Which approach best supports this check?",
+    "options": [
+      "Financial Analysis, focused on the manual's associated cost centers",
+      "Prototyping, focused on how a future interface might look",
+      "Backlog Management, focused on sequencing upcoming tasks",
+      "Document Analysis, with findings cross-checked against current practice"
+    ],
+    "correct_index": 3,
+    "explanation": "Document Analysis cross-checked against current practice is the technique suited to testing whether older documentation still holds. The other techniques target cost, interface design, and task sequencing, not currency.",
+    "difficulty": "easy"
+  },
+  {
+    "id": "d9-003",
+    "domain_id": 9,
+    "activity_statement_id": "9.2",
+    "technique_tag": null,
+    "competency_tag": null,
+    "question_type": "situational",
+    "stem": "Midway through solution planning, a newly discovered budget limit rules out several of the options under consideration. What is the appropriate response?",
+    "options": [
+      "Continue with the original plan and revisit the budget at project close",
+      "Recognize the limit as a real constraint and adapt the plan to stay realistic",
+      "Halt the initiative rather than work within the reduced budget",
+      "Keep the constraint between the analyst and sponsor until the plan is final"
+    ],
+    "correct_index": 1,
+    "explanation": "Recognizing the constraint and adapting the plan to stay realistic is the correct foundational response. Deferring the issue, escalating to cancellation, or withholding it from the wider team all fail to address the limitation constructively.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "d9-004",
+    "domain_id": 9,
+    "activity_statement_id": "9.3",
+    "technique_tag": null,
+    "competency_tag": "Industry Knowledge",
+    "question_type": "situational",
+    "stem": "An analyst notices a competitor has adopted a new technology that could shift the competitive landscape. Which competency is most directly being applied by recognizing and interpreting this signal?",
+    "options": [
+      "Data Modelling",
+      "Industry Knowledge",
+      "Backlog Management",
+      "Business Rules Analysis"
+    ],
+    "correct_index": 1,
+    "explanation": "Recognizing and interpreting competitive and industry trends draws on Industry Knowledge. Data Modelling, Backlog Management, and Business Rules Analysis are technique-oriented competencies unrelated to reading market signals.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "d9-005",
+    "domain_id": 9,
+    "activity_statement_id": "9.4",
+    "technique_tag": null,
+    "competency_tag": null,
+    "question_type": "situational",
+    "stem": "An analyst supporting a healthcare initiative needs the proposed solution to align with relevant privacy regulations. What is the appropriate foundational-level action?",
+    "options": [
+      "Treat regulatory alignment as a matter outside the scope of BA work",
+      "Assume the solution complies since an experienced vendor built it",
+      "Apply the relevant regulatory framework and flag compliance concerns",
+      "Hand the entire compliance question to legal with no further BA input"
+    ],
+    "correct_index": 2,
+    "explanation": "Applying the relevant framework and flagging compliance considerations is a sound foundational contribution. Treating regulation as out of scope, assuming compliance by default, or fully disengaging all leave a gap the BA is positioned to help close.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "d9-006",
+    "domain_id": 9,
+    "activity_statement_id": "9.1",
+    "technique_tag": null,
+    "competency_tag": null,
+    "question_type": "definition",
+    "stem": "Why does validating information quality matter before it is used to support analysis or a decision?",
+    "options": [
+      "Because acting on inaccurate or outdated information can lead to flawed recommendations",
+      "Because validation is mainly a formality expected by governance policy",
+      "Because information quality is a concern mostly for financial figures",
+      "Because validation stops mattering once information is written down"
+    ],
+    "correct_index": 0,
+    "explanation": "Flawed inputs produce flawed recommendations, which is why validation matters regardless of format or subject area. Treating it as a paperwork step, or as chiefly a financial-data concern, understates what's actually at stake.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "d9-007",
+    "domain_id": 9,
+    "activity_statement_id": "9.2",
+    "technique_tag": null,
+    "competency_tag": null,
+    "question_type": "definition",
+    "stem": "Which of the following is the clearest example of a genuine constraint in the Context domain?",
+    "options": [
+      "A stakeholder's stated preference for holding morning meetings",
+      "A minor font choice made in a requirements document template",
+      "One reviewer's personal preference for a particular document layout",
+      "A limited implementation budget that rules out several viable options"
+    ],
+    "correct_index": 3,
+    "explanation": "A budget limit that actually removes viable options is a real constraint. Meeting-time preferences, formatting choices, and layout preferences are minor stylistic matters, not limitations that bound what's achievable.",
+    "difficulty": "easy"
+  },
+  {
+    "id": "d9-008",
+    "domain_id": 9,
+    "activity_statement_id": "9.3",
+    "technique_tag": null,
+    "competency_tag": null,
+    "question_type": "situational",
+    "stem": "An organization is weighing a move to a new cloud-based platform, and an analyst is asked to help assess how the shift might affect an upcoming initiative. What is the appropriate contribution at foundational level?",
+    "options": [
+      "Make the final platform adoption decision on the team's behalf",
+      "Treat the technology question as being outside the analyst's role",
+      "Help analyze the trend and feed findings into planning, under guidance",
+      "Assume the platform will perform as advertised without review"
+    ],
+    "correct_index": 2,
+    "explanation": "Helping analyze the trend and feed findings into planning, under guidance, matches foundational-level scope. Deciding unilaterally, disengaging, or assuming performance without review all overstep or underdeliver on that role.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "d9-009",
+    "domain_id": 9,
+    "activity_statement_id": "9.4",
+    "technique_tag": null,
+    "competency_tag": null,
+    "question_type": "definition",
+    "stem": "Why does applying relevant industry standards matter when doing business analysis work?",
+    "options": [
+      "Standards help align the work with established practices and professional expectations",
+      "Standards are a formality that rarely changes how work actually proceeds",
+      "Standards mainly apply within regulated sectors like finance or healthcare",
+      "Applying a standard reduces the need for further stakeholder input"
+    ],
+    "correct_index": 0,
+    "explanation": "Standards connect the work to established practice and professional expectations, which matters across sectors, not just regulated ones, and they inform analysis rather than replacing stakeholder input.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "d9-010",
+    "domain_id": 9,
+    "activity_statement_id": "9.1",
+    "technique_tag": null,
+    "competency_tag": null,
+    "question_type": "situational",
+    "stem": "A single stakeholder reports what they describe as a widespread problem, but offers no supporting data. What should the analyst do next?",
+    "options": [
+      "Record the claim as confirmed based on the stakeholder's seniority",
+      "Dismiss the claim, since a single source rarely warrants a look",
+      "Check the claim against broader data or input before treating it as fact",
+      "Pass the claim along to leadership exactly as reported, unverified"
+    ],
+    "correct_index": 2,
+    "explanation": "Corroborating an anecdotal claim before treating it as fact is the correct validation step. Accepting it outright, dismissing it outright, or forwarding it unverified all skip that check in one direction or the other.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "d9-011",
+    "domain_id": 9,
+    "activity_statement_id": "9.2",
+    "technique_tag": null,
+    "competency_tag": null,
+    "question_type": "situational",
+    "stem": "A key technical resource unexpectedly becomes unavailable partway through an initiative, forcing the team to rework its plan. Which BACCM concept does this event most directly relate to?",
+    "options": [
+      "Context, since circumstances surrounding the plan have shifted",
+      "Solution, since the resource loss changes the technical design",
+      "Value, since losing the resource lowers the financial return",
+      "Need, since the loss changes the underlying business problem"
+    ],
+    "correct_index": 0,
+    "explanation": "An unexpected resource loss is a circumstance surrounding the initiative — a Context factor — even though it will eventually ripple into Solution decisions. The underlying Need and the initiative's Value proposition haven't changed; only the circumstances the team must plan around have.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "d9-012",
+    "domain_id": 9,
+    "activity_statement_id": "9.3",
+    "technique_tag": null,
+    "competency_tag": null,
+    "question_type": "definition",
+    "stem": "Which best describes the foundational-level analyst's role with respect to emerging technology trends?",
+    "options": [
+      "Stay aware of relevant trends and help assess their likely effect, under guidance",
+      "Set enterprise technology strategy independently of senior staff direction",
+      "Leave all awareness of technology trends to the IT department",
+      "Recommend adopting each new trend as it emerges, regardless of fit"
+    ],
+    "correct_index": 0,
+    "explanation": "Staying aware and assisting under guidance matches foundational scope. Independently owning strategy, deferring entirely to IT, or adopting every trend without regard to fit all sit outside that scope.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "d9-013",
+    "domain_id": 9,
+    "activity_statement_id": "9.4",
+    "technique_tag": null,
+    "competency_tag": null,
+    "question_type": "situational",
+    "stem": "An analyst supporting a financial services initiative is unfamiliar with a regulatory framework that appears relevant to the work. What is the most appropriate action?",
+    "options": [
+      "Continue the work as planned and address the gap if it becomes a problem",
+      "Learn the framework's key points and consult compliance resources as needed",
+      "Decline the assignment on the grounds that the framework is unfamiliar",
+      "Apply requirements from a different framework the analyst knows well"
+    ],
+    "correct_index": 1,
+    "explanation": "Learning the framework and consulting the right resources closes the gap responsibly. Proceeding regardless, declining the work, or substituting a familiar-but-wrong framework all leave the compliance question unaddressed.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "d9-014",
+    "domain_id": 9,
+    "activity_statement_id": "9.1",
+    "technique_tag": null,
+    "competency_tag": null,
+    "question_type": "definition",
+    "stem": "In the Context domain, what does 'alignment to your situation' add on top of simply checking that information is accurate?",
+    "options": [
+      "Confirming the information uses correct grammar and formatting choices",
+      "Confirming the information matches a generic industry template exactly",
+      "Confirming the information was created within the past business day",
+      "Confirming the information is not only accurate but relevant to the situation"
+    ],
+    "correct_index": 3,
+    "explanation": "Alignment to situation means checking relevance and applicability to the current circumstances, beyond bare accuracy. Grammar, template conformity, and recency alone don't establish that fit.",
+    "difficulty": "easy"
+  },
+  {
+    "id": "d9-015",
+    "domain_id": 9,
+    "activity_statement_id": "9.2",
+    "technique_tag": null,
+    "competency_tag": null,
+    "question_type": "situational",
+    "stem": "A new organizational policy restricts what data can be shared externally partway through a project. How should the analyst respond?",
+    "options": [
+      "Recognize the new constraint, assess its impact, and adapt plans to stay compliant",
+      "Continue with the original plan since the policy shift came from outside the project",
+      "Recommend cancelling the project rather than exploring how to adapt",
+      "Keep the policy change from the team until it becomes unavoidable to mention"
+    ],
+    "correct_index": 0,
+    "explanation": "Recognizing the new constraint and adapting plans is the sound response, rather than ignoring the change, escalating straight to cancellation, or withholding it from the team.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "d9-016",
+    "domain_id": 9,
+    "activity_statement_id": "9.3",
+    "technique_tag": null,
+    "competency_tag": null,
+    "question_type": "situational",
+    "stem": "A proposed solution depends on a technology that vendors are phasing out industry-wide over the next two years. The technology still works fine today. How should the analyst treat this?",
+    "options": [
+      "Leave it out of the analysis, since current functionality is what matters here",
+      "Treat it as purely a solution-design concern rather than a context factor",
+      "Raise it only once a vendor representative brings the timeline up",
+      "Flag the declining industry support as a factor affecting the solution's longevity"
+    ],
+    "correct_index": 3,
+    "explanation": "Declining industry-wide support is exactly the kind of context signal the analyst should surface as input to the decision. Routing it away as a pure design matter, ignoring it because things currently work, or waiting for the vendor to raise it all let a relevant context factor go unflagged.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "d9-017",
+    "domain_id": 9,
+    "activity_statement_id": "9.4",
+    "technique_tag": null,
+    "competency_tag": null,
+    "question_type": "situational",
+    "stem": "Comparing two solution designs, the analyst finds one aligns more closely with an industry framework the organization has committed to following. How should this factor into the recommendation?",
+    "options": [
+      "Set it aside, since framework alignment is a secondary concern",
+      "Let it override every other factor in the comparison",
+      "Treat framework alignment as irrelevant to comparing the designs",
+      "Weigh it as one meaningful factor alongside other relevant considerations"
+    ],
+    "correct_index": 3,
+    "explanation": "Framework alignment belongs in the mix as a meaningful factor, weighed alongside cost, risk, and fit, neither dismissed as irrelevant nor allowed to override everything else.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "d9-018",
+    "domain_id": 9,
+    "activity_statement_id": "9.1",
+    "technique_tag": null,
+    "competency_tag": null,
+    "question_type": "situational",
+    "stem": "An analyst notes that a dataset used in an analysis was cross-checked against two independent sources before use. Why record this?",
+    "options": [
+      "It exists mainly to satisfy a record-keeping habit with little bearing on the analysis",
+      "It matters only when a stakeholder explicitly asks for a validation record",
+      "It creates a traceable record of how the information was assessed, supporting confidence later",
+      "It mainly serves to make the deliverable look longer and more thorough"
+    ],
+    "correct_index": 2,
+    "explanation": "A traceable validation record supports confidence in decisions built on that data. Treating it as a habit, an on-request extra, or padding misses why the practice actually matters.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "d9-019",
+    "domain_id": 9,
+    "activity_statement_id": "9.2",
+    "technique_tag": null,
+    "competency_tag": null,
+    "question_type": "definition",
+    "stem": "Why is recognizing constraints early in an initiative valuable?",
+    "options": [
+      "It matters mainly once the constraint has already affected implementation",
+      "It guarantees that the constraint itself will eventually be lifted",
+      "It lets plans be adapted proactively, rather than caught out by the constraint too late",
+      "It has little bearing on how planning decisions actually get made"
+    ],
+    "correct_index": 2,
+    "explanation": "Early recognition enables proactive adaptation, which beats discovering a constraint after the fact. It doesn't remove the constraint, and it clearly does shape planning decisions.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "d9-020",
+    "domain_id": 9,
+    "activity_statement_id": "9.3",
+    "technique_tag": null,
+    "competency_tag": null,
+    "question_type": "situational",
+    "stem": "A team is eager to adopt a trendy new tool without checking whether it actually fits the organization's needs and constraints. What can the analyst contribute?",
+    "options": [
+      "Encourage adoption anyway, since keeping pace with trends has its own value",
+      "Block adoption outright without reviewing whether the tool might fit",
+      "Ground the discussion in how the tool actually fits the organization's context",
+      "Stay quiet on the topic to avoid dampening the team's enthusiasm"
+    ],
+    "correct_index": 2,
+    "explanation": "Grounding the trend in the organization's actual context is the sound contribution, as opposed to endorsing it on popularity alone, blocking it without review, or opting out of the conversation entirely.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "d9-021",
+    "domain_id": 9,
+    "activity_statement_id": "9.4",
+    "technique_tag": null,
+    "competency_tag": null,
+    "question_type": "definition",
+    "stem": "What is the main risk of ignoring relevant industry standards when designing a solution?",
+    "options": [
+      "Essentially no risk, since most standards are non-binding recommendations",
+      "Faster and cheaper delivery with little real downside",
+      "A risk that surfaces only once the solution is eventually retired",
+      "Rework, non-compliance, or reduced credibility once the standard can't be avoided"
+    ],
+    "correct_index": 3,
+    "explanation": "Ignoring a relevant standard risks rework, non-compliance, or credibility issues once it can no longer be avoided; it isn't a free shortcut, and the risk shows up well before retirement.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "d9-022",
+    "domain_id": 9,
+    "activity_statement_id": "9.1",
+    "technique_tag": null,
+    "competency_tag": null,
+    "question_type": "situational",
+    "stem": "An analyst receives a dataset from an unfamiliar source with no documentation of how it was collected. What should happen before it's used in analysis?",
+    "options": [
+      "Use it right away, since most data sources are comparable in reliability",
+      "Investigate the data's origin and reliability before relying on it for analysis",
+      "Discard it automatically without checking where it came from",
+      "Merge it with other datasets and check for consistency afterward"
+    ],
+    "correct_index": 1,
+    "explanation": "Investigating an unfamiliar source's origin and reliability before use is sound validation practice. Using it unchecked, discarding it reflexively, or merging first and checking later all skip the needed step or do it out of order.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "d9-023",
+    "domain_id": 9,
+    "activity_statement_id": "9.2",
+    "technique_tag": null,
+    "competency_tag": null,
+    "question_type": "situational",
+    "stem": "A leadership change shifts organizational priorities midway through an initiative, deprioritizing a previously agreed scope item. Is this best treated as a Context constraint or a Change-domain issue for the analyst to address?",
+    "options": [
+      "Primarily a Change-domain issue the analyst should resolve by redefining the goals directly",
+      "Neither, since leadership-driven shifts sit outside what business analysis addresses",
+      "Primarily a Context constraint the analyst should recognize and help the plan adapt to",
+      "Both equally, with the analyst deciding independently which scope items proceed"
+    ],
+    "correct_index": 2,
+    "explanation": "The priority shift is a circumstance surrounding the initiative — a Context constraint the analyst should recognize and help the plan adapt to, in coordination with stakeholders. Redefining transformation goals belongs to those steering the Change itself, and disengaging or unilaterally deciding scope both overstate or understate the analyst's role.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "d9-024",
+    "domain_id": 9,
+    "activity_statement_id": "9.3",
+    "technique_tag": null,
+    "competency_tag": null,
+    "question_type": "definition",
+    "stem": "How does technology trend awareness support foundational-level business analysis work?",
+    "options": [
+      "It helps the analyst notice relevant technology, though it never replaces expertise",
+      "It removes the need for any deeper technical expertise on the team",
+      "It matters mainly for analysts employed by technology companies",
+      "It has little practical application at the foundational level of practice"
+    ],
+    "correct_index": 0,
+    "explanation": "Trend awareness helps the analyst spot relevance to a need or solution, informing better contributions; it doesn't replace deeper technical expertise, and it applies well beyond tech-sector employers.",
+    "difficulty": "easy"
+  },
+  {
+    "id": "d9-025",
+    "domain_id": 9,
+    "activity_statement_id": "9.4",
+    "technique_tag": null,
+    "competency_tag": null,
+    "question_type": "situational",
+    "stem": "An analyst is unsure which industry framework applies to a new initiative in an unfamiliar sector. What is the most appropriate action?",
+    "options": [
+      "Research the sector and consult knowledgeable colleagues to find the framework that applies",
+      "Reuse the framework applied on a past project in a different, unrelated sector",
+      "Set framework consideration aside, since the sector is unfamiliar",
+      "Apply every framework the analyst has previously encountered, to be safe"
+    ],
+    "correct_index": 0,
+    "explanation": "Researching the sector and consulting knowledgeable sources is more reliable than guessing from an unrelated precedent, skipping the step, or applying every framework indiscriminately.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "d9-026",
+    "domain_id": 9,
+    "activity_statement_id": "9.1",
+    "technique_tag": null,
+    "competency_tag": null,
+    "question_type": "definition",
+    "stem": "How does validating information connect to the Context domain as a whole?",
+    "options": [
+      "It is unrelated to Context and belongs to the Need domain instead",
+      "It grounds analysis in an accurate read of the initiative's circumstances",
+      "Context concerns mainly external factors, not internal data quality",
+      "Validating information mostly matters near the end of an initiative"
+    ],
+    "correct_index": 1,
+    "explanation": "Validating information supports an accurate read of the circumstances around the initiative, which is what Context is about; it isn't confined to the Need domain, limited to external factors only, or relevant only late in the timeline.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "d9-027",
+    "domain_id": 9,
+    "activity_statement_id": "9.2",
+    "technique_tag": null,
+    "competency_tag": null,
+    "question_type": "situational",
+    "stem": "An analyst notices a testing plan assumes stakeholders have unlimited availability, when in reality their capacity is quite limited. What should happen next?",
+    "options": [
+      "Flag the capacity constraint and adapt the testing plan to fit stakeholder availability",
+      "Proceed with the plan as written and expect stakeholders to find the time",
+      "Drop stakeholder testing from the plan without further discussion",
+      "Leave the plan unchanged and assume the constraint resolves itself"
+    ],
+    "correct_index": 0,
+    "explanation": "Flagging the mismatch and adapting the plan is the correct response; proceeding unchanged, cutting testing outright, or assuming self-resolution all leave a real capacity constraint unaddressed.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "d9-028",
+    "domain_id": 9,
+    "activity_statement_id": "9.3",
+    "technique_tag": null,
+    "competency_tag": null,
+    "question_type": "situational",
+    "stem": "An analyst helps map how a new tool will connect with existing systems as part of a technology integration effort. What is the primary value of this contribution?",
+    "options": [
+      "It has little value, since integration is a purely technical matter",
+      "It helps ensure the tool is thoughtfully incorporated rather than adopted in isolation",
+      "It removes the need for any further technical implementation work",
+      "It ensures the technology will function without issues once integrated"
+    ],
+    "correct_index": 1,
+    "explanation": "Mapping the connections supports thoughtful integration into the broader initiative; it doesn't eliminate implementation work, promise flawless operation, or fall entirely outside what a BA can usefully contribute.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "d9-029",
+    "domain_id": 9,
+    "activity_statement_id": "9.4",
+    "technique_tag": null,
+    "competency_tag": null,
+    "question_type": "situational",
+    "stem": "A sector has both formal regulatory requirements and informal best practices that aren't legally required. How should an analyst treat the two?",
+    "options": [
+      "Treat both as mandatory, since best practices function as unwritten regulations",
+      "Treat the regulations as mandatory, and best practices as strengthening quality and credibility",
+      "Treat only the best practices as worth following, since they reflect current thinking",
+      "Treat neither as relevant, since only contractual terms bind the initiative"
+    ],
+    "correct_index": 1,
+    "explanation": "Regulatory requirements carry mandatory weight, while best practices, though not legally binding, still add credibility and quality worth pursuing. Collapsing the two into one mandatory category, or discounting either entirely, misreads the distinction.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "d9-030",
+    "domain_id": 9,
+    "activity_statement_id": "9.1",
+    "technique_tag": null,
+    "competency_tag": null,
+    "question_type": "situational",
+    "stem": "An urgent stakeholder request leaves an analyst no time to fully validate every figure before summarizing findings. Should the analyst present the findings as-is, or hold them until validation is complete?",
+    "options": [
+      "Present the findings as fully validated, since the deadline leaves no room for caveats",
+      "Withhold the summary until every figure is completely validated, regardless of urgency",
+      "Present the findings and quietly validate the rest afterward without mentioning the gap",
+      "Present the findings, but clearly flag which parts are validated and which still need confirmation"
+    ],
+    "correct_index": 3,
+    "explanation": "Being transparent about what is and isn't yet validated respects both the urgency and the integrity of the information; overstating confidence, refusing to engage with a genuine deadline, or validating silently after the fact all handle the tension worse.",
+    "difficulty": "hard"
+  }
 ]

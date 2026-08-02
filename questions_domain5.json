@@ -1,32 +1,542 @@
 [
-  {"id":"d5-001","domain_id":5,"activity_statement_id":"5.1","technique_tag":"Interviews","competency_tag":null,"question_type":"situational","stem":"An analyst wants to understand a stakeholder's day-to-day pain points in depth, in a one-on-one setting. Which basic elicitation technique fits best?","options":["Interviews","SWOT Analysis","Backlog Management","Data Modelling"],"correct_index":0,"explanation":"Interviews are well suited to gathering in-depth, one-on-one insight into a stakeholder's experience.","difficulty":"easy"},
-  {"id":"d5-002","domain_id":5,"activity_statement_id":"5.1","technique_tag":null,"competency_tag":"Listening","question_type":"situational","stem":"During an elicitation session, a stakeholder gives a vague, hesitant answer. What competency is most important for the analyst to draw on to build rapport and get a fuller picture?","options":["Listening, including active listening to pick up on hesitation and unstated concerns","Data Modelling, to formalize the answer immediately","Financial Analysis, to quantify the response","Backlog Management, to log the answer as a task"],"correct_index":0,"explanation":"Active listening helps an analyst notice hesitation and unstated concerns, building rapport for deeper elicitation.","difficulty":"medium"},
-  {"id":"d5-003","domain_id":5,"activity_statement_id":"5.2","technique_tag":null,"competency_tag":null,"question_type":"situational","stem":"An analyst documents a requirement based on a stakeholder conversation, then brings it back to the stakeholder to confirm accuracy. What is this step called?","options":["Validation of the documented requirement against the stakeholder's actual need","Prioritization","Root cause analysis","Value realization"],"correct_index":0,"explanation":"Confirming documented requirements accurately reflect the stakeholder's actual need is the validation step.","difficulty":"easy"},
-  {"id":"d5-004","domain_id":5,"activity_statement_id":"5.3","technique_tag":null,"competency_tag":null,"question_type":"situational","stem":"A stakeholder's stated need doesn't seem to align with the documented project outcomes. What should the analyst do?","options":["Ignore the misalignment and proceed as planned","Flag the conflict for review and seek clarification to reconcile the stated need with the intended outcomes","Automatically prioritize the stakeholder's need over the documented outcomes","Remove the stakeholder from further discussions"],"correct_index":1,"explanation":"Flagging misalignment for review and clarification is the appropriate foundational-level response to a need/outcome conflict.","difficulty":"medium"},
-  {"id":"d5-005","domain_id":5,"activity_statement_id":"5.4","technique_tag":"Prioritization","competency_tag":null,"question_type":"situational","stem":"Multiple stakeholders have submitted competing needs with limited resources to address them all. Which technique directly supports resolving this?","options":["Prioritization, considering value and urgency","Data Modelling, to visualize the data structure","Organizational Modelling, to map reporting lines","Vendor Assessment, to compare suppliers"],"correct_index":0,"explanation":"Prioritization directly addresses how to sequence competing needs based on value and urgency.","difficulty":"easy"},
-  {"id":"d5-006","domain_id":5,"activity_statement_id":"5.1","technique_tag":"Brainstorming","competency_tag":null,"question_type":"situational","stem":"An analyst wants to generate a wide range of possible underlying causes for a vaguely described business problem, involving multiple stakeholders. Which technique is most appropriate?","options":["Brainstorming","Interviews","Data Modelling","Item Tracking"],"correct_index":0,"explanation":"Brainstorming is well suited for generating a wide range of ideas or possible causes with group participation.","difficulty":"easy"},
-  {"id":"d5-007","domain_id":5,"activity_statement_id":"5.2","technique_tag":"Document Analysis","competency_tag":null,"question_type":"situational","stem":"An analyst wants to understand existing business rules by reviewing an organization's policy manuals and procedure documents. Which technique fits best?","options":["Document Analysis","Workshops","Collaborative Games","Root Cause Analysis"],"correct_index":0,"explanation":"Document Analysis involves reviewing existing documentation like policy manuals to extract relevant information.","difficulty":"easy"},
-  {"id":"d5-008","domain_id":5,"activity_statement_id":"5.3","technique_tag":null,"competency_tag":null,"question_type":"definition","stem":"Why is it important to compare stakeholder needs against intended outcomes rather than assuming alignment?","options":["Because stated needs and actual desired outcomes can sometimes diverge, and unchecked divergence risks delivering the wrong result","Because outcomes are always more important than needs, regardless of context","Because this comparison is only relevant in regulated industries","Because stakeholders never accurately state their own needs"],"correct_index":0,"explanation":"Needs and outcomes can diverge; checking alignment helps avoid delivering results that miss the real intent.","difficulty":"medium"},
-  {"id":"d5-009","domain_id":5,"activity_statement_id":"5.4","technique_tag":null,"competency_tag":null,"question_type":"situational","stem":"A stakeholder insists their request is the highest priority, but it has low measurable business value and low urgency. How should the analyst support prioritization?","options":["Automatically defer to the stakeholder's insistence regardless of value or urgency","Present the value and urgency assessment transparently to support an informed prioritization discussion","Reject the request outright without discussion","Avoid raising the value/urgency mismatch to prevent conflict"],"correct_index":1,"explanation":"Supporting prioritization with transparent value/urgency data enables informed decisions rather than deferring to insistence alone.","difficulty":"medium"},
-  {"id":"d5-010","domain_id":5,"activity_statement_id":"5.1","technique_tag":"Workshops","competency_tag":"Facilitation","question_type":"situational","stem":"An analyst needs to gather input from a diverse group of stakeholders simultaneously and build consensus on a shared understanding of a problem. Which technique and competency pairing is most relevant?","options":["Workshops, supported by Facilitation skills","Data Mining, supported by Business Acumen","Backlog Management, supported by Written Communication","Financial Analysis, supported by Industry Knowledge"],"correct_index":0,"explanation":"Workshops are designed for group elicitation and consensus-building, requiring strong Facilitation skills.","difficulty":"medium"},
-  {"id":"d5-011","domain_id":5,"activity_statement_id":"5.2","technique_tag":null,"competency_tag":"Written Communication","question_type":"situational","stem":"An analyst documents a stakeholder need in vague, ambiguous language that could be interpreted multiple ways. What is the risk?","options":["No risk, since ambiguity is normal in early documentation","Misinterpretation downstream, potentially leading to a solution that doesn't match the actual need","It guarantees faster stakeholder approval","It automatically improves flexibility for the solution team"],"correct_index":1,"explanation":"Ambiguous documentation risks downstream misinterpretation and misalignment between the solution and the actual need.","difficulty":"medium"},
-  {"id":"d5-012","domain_id":5,"activity_statement_id":"5.1","technique_tag":null,"competency_tag":null,"question_type":"definition","stem":"Which best describes 'building positive rapport' during elicitation at the foundational level?","options":["Establishing trust and openness with stakeholders so they are willing to share accurate, complete information","Only being relevant in social settings unrelated to elicitation","Avoiding difficult questions to keep the conversation pleasant","A one-time activity that doesn't need to be maintained"],"correct_index":0,"explanation":"Rapport-building fosters trust so stakeholders share accurate, complete information — it's not about avoiding hard questions.","difficulty":"medium"},
-  {"id":"d5-013","domain_id":5,"activity_statement_id":"5.3","technique_tag":null,"competency_tag":null,"question_type":"situational","stem":"An analyst notices two departments have submitted needs that appear to directly conflict with each other. What is the appropriate foundational-level action?","options":["Flag the conflict for review by appropriate stakeholders or leadership rather than resolving it unilaterally","Ignore the conflict and proceed with whichever need was submitted first","Combine both conflicting needs into a single, contradictory requirement","Reject both needs to avoid the conflict entirely"],"correct_index":0,"explanation":"Flagging conflicting needs for appropriate review is the correct foundational-level action rather than unilateral resolution.","difficulty":"medium"},
-  {"id":"d5-014","domain_id":5,"activity_statement_id":"5.4","technique_tag":null,"competency_tag":null,"question_type":"definition","stem":"Which best describes the relationship between prioritization and business value?","options":["Prioritization should generally weigh how much value and urgency each need represents relative to others","Prioritization should always be based on which stakeholder is most senior","Value has no role in prioritization decisions","Urgency is irrelevant if value is high"],"correct_index":0,"explanation":"Sound prioritization weighs both value and urgency, rather than relying solely on stakeholder seniority.","difficulty":"medium"},
-  {"id":"d5-015","domain_id":5,"activity_statement_id":"5.1","technique_tag":"Focus Groups","competency_tag":null,"question_type":"situational","stem":"An analyst wants to gather perceptions from a representative sample of end users about a proposed change, in a moderated group discussion format. Which technique fits best?","options":["Focus Groups","Data Modelling","Business Rules Analysis","Sequence Diagrams"],"correct_index":0,"explanation":"Focus Groups involve moderated group discussion to gather perceptions from a representative sample of users.","difficulty":"medium"},
-  {"id":"d5-016","domain_id":5,"activity_statement_id":"5.2","technique_tag":null,"competency_tag":null,"question_type":"situational","stem":"After documenting a requirement, an analyst skips the step of confirming it with the stakeholder who provided the original input. What risk does this create?","options":["No risk, since documentation alone is sufficient","The documented requirement may not accurately reflect what the stakeholder actually meant, risking later rework","It guarantees the requirement will be implemented faster","It eliminates the need for further stakeholder engagement"],"correct_index":1,"explanation":"Skipping validation risks inaccurate documentation and potential rework later if the requirement doesn't match true intent.","difficulty":"medium"},
-  {"id":"d5-017","domain_id":5,"activity_statement_id":"5.3","technique_tag":null,"competency_tag":null,"question_type":"definition","stem":"Which best describes why comparing stakeholder needs with intended outcomes is a foundational-level BA activity rather than a one-time check?","options":["Because needs and outcomes can shift as understanding deepens throughout an initiative, requiring ongoing comparison","Because it is only required once at project kickoff","Because outcomes never change once defined","Because stakeholder needs are irrelevant after initial elicitation"],"correct_index":0,"explanation":"Needs and outcomes can shift over time, so comparison should be ongoing rather than a single kickoff check.","difficulty":"medium"},
-  {"id":"d5-018","domain_id":5,"activity_statement_id":"5.4","technique_tag":null,"competency_tag":"Negotiation and Conflict Resolution","question_type":"situational","stem":"Two stakeholders both insist their need should be prioritized first, and neither will budge. Which competency is most relevant to reaching a resolution?","options":["Negotiation and Conflict Resolution","Data Mining","Business Model Canvas","Scope Modelling"],"correct_index":0,"explanation":"Resolving a prioritization standoff between insistent stakeholders calls directly on Negotiation and Conflict Resolution skills.","difficulty":"medium"},
-  {"id":"d5-019","domain_id":5,"activity_statement_id":"5.1","technique_tag":null,"competency_tag":null,"question_type":"definition","stem":"Which best describes a 'basic' elicitation method appropriate at the foundational BA level?","options":["Advanced statistical modeling of large datasets","Straightforward techniques like interviews, document analysis, or brainstorming used to gather stakeholder input","Enterprise architecture frameworks","Complex financial derivatives analysis"],"correct_index":1,"explanation":"Foundational-level elicitation relies on straightforward, widely-used techniques, not advanced statistical or enterprise-level methods.","difficulty":"easy"},
-  {"id":"d5-020","domain_id":5,"activity_statement_id":"5.2","technique_tag":null,"competency_tag":null,"question_type":"situational","stem":"A stakeholder reviews a documented requirement and says, 'That's close, but not quite what I meant.' What should the analyst do next?","options":["Proceed with the requirement as originally documented since it's 'close enough'","Collaborate with the stakeholder to refine the documentation until it accurately reflects their intent","Discard the requirement entirely without further discussion","Assign a different stakeholder to clarify instead"],"correct_index":1,"explanation":"Collaborating to refine documentation until it accurately captures intent is the correct validation response.","difficulty":"easy"},
-  {"id":"d5-021","domain_id":5,"activity_statement_id":"5.3","technique_tag":null,"competency_tag":null,"question_type":"situational","stem":"An analyst is comparing a list of stakeholder needs against a project's defined outcomes and finds most align well, but one seems only tangentially related. What is the appropriate next step?","options":["Automatically include the tangential need without question","Flag it for clarification to understand whether it truly supports the intended outcomes or should be reconsidered","Automatically exclude it without any stakeholder discussion","Assume it was a data entry error and delete it"],"correct_index":1,"explanation":"Flagging for clarification rather than automatically including or excluding reflects sound foundational-level judgment.","difficulty":"medium"},
-  {"id":"d5-022","domain_id":5,"activity_statement_id":"5.4","technique_tag":null,"competency_tag":null,"question_type":"definition","stem":"Which best explains why urgency alone should not be the sole basis for prioritization?","options":["Urgency should always be ignored in favor of long-term value","A need can be urgent but low-value, or high-value but not urgent — both value and urgency should factor into the decision","Urgency and value always move together, so considering both is redundant","Only senior stakeholders should determine urgency"],"correct_index":1,"explanation":"Urgency and value don't always align, so both dimensions should inform prioritization decisions.","difficulty":"medium"},
-  {"id":"d5-023","domain_id":5,"activity_statement_id":"5.1","technique_tag":"Observation","competency_tag":null,"question_type":"situational","stem":"An analyst wants to understand how employees actually perform a task day-to-day, since their described process doesn't match what's documented. Which technique is best suited?","options":["Observation, watching the actual task performance directly","Financial Analysis, to calculate task cost","Vendor Assessment, to evaluate suppliers","Balanced Scorecard, to track strategic metrics"],"correct_index":0,"explanation":"Observation is well suited to capturing actual task performance, which can differ from what's described or documented.","difficulty":"medium"},
-  {"id":"d5-024","domain_id":5,"activity_statement_id":"5.2","technique_tag":null,"competency_tag":null,"question_type":"definition","stem":"Which best describes 'collaborating with stakeholders to validate needs, under guidance' at the foundational level?","options":["Working with more experienced colleagues or leadership to confirm documented needs are accurate before proceeding","Validating needs entirely independently, without any collaboration","Skipping validation whenever time is limited","Assuming documented needs are automatically correct"],"correct_index":0,"explanation":"Foundational-level validation typically involves collaborating with stakeholders and working under guidance from more experienced roles.","difficulty":"medium"},
-  {"id":"d5-025","domain_id":5,"activity_statement_id":"5.3","technique_tag":null,"competency_tag":null,"question_type":"situational","stem":"A department claims their need is 'critical' but cannot articulate a clear business outcome it supports. What should the analyst do?","options":["Accept the claim at face value and proceed","Probe further to understand the underlying outcome the need is meant to support, before accepting it as critical","Automatically deprioritize it for lack of clarity","Escalate immediately without further investigation"],"correct_index":1,"explanation":"Probing further to connect a stated need to a clear outcome is appropriate before accepting urgency claims at face value.","difficulty":"medium"},
-  {"id":"d5-026","domain_id":5,"activity_statement_id":"5.4","technique_tag":null,"competency_tag":null,"question_type":"situational","stem":"A backlog contains far more submitted needs than the team can address in the current cycle. What foundational-level support can the analyst offer?","options":["Support stakeholders in prioritizing needs by facilitating a structured discussion around value and urgency","Arbitrarily select which needs to address without stakeholder input","Refuse to engage with prioritization since it's a management decision","Address every need simultaneously regardless of capacity"],"correct_index":0,"explanation":"Facilitating structured, value/urgency-based prioritization discussions is the appropriate foundational-level support role.","difficulty":"medium"},
-  {"id":"d5-027","domain_id":5,"activity_statement_id":"5.1","technique_tag":null,"competency_tag":null,"question_type":"definition","stem":"Which best reflects the connection between elicitation and rapport-building?","options":["Rapport has no bearing on the quality of elicited information","Strong rapport tends to encourage more open, honest, and complete stakeholder responses during elicitation","Rapport-building should be avoided to maintain professional distance","Rapport is only relevant in informal elicitation settings"],"correct_index":1,"explanation":"Rapport encourages more open and complete responses — it supports rather than undermines professional elicitation.","difficulty":"medium"},
-  {"id":"d5-028","domain_id":5,"activity_statement_id":"5.2","technique_tag":null,"competency_tag":null,"question_type":"situational","stem":"An analyst documents requirements using highly technical jargon that the business stakeholder doesn't fully understand when reviewing for validation. What issue does this create?","options":["No issue, since technical accuracy is all that matters","The stakeholder may not be able to meaningfully validate the requirement if they can't understand the language used","It ensures faster stakeholder sign-off","It eliminates ambiguity entirely"],"correct_index":1,"explanation":"Jargon-heavy documentation can prevent stakeholders from meaningfully validating requirements they can't fully understand.","difficulty":"medium"},
-  {"id":"d5-029","domain_id":5,"activity_statement_id":"5.3","technique_tag":null,"competency_tag":null,"question_type":"definition","stem":"Which best describes the purpose of checking alignment between needs and outcomes before moving to solution design?","options":["To ensure the eventual solution is actually addressing a validated need tied to the desired outcome, rather than solving the wrong problem","To slow down the project unnecessarily","To satisfy a purely administrative requirement","Because solution design cannot begin until this step is fully automated"],"correct_index":0,"explanation":"Checking alignment before solutioning helps ensure the eventual solution addresses the real, validated need and outcome.","difficulty":"medium"},
-  {"id":"d5-030","domain_id":5,"activity_statement_id":"5.4","technique_tag":null,"competency_tag":null,"question_type":"situational","stem":"A stakeholder asks the analyst to simply rank their needs by 'gut feeling' without discussing value or urgency. How should the analyst respond?","options":["Comply immediately since the stakeholder requested it","Suggest a structured approach considering value and urgency, explaining how it leads to more defensible prioritization decisions","Refuse to participate in prioritization at all","Rank the needs randomly instead"],"correct_index":1,"explanation":"Guiding the stakeholder toward a structured value/urgency-based approach supports more defensible prioritization than gut feeling alone.","difficulty":"medium"}
+  {
+    "id": "d5-001",
+    "domain_id": 5,
+    "activity_statement_id": "5.1",
+    "technique_tag": "Interviews",
+    "competency_tag": null,
+    "question_type": "situational",
+    "stem": "An analyst wants to understand a stakeholder's day-to-day pain points in depth, in a one-on-one setting. Which basic elicitation technique fits best?",
+    "options": [
+      "Focus Groups, for moderated discussion across many participants",
+      "Interviews, for direct one-on-one dialogue with the stakeholder",
+      "Document Analysis, for reviewing existing policies and manuals",
+      "Observation, for watching the stakeholder's daily workflow"
+    ],
+    "correct_index": 1,
+    "explanation": "Interviews suit one-on-one, in-depth conversation. Focus Groups involve several participants at once rather than a single stakeholder, Document Analysis works from existing paperwork rather than live dialogue, and Observation captures behavior rather than spoken detail.",
+    "difficulty": "easy"
+  },
+  {
+    "id": "d5-002",
+    "domain_id": 5,
+    "activity_statement_id": "5.1",
+    "technique_tag": null,
+    "competency_tag": "Listening",
+    "question_type": "situational",
+    "stem": "During an elicitation session, a stakeholder gives a vague, hesitant answer. Which competency is most important for drawing out a fuller picture?",
+    "options": [
+      "Data Modelling, to turn the vague answer into a formal diagram right away",
+      "Active listening, to notice hesitation and unstated concerns behind the answer",
+      "Financial Analysis, to quantify what the stakeholder is describing",
+      "Backlog Management, to log the vague answer as a task for later"
+    ],
+    "correct_index": 1,
+    "explanation": "Active listening helps the analyst notice hesitation and unstated concerns and respond to them in the moment. The other options jump to formal analysis or logging techniques before the underlying concern has even been understood.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "d5-003",
+    "domain_id": 5,
+    "activity_statement_id": "5.2",
+    "technique_tag": null,
+    "competency_tag": null,
+    "question_type": "situational",
+    "stem": "An analyst documents a requirement based on a stakeholder conversation, then brings it back to the stakeholder to confirm it's accurate. What is this step called?",
+    "options": [
+      "Prioritizing the requirement relative to other submitted needs",
+      "Tracing the root cause of the underlying business problem",
+      "Validating the documented requirement against the stakeholder's intent",
+      "Assessing how much value the requirement will realize"
+    ],
+    "correct_index": 2,
+    "explanation": "Bringing documentation back to confirm it reflects what the stakeholder actually meant is validation. Prioritizing, root-cause analysis, and value assessment are related but separate activities that happen at different points in the work.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "d5-004",
+    "domain_id": 5,
+    "activity_statement_id": "5.3",
+    "technique_tag": null,
+    "competency_tag": null,
+    "question_type": "situational",
+    "stem": "A stakeholder's stated need doesn't seem to align with the documented project outcomes. What should the analyst do?",
+    "options": [
+      "Flag the conflict for review and seek clarification to reconcile need and outcome",
+      "Proceed as planned and treat the misalignment as unimportant",
+      "Automatically prioritize the stakeholder's need over the documented outcome",
+      "Remove the stakeholder from further discussions on the topic"
+    ],
+    "correct_index": 0,
+    "explanation": "Flagging the conflict and seeking clarification reconciles the mismatch without overstepping. Ignoring it, automatically favoring the stakeholder, or cutting them out of discussion all skip the clarification step a foundational-level BA should take.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "d5-005",
+    "domain_id": 5,
+    "activity_statement_id": "5.4",
+    "technique_tag": "Prioritization",
+    "competency_tag": null,
+    "question_type": "situational",
+    "stem": "Multiple stakeholders have submitted competing needs with limited resources to address them all. Which technique directly supports resolving this?",
+    "options": [
+      "Data Modelling, used to visualize how the underlying data is structured",
+      "Organizational Modelling, used to map out formal reporting lines",
+      "Vendor Assessment, used to compare and rank competing suppliers",
+      "Prioritization, which always weighs each need's value against urgency"
+    ],
+    "correct_index": 3,
+    "explanation": "Prioritization directly sequences competing needs by weighing value against urgency. The other techniques model data structures, reporting lines, or suppliers — none of them address how to order competing needs.",
+    "difficulty": "easy"
+  },
+  {
+    "id": "d5-006",
+    "domain_id": 5,
+    "activity_statement_id": "5.1",
+    "technique_tag": "Brainstorming",
+    "competency_tag": null,
+    "question_type": "situational",
+    "stem": "An analyst wants to generate a wide range of possible causes for a vaguely described business problem, drawing on input from several stakeholders at once. Which technique is most appropriate?",
+    "options": [
+      "Interviews, to explore one stakeholder's perspective in isolation",
+      "Data Modelling, to diagram the data entities involved in the problem",
+      "Item Tracking, to log issues that have already been identified",
+      "Brainstorming, to surface many possible causes quickly with group input"
+    ],
+    "correct_index": 3,
+    "explanation": "Brainstorming is built for generating a broad set of ideas quickly with group participation. Interviews explore one perspective at a time rather than group breadth, and Data Modelling or Item Tracking both assume the relevant items are already known.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "d5-007",
+    "domain_id": 5,
+    "activity_statement_id": "5.2",
+    "technique_tag": "Document Analysis",
+    "competency_tag": null,
+    "question_type": "situational",
+    "stem": "An analyst wants to understand existing business rules by reviewing an organization's policy manuals and procedure documents. Which technique fits best?",
+    "options": [
+      "Workshops, running a facilitated session with several stakeholders",
+      "Collaborative Games, using structured play to surface ideas",
+      "Document Analysis, reviewing existing policy manuals and procedures",
+      "Root Cause Analysis, tracing a problem back to its origin"
+    ],
+    "correct_index": 2,
+    "explanation": "Document Analysis is built for extracting information from existing documentation like policy manuals. Workshops and Collaborative Games need live participants, and Root Cause Analysis targets problems, not rule discovery.",
+    "difficulty": "easy"
+  },
+  {
+    "id": "d5-008",
+    "domain_id": 5,
+    "activity_statement_id": "5.3",
+    "technique_tag": null,
+    "competency_tag": null,
+    "question_type": "definition",
+    "stem": "Which best explains why confirming that a requirement accurately captures what a stakeholder said is not the same check as validating that need against the initiative's intended outcomes?",
+    "options": [
+      "They are the same accuracy check simply performed a second time",
+      "The distinction only matters within heavily regulated industries",
+      "Outcome validation fully replaces the need for any accuracy check",
+      "One confirms accurate capture; the other confirms the need still supports the outcome"
+    ],
+    "correct_index": 3,
+    "explanation": "Confirming a requirement's wording matches what was said (accuracy) is a distinct check from confirming that need still supports the initiative's intended outcome (relevance) — a requirement can be captured with perfect accuracy and still fail to serve the outcome it's meant for. It isn't a duplicate check, isn't limited to regulated industries, and doesn't replace the accuracy check.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "d5-009",
+    "domain_id": 5,
+    "activity_statement_id": "5.4",
+    "technique_tag": null,
+    "competency_tag": null,
+    "question_type": "situational",
+    "stem": "A stakeholder insists their request is the highest priority, but it scores low on both business value and urgency. How should the analyst support prioritization?",
+    "options": [
+      "Defer to the stakeholder's insistence regardless of the assessment",
+      "Reject the request outright, without opening any discussion",
+      "Present the value and urgency assessment to inform the discussion",
+      "Avoid raising the mismatch at all, to prevent any conflict"
+    ],
+    "correct_index": 2,
+    "explanation": "Laying out the value/urgency assessment transparently supports an informed discussion. Deferring outright, rejecting without discussion, or avoiding the mismatch all skip the evidence-based conversation prioritization depends on.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "d5-010",
+    "domain_id": 5,
+    "activity_statement_id": "5.1",
+    "technique_tag": "Workshops",
+    "competency_tag": "Facilitation",
+    "question_type": "situational",
+    "stem": "An analyst needs to bring a cross-functional group of stakeholders together to work through a shared problem and leave the session having agreed on a common understanding, not just having each person's individual opinion on record. Which technique and competency pairing fits best?",
+    "options": [
+      "Focus Groups, supported by Listening, to gather individual reactions without seeking group agreement",
+      "Brainstorming, supported by Creativity, to generate options without converging on one outcome",
+      "Workshops, supported by Facilitation, to structure the group toward a shared, agreed outcome",
+      "Interviews, supported by Written Communication, to record each person's view one at a time"
+    ],
+    "correct_index": 2,
+    "explanation": "Workshops are structured, facilitated sessions designed to reach a shared outcome or consensus — that's the key distinction from Focus Groups, which gather individual perceptions in a moderated discussion but don't necessarily converge on agreement. Brainstorming generates options without converging, and interviews capture views one person at a time rather than building group consensus.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "d5-011",
+    "domain_id": 5,
+    "activity_statement_id": "5.2",
+    "technique_tag": null,
+    "competency_tag": "Written Communication",
+    "question_type": "situational",
+    "stem": "An analyst documents a stakeholder need in vague, ambiguous language that could be read multiple ways. What is the risk?",
+    "options": [
+      "No real risk, since some ambiguity is normal in early documentation",
+      "Misinterpretation downstream, since the solution built may not match the real need",
+      "Faster stakeholder approval, since less detail is easier to sign off",
+      "More flexibility for the solution team to interpret intent broadly"
+    ],
+    "correct_index": 1,
+    "explanation": "Ambiguous wording risks the eventual solution being built against a misread of the actual need. It doesn't speed up approval, add useful flexibility, or count as harmless — those options treat the ambiguity as a benefit rather than the risk it actually is.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "d5-012",
+    "domain_id": 5,
+    "activity_statement_id": "5.1",
+    "technique_tag": null,
+    "competency_tag": null,
+    "question_type": "definition",
+    "stem": "Which best describes 'building positive rapport' during elicitation at the foundational level?",
+    "options": [
+      "Staying purely social so the conversation never touches difficult topics",
+      "A single icebreaker exercise performed once, then set aside",
+      "Rapport only matters in casual, unstructured conversations",
+      "Building trust so stakeholders share complete, accurate information"
+    ],
+    "correct_index": 3,
+    "explanation": "Rapport means building enough trust that stakeholders are willing to share complete, honest input — not avoiding hard topics, treating it as a one-off exercise, or assuming it only applies to informal settings.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "d5-013",
+    "domain_id": 5,
+    "activity_statement_id": "5.3",
+    "technique_tag": null,
+    "competency_tag": null,
+    "question_type": "situational",
+    "stem": "An analyst notices two departments have submitted needs that directly conflict with each other. What is the appropriate foundational-level action?",
+    "options": [
+      "Flag the conflict for review by the appropriate stakeholders or leadership",
+      "Personally negotiate a compromise between the two departments",
+      "Proceed with whichever department's need was submitted first",
+      "Combine both needs into a single requirement despite the conflict"
+    ],
+    "correct_index": 0,
+    "explanation": "At the foundational level, the appropriate move is to surface the conflict to those with authority to decide, not to personally broker a compromise — that risks overstepping the BA's role and authority at this level. Picking by submission order or forcing both needs into one contradictory requirement both avoid resolving the actual conflict.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "d5-014",
+    "domain_id": 5,
+    "activity_statement_id": "5.4",
+    "technique_tag": null,
+    "competency_tag": null,
+    "question_type": "definition",
+    "stem": "Which best describes the relationship between prioritization and business value?",
+    "options": [
+      "Prioritization should always follow whichever stakeholder is most senior",
+      "Value plays no meaningful role in prioritization decisions",
+      "Urgency becomes irrelevant whenever value is already rated high",
+      "Prioritization should weigh how much value and urgency each need carries"
+    ],
+    "correct_index": 3,
+    "explanation": "Sound prioritization weighs value alongside urgency, rather than being decided purely by seniority or treating value and urgency as unrelated dimensions where one cancels out the other.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "d5-015",
+    "domain_id": 5,
+    "activity_statement_id": "5.1",
+    "technique_tag": "Focus Groups",
+    "competency_tag": null,
+    "question_type": "situational",
+    "stem": "An analyst wants to gather perceptions from a representative sample of end users about a proposed change, using a moderated group discussion. Which technique fits best?",
+    "options": [
+      "Data Modelling, a diagram of how information flows through a system",
+      "Focus Groups, a moderated discussion with a representative sample of users",
+      "Business Rules Analysis, a review of policies that constrain a process",
+      "Sequence Diagrams, a visual of the order in which operations occur"
+    ],
+    "correct_index": 1,
+    "explanation": "Focus Groups are moderated discussions designed to surface perceptions from a representative sample of users. The other options model data flow, business rules, or operation sequencing rather than gathering opinions.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "d5-016",
+    "domain_id": 5,
+    "activity_statement_id": "5.2",
+    "technique_tag": null,
+    "competency_tag": null,
+    "question_type": "situational",
+    "stem": "After documenting a requirement, an analyst skips confirming it with the stakeholder who provided the original input. What risk does this create?",
+    "options": [
+      "No risk, since documentation alone is considered sufficient",
+      "It guarantees the requirement will move to build faster",
+      "The documented requirement may not reflect real intent, risking rework later",
+      "It removes the need for any further stakeholder engagement"
+    ],
+    "correct_index": 2,
+    "explanation": "Skipping confirmation risks the documented requirement not matching real intent, creating rework later. It doesn't speed delivery, guarantee anything positive, or remove the need for further engagement — those overstate the benefit of skipping the step.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "d5-017",
+    "domain_id": 5,
+    "activity_statement_id": "5.3",
+    "technique_tag": null,
+    "competency_tag": null,
+    "question_type": "definition",
+    "stem": "Which best explains why comparing stakeholder needs with intended outcomes is an ongoing foundational-level activity rather than a one-time check?",
+    "options": [
+      "Needs and outcomes can shift as understanding deepens, requiring ongoing comparison",
+      "It is a check that is only required once, at project kickoff",
+      "Outcomes are fixed and never change once they've been defined",
+      "Stakeholder needs stop mattering once initial elicitation ends"
+    ],
+    "correct_index": 0,
+    "explanation": "Understanding of both needs and outcomes tends to deepen as an initiative progresses, so the comparison should recur rather than being locked in at kickoff or treated as permanently settled once needs are first captured.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "d5-018",
+    "domain_id": 5,
+    "activity_statement_id": "5.4",
+    "technique_tag": null,
+    "competency_tag": "Negotiation and Conflict Resolution",
+    "question_type": "situational",
+    "stem": "Two stakeholders both insist their need must be prioritized first, and a structured value/urgency scoring exercise hasn't broken the impasse because they dispute the scoring itself. Which competency is most relevant to moving the discussion forward?",
+    "options": [
+      "Prioritization, to recalculate the value and urgency scores a second time",
+      "Negotiation and Conflict Resolution, to work through the interpersonal impasse directly",
+      "Data Mining, to find patterns in past prioritization decisions",
+      "Business Model Canvas, to map the organization's value proposition"
+    ],
+    "correct_index": 1,
+    "explanation": "When stakeholders are contesting the scoring itself rather than lacking one, re-running the same structured technique won't resolve a personal standoff — that calls on the interpersonal competency of Negotiation and Conflict Resolution. Prioritization is the technique already tried, and Data Mining and Business Model Canvas are unrelated to resolving the impasse.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "d5-019",
+    "domain_id": 5,
+    "activity_statement_id": "5.1",
+    "technique_tag": null,
+    "competency_tag": null,
+    "question_type": "definition",
+    "stem": "Which best describes a 'basic' elicitation method appropriate at the foundational BA level?",
+    "options": [
+      "Advanced statistical modeling of large historical datasets",
+      "Enterprise architecture frameworks for mapping technology landscapes",
+      "Straightforward methods such as interviews or document analysis",
+      "Complex financial derivative valuation techniques"
+    ],
+    "correct_index": 2,
+    "explanation": "Foundational-level elicitation relies on straightforward techniques like interviews or document analysis — not advanced statistical, enterprise-architecture, or financial-modeling methods.",
+    "difficulty": "easy"
+  },
+  {
+    "id": "d5-020",
+    "domain_id": 5,
+    "activity_statement_id": "5.2",
+    "technique_tag": null,
+    "competency_tag": null,
+    "question_type": "situational",
+    "stem": "A stakeholder reviews a documented requirement and says, 'That's close, but not quite what I meant.' What should the analyst do next?",
+    "options": [
+      "Proceed with the current wording since it's already close enough",
+      "Work with the stakeholder to refine the documentation until it fits their intent",
+      "Discard the requirement and start over from a blank page",
+      "Assign a different stakeholder to interpret the original intent"
+    ],
+    "correct_index": 1,
+    "explanation": "Working with the stakeholder to refine the wording until it matches their intent is the correct validation response — proceeding anyway, discarding it entirely, or handing it to someone else all bypass the clarification the stakeholder is actually asking for.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "d5-021",
+    "domain_id": 5,
+    "activity_statement_id": "5.3",
+    "technique_tag": null,
+    "competency_tag": null,
+    "question_type": "situational",
+    "stem": "An analyst compares a list of stakeholder needs against a project's defined outcomes and finds most align well, but one seems only tangentially related. What is the appropriate next step?",
+    "options": [
+      "Flag it for clarification on whether it truly supports the intended outcomes",
+      "Include it automatically without raising any questions",
+      "Exclude it automatically without any stakeholder discussion",
+      "Assume it was entered in error and delete it outright"
+    ],
+    "correct_index": 0,
+    "explanation": "Flagging the tangential need for clarification — rather than automatically including, excluding, or deleting it — reflects sound foundational-level judgment.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "d5-022",
+    "domain_id": 5,
+    "activity_statement_id": "5.4",
+    "technique_tag": null,
+    "competency_tag": null,
+    "question_type": "definition",
+    "stem": "Which best explains why urgency alone should not be the sole basis for prioritization?",
+    "options": [
+      "Urgency should always be ignored in favor of long-term value",
+      "A need can be urgent but low-value, or valuable but not urgent — both matter",
+      "Urgency and value always move together, so weighing both is redundant",
+      "Only the most senior stakeholders are qualified to judge urgency"
+    ],
+    "correct_index": 1,
+    "explanation": "A need can be urgent but low-value, or valuable but not urgent, so both dimensions should inform the decision — treating urgency as always secondary, assuming it tracks value automatically, or reserving urgency judgments for senior stakeholders alone are all inaccurate.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "d5-023",
+    "domain_id": 5,
+    "activity_statement_id": "5.1",
+    "technique_tag": "Observation",
+    "competency_tag": null,
+    "question_type": "situational",
+    "stem": "An analyst wants to understand how employees actually perform a task day-to-day, since their described process doesn't match what's documented. Which technique is best suited?",
+    "options": [
+      "Financial Analysis, to calculate the fully loaded cost of the task",
+      "Vendor Assessment, to compare external suppliers of the process",
+      "Balanced Scorecard, to track strategic performance metrics",
+      "Observation, to watch how the task is actually performed day-to-day"
+    ],
+    "correct_index": 3,
+    "explanation": "Observation captures how a task is actually performed, which can diverge from what's described or documented. The other options measure cost, compare suppliers, or track strategic metrics — none of them capture live task performance.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "d5-024",
+    "domain_id": 5,
+    "activity_statement_id": "5.2",
+    "technique_tag": null,
+    "competency_tag": null,
+    "question_type": "definition",
+    "stem": "Which best describes what 'collaborating with stakeholders to validate needs, under guidance' looks like at the foundational level?",
+    "options": [
+      "Always collaborating with more experienced colleagues to confirm the need is accurate",
+      "Independently deciding a documented need is accurate without any second opinion",
+      "Deferring entirely to the stakeholder's original wording without any review",
+      "Escalating every documented need to senior leadership for formal sign-off"
+    ],
+    "correct_index": 0,
+    "explanation": "Foundational-level validation is collaborative, done under guidance from more experienced colleagues — not decided solo, not a matter of leaving the original wording untouched, and not something that requires escalating every single item to leadership, which overstates the foundational role and would slow the work unnecessarily.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "d5-025",
+    "domain_id": 5,
+    "activity_statement_id": "5.3",
+    "technique_tag": null,
+    "competency_tag": null,
+    "question_type": "situational",
+    "stem": "A department claims their need is 'critical' but cannot articulate a clear business outcome it supports. What should the analyst do?",
+    "options": [
+      "Probe further to connect the claimed need to a clear underlying outcome",
+      "Accept the critical label at face value and move forward",
+      "Deprioritize it automatically for lacking a clear outcome",
+      "Escalate it immediately without further investigation"
+    ],
+    "correct_index": 0,
+    "explanation": "Probing further to connect the claimed need to an underlying outcome is appropriate before accepting an urgency label at face value — accepting it outright, deprioritizing it, or escalating without any investigation all skip that step.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "d5-026",
+    "domain_id": 5,
+    "activity_statement_id": "5.4",
+    "technique_tag": null,
+    "competency_tag": null,
+    "question_type": "situational",
+    "stem": "A backlog contains far more submitted needs than the team can address in the current cycle. What foundational-level support can the analyst offer?",
+    "options": [
+      "Facilitate a structured discussion around value and urgency to support prioritization",
+      "Arbitrarily select which needs to address without any stakeholder input",
+      "Decline to engage, since prioritization is a management-only decision",
+      "Attempt to address every submitted need at once regardless of capacity"
+    ],
+    "correct_index": 0,
+    "explanation": "Facilitating a structured, value/urgency-based discussion is the appropriate foundational-level support. Picking arbitrarily, declining to engage, or trying to address everything at once all fail to actually help the team prioritize.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "d5-027",
+    "domain_id": 5,
+    "activity_statement_id": "5.1",
+    "technique_tag": null,
+    "competency_tag": null,
+    "question_type": "definition",
+    "stem": "Which best reflects the connection between elicitation and rapport-building?",
+    "options": [
+      "Rapport has no real bearing on the quality of elicited information",
+      "Rapport-building should be skipped to preserve professional distance",
+      "Strong rapport tends to encourage more open, honest stakeholder responses",
+      "Rapport is a nice-to-have that elicited information doesn't actually depend on"
+    ],
+    "correct_index": 2,
+    "explanation": "Strong rapport tends to encourage more open, complete stakeholder responses — it supports rather than undermines professional elicitation, contrary to claims that it's irrelevant, should be avoided, or doesn't actually affect the quality of what's shared.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "d5-028",
+    "domain_id": 5,
+    "activity_statement_id": "5.2",
+    "technique_tag": null,
+    "competency_tag": null,
+    "question_type": "situational",
+    "stem": "An analyst documents requirements using highly technical jargon that the business stakeholder doesn't fully understand when reviewing for validation. What issue does this create?",
+    "options": [
+      "The stakeholder can't meaningfully validate wording they don't understand",
+      "No real issue, since technical accuracy matters most here",
+      "It tends to speed up the stakeholder sign-off process",
+      "It removes all ambiguity from the documented requirement"
+    ],
+    "correct_index": 0,
+    "explanation": "If the stakeholder can't understand the wording, they can't meaningfully validate it — jargon doesn't make accuracy irrelevant, speed up sign-off, or eliminate ambiguity; it just shifts the ambiguity onto the reader.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "d5-029",
+    "domain_id": 5,
+    "activity_statement_id": "5.3",
+    "technique_tag": null,
+    "competency_tag": null,
+    "question_type": "definition",
+    "stem": "Which best describes the purpose of checking alignment between needs and outcomes before moving to solution design?",
+    "options": [
+      "To slow the project down as an extra administrative step",
+      "To make sure the eventual solution addresses a validated, outcome-linked need",
+      "To satisfy a purely paperwork-driven compliance requirement",
+      "Because solution design cannot start until this step is automated"
+    ],
+    "correct_index": 1,
+    "explanation": "Checking alignment first helps ensure the eventual solution addresses a validated, outcome-linked need rather than solving the wrong problem — it isn't about slowing things down, satisfying paperwork, or waiting on automation.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "d5-030",
+    "domain_id": 5,
+    "activity_statement_id": "5.4",
+    "technique_tag": null,
+    "competency_tag": null,
+    "question_type": "situational",
+    "stem": "A stakeholder asks the analyst to simply rank their needs by 'gut feeling,' without discussing value or urgency. How should the analyst respond?",
+    "options": [
+      "Comply immediately and rank the needs purely by gut feeling",
+      "Decline to take part in the prioritization exercise altogether",
+      "Rank the submitted needs in a completely random order instead",
+      "Suggest a structured value/urgency approach for more defensible decisions"
+    ],
+    "correct_index": 3,
+    "explanation": "Suggesting a structured value/urgency approach supports more defensible prioritization decisions than gut feeling alone. Complying immediately, refusing to participate, or ranking randomly all fail to add the analytical value the analyst is there to provide.",
+    "difficulty": "medium"
+  }
 ]

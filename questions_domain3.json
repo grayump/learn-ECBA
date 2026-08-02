@@ -1,20 +1,326 @@
 [
-  {"id":"d3-001","domain_id":3,"activity_statement_id":"3.1","technique_tag":null,"competency_tag":null,"question_type":"definition","stem":"Which statement best reflects how business analysis roles vary across organizational contexts?","options":["Only people with the exact title 'Business Analyst' perform BA activities","Roles performing business analysis vary — product owners, project managers, and subject matter experts may all perform BA activities depending on context","BA activities are always performed by a dedicated, standalone department","Role variation only occurs in Agile organizations"],"correct_index":1,"explanation":"BA activities can be performed by various roles depending on organizational context, not exclusively by titled 'Business Analysts.'","difficulty":"easy"},
-  {"id":"d3-002","domain_id":3,"activity_statement_id":"3.2","technique_tag":null,"competency_tag":null,"question_type":"situational","stem":"A team is deciding between a heavily documented, sequential approach and a lightweight, iterative approach for a new initiative. What should drive this choice?","options":["Whichever approach the analyst personally prefers","The nature of the initiative, its risk profile, stakeholder needs, and organizational context","Always choosing the most modern-sounding approach","Selecting the approach used on the analyst's last project, regardless of fit"],"correct_index":1,"explanation":"Choosing a BA approach should be driven by the initiative's nature, risk, stakeholder needs, and context — not personal preference or habit.","difficulty":"medium"},
-  {"id":"d3-003","domain_id":3,"activity_statement_id":"3.3","technique_tag":null,"competency_tag":null,"question_type":"definition","stem":"Which of the following is an example of an organizational consideration that can influence business analysis work?","options":["The color scheme of the project's presentation slides","Organizational culture, governance structures, and decision-making authority","The specific font used in requirements documents","The analyst's personal calendar availability"],"correct_index":1,"explanation":"Culture, governance, and decision-making authority are organizational considerations that meaningfully influence BA work.","difficulty":"easy"},
-  {"id":"d3-004","domain_id":3,"activity_statement_id":"3.4","technique_tag":null,"competency_tag":null,"question_type":"definition","stem":"Which best distinguishes a requirement from a design?","options":["A requirement describes what is needed; a design describes how that need will be satisfied","There is no meaningful distinction between the two","A design always comes before a requirement is defined","Requirements are only used in Agile projects, designs only in waterfall"],"correct_index":0,"explanation":"Requirements describe the need (the 'what'); designs describe the specific approach to satisfying it (the 'how').","difficulty":"medium"},
-  {"id":"d3-005","domain_id":3,"activity_statement_id":"3.1","technique_tag":null,"competency_tag":null,"question_type":"situational","stem":"A product owner in an agile team spends significant time eliciting and prioritizing needs from stakeholders. According to the Business Analysis Standard, is this person performing business analysis?","options":["No, only people with 'analyst' in their title can perform business analysis","Yes, because the activity performed matches the definition of business analysis, regardless of title","No, product owners are prohibited from doing BA work","Yes, but only if they hold an IIBA certification"],"correct_index":1,"explanation":"Business analysis is defined by the activity, not the job title — a product owner eliciting and prioritizing needs is doing BA work.","difficulty":"medium"},
-  {"id":"d3-006","domain_id":3,"activity_statement_id":"3.2","technique_tag":null,"competency_tag":null,"question_type":"definition","stem":"Why is there no single 'correct' business analysis approach for every initiative?","options":["Because the BABOK Guide has not defined any approaches","Because the right approach depends on factors like initiative complexity, organizational culture, and stakeholder needs","Because approaches are only relevant to IT projects","Because IIBA has deprecated the concept of approaches"],"correct_index":1,"explanation":"The right BA approach is context-dependent, shaped by complexity, culture, and stakeholder needs — there's no universal default.","difficulty":"medium"},
-  {"id":"d3-007","domain_id":3,"activity_statement_id":"3.3","technique_tag":null,"competency_tag":null,"question_type":"situational","stem":"An analyst proposes a new requirements management process without accounting for the organization's existing approval hierarchy. What is the most likely consequence?","options":["No consequence, since process design is independent of organizational structure","Friction or resistance, since the proposal ignores a real organizational consideration that affects adoption","Immediate and automatic approval, regardless of hierarchy","The organization will restructure itself to fit the new process"],"correct_index":1,"explanation":"Ignoring existing governance/approval structures — a key organizational consideration — commonly creates friction and resistance to adoption.","difficulty":"medium"},
-  {"id":"d3-008","domain_id":3,"activity_statement_id":"3.4","technique_tag":null,"competency_tag":null,"question_type":"situational","stem":"A stakeholder says, 'We need the system to calculate shipping costs automatically.' A vendor later proposes a specific algorithm and UI to accomplish this. Which best labels each statement?","options":["Both are requirements","The stakeholder statement is a requirement; the vendor's specific algorithm and UI proposal is a design","Both are designs","The stakeholder statement is a design; the vendor's proposal is a requirement"],"correct_index":1,"explanation":"The stakeholder's need is the requirement (what); the vendor's specific technical approach is the design (how).","difficulty":"medium"},
-  {"id":"d3-009","domain_id":3,"activity_statement_id":"3.1","technique_tag":null,"competency_tag":null,"question_type":"definition","stem":"Which best explains why business analysis responsibilities can shift between roles across different organizations?","options":["Because business analysis is not a real discipline","Because the specific role structure of an organization determines who carries out BA activities, even though the underlying discipline is consistent","Because IIBA assigns roles randomly per organization","Because only large organizations have formal BA roles"],"correct_index":1,"explanation":"Organizational structure determines who performs BA activities, but the underlying discipline and its purpose remain consistent.","difficulty":"medium"},
-  {"id":"d3-010","domain_id":3,"activity_statement_id":"3.2","technique_tag":null,"competency_tag":null,"question_type":"situational","stem":"A highly regulated financial institution is comparing an agile approach against a traditional, heavily documented approach for a compliance-driven initiative. Which factor should weigh most heavily in the decision?","options":["Which approach is currently trending in the industry","Regulatory requirements for documentation, traceability, and audit trails","The analyst's personal familiarity with agile","The number of team members available"],"correct_index":1,"explanation":"For a compliance-driven initiative, regulatory documentation and traceability requirements should weigh most heavily in the approach decision.","difficulty":"medium"},
-  {"id":"d3-011","domain_id":3,"activity_statement_id":"3.3","technique_tag":null,"competency_tag":null,"question_type":"definition","stem":"Which best describes the potential impact of organizational culture on business analysis work?","options":["Culture has no bearing on how BA work should be conducted","Culture can influence how stakeholders engage, how decisions are made, and how change is received","Culture only matters for HR-related initiatives","Culture is fixed and cannot be considered during analysis"],"correct_index":1,"explanation":"Organizational culture shapes stakeholder engagement, decision-making, and receptiveness to change — all relevant to BA work.","difficulty":"medium"},
-  {"id":"d3-012","domain_id":3,"activity_statement_id":"3.4","technique_tag":null,"competency_tag":null,"question_type":"definition","stem":"How do requirements and designs typically evolve throughout an initiative?","options":["Requirements are defined once and never change; designs are the only thing refined","Both may be refined iteratively as understanding deepens, with designs generally becoming more detailed as requirements stabilize","Designs are always finalized before any requirement is identified","Neither requirements nor designs change once documented"],"correct_index":1,"explanation":"Both requirements and designs can be refined iteratively, with designs typically gaining detail as requirements stabilize.","difficulty":"medium"},
-  {"id":"d3-013","domain_id":3,"activity_statement_id":"3.1","technique_tag":null,"competency_tag":null,"question_type":"situational","stem":"An IT manager occasionally performs stakeholder elicitation and requirements documentation alongside their technical duties. How should this be understood in terms of BA roles?","options":["This is not real business analysis since it's not their primary role","The IT manager is performing business analysis activities as part of a blended role, which is common depending on organizational structure","This is only valid if IIBA formally certifies the IT manager first","This situation is prohibited by the BABOK Guide"],"correct_index":1,"explanation":"Blended roles performing BA activities alongside other duties are common and consistent with how roles vary by organizational context.","difficulty":"medium"},
-  {"id":"d3-014","domain_id":3,"activity_statement_id":"3.2","technique_tag":null,"competency_tag":null,"question_type":"definition","stem":"Which best reflects the relationship between business analysis approaches and methodologies like Agile or Waterfall?","options":["Business analysis approaches must always match the software development methodology exactly","Business analysis approaches can be adapted to fit within different methodologies, since methodology and BA approach are related but distinct considerations","Business analysis approaches are irrelevant once a methodology is chosen","Only Waterfall methodologies support structured business analysis"],"correct_index":1,"explanation":"BA approach and delivery methodology are related but distinct — BA approaches adapt to fit within whichever methodology is used.","difficulty":"medium"},
-  {"id":"d3-015","domain_id":3,"activity_statement_id":"3.3","technique_tag":null,"competency_tag":null,"question_type":"situational","stem":"An analyst joins a new organization and notices that decisions are made informally through hallway conversations rather than documented approvals. What should the analyst do?","options":["Insist the organization immediately adopt formal documented approvals","Recognize this as an organizational consideration and adapt their engagement approach accordingly, while still ensuring critical decisions are appropriately captured","Ignore the informal culture and proceed exactly as they did at their previous organization","Refuse to work within an informal decision-making culture"],"correct_index":1,"explanation":"Adapting to organizational context while still safeguarding critical decision capture reflects sound handling of organizational considerations.","difficulty":"medium"},
-  {"id":"d3-016","domain_id":3,"activity_statement_id":"3.4","technique_tag":null,"competency_tag":null,"question_type":"situational","stem":"A requirement states, 'Users must be able to reset their password.' A design document specifies, 'Password reset will use a time-limited emailed link with two-factor confirmation.' What does this pairing illustrate?","options":["A design that is unrelated to the requirement it supports","A requirement clearly connected to a specific design option chosen to satisfy it","Two conflicting requirements","An example of poor requirements practice"],"correct_index":1,"explanation":"This illustrates the requirement-to-design relationship: the requirement states the need, and the design specifies a particular way to meet it.","difficulty":"easy"},
-  {"id":"d3-017","domain_id":3,"activity_statement_id":"3.1","technique_tag":null,"competency_tag":null,"question_type":"definition","stem":"Which best captures why understanding role variation matters for a foundational-level BA professional?","options":["It doesn't matter, since roles are standardized across all organizations","It helps the analyst recognize who else in an organization may be doing BA-related work, enabling better collaboration","It is only relevant for hiring managers","It replaces the need to understand BA techniques"],"correct_index":1,"explanation":"Recognizing role variation helps analysts identify collaborators performing related work, supporting more effective engagement.","difficulty":"medium"},
-  {"id":"d3-018","domain_id":3,"activity_statement_id":"3.2","technique_tag":null,"competency_tag":null,"question_type":"definition","stem":"Which best reflects a mature approach to selecting a business analysis approach for a new initiative?","options":["Defaulting to the same approach for every initiative regardless of context","Assessing factors such as complexity, risk, stakeholder needs, and organizational culture before selecting or tailoring an approach","Letting the most vocal stakeholder decide the approach","Avoiding any explicit approach decision and improvising as needed"],"correct_index":1,"explanation":"A mature approach selection process weighs complexity, risk, stakeholder needs, and culture rather than defaulting or improvising.","difficulty":"medium"}
+  {
+    "id": "d3-001",
+    "domain_id": 3,
+    "activity_statement_id": "3.1",
+    "technique_tag": null,
+    "competency_tag": null,
+    "question_type": "definition",
+    "stem": "Under the Business Analysis Standard, who can be considered to be performing business analysis work?",
+    "options": [
+      "Anyone performing BA activities, regardless of job title",
+      "Just staff whose title formally includes 'analyst'",
+      "Just employees in a centralized, dedicated BA department",
+      "Just individuals holding a formal IIBA certification"
+    ],
+    "correct_index": 0,
+    "explanation": "Business analysis is defined by the activity performed, not by job title, department, or certification — all three distractors substitute a formal marker for the actual practice.",
+    "difficulty": "easy"
+  },
+  {
+    "id": "d3-002",
+    "domain_id": 3,
+    "activity_statement_id": "3.2",
+    "technique_tag": null,
+    "competency_tag": null,
+    "question_type": "situational",
+    "stem": "A team is deciding between a heavily documented, sequential approach and a lightweight, iterative approach for a new initiative. What should primarily drive this choice?",
+    "options": [
+      "Whichever approach the analyst used most recently",
+      "The approach the loudest stakeholder happens to prefer",
+      "The initiative's complexity, risk, and stakeholder needs",
+      "Whichever approach needs the least documentation"
+    ],
+    "correct_index": 2,
+    "explanation": "Approach selection should be driven by the initiative's own characteristics — complexity, risk, stakeholder needs, context — not by habit, stakeholder volume, or a blanket preference for less paperwork.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "d3-003",
+    "domain_id": 3,
+    "activity_statement_id": "3.3",
+    "technique_tag": null,
+    "competency_tag": null,
+    "question_type": "definition",
+    "stem": "Which of the following is an organizational consideration that can meaningfully influence business analysis work?",
+    "options": [
+      "The font style used in requirements documents",
+      "Governance structure and where decision authority sits",
+      "The color scheme of a project's presentation slides",
+      "The brand of software installed on team laptops"
+    ],
+    "correct_index": 1,
+    "explanation": "Governance and decision-making authority are core organizational considerations; document formatting, slide aesthetics, and hardware brand have no bearing on how BA work should be conducted.",
+    "difficulty": "easy"
+  },
+  {
+    "id": "d3-004",
+    "domain_id": 3,
+    "activity_statement_id": "3.4",
+    "technique_tag": null,
+    "competency_tag": null,
+    "question_type": "definition",
+    "stem": "Which statement best distinguishes a requirement from a design?",
+    "options": [
+      "A design is written before any requirement is captured",
+      "A requirement states the need; a design states how that need will be met",
+      "Requirements and designs are simply two names for the same artifact",
+      "Designs belong to Agile initiatives; requirements belong to Waterfall"
+    ],
+    "correct_index": 1,
+    "explanation": "A requirement expresses the underlying need (the 'what'); a design specifies a particular way to satisfy it (the 'how'). Sequencing myths, treating them as identical, or tying them to a specific methodology all misstate the distinction.",
+    "difficulty": "easy"
+  },
+  {
+    "id": "d3-005",
+    "domain_id": 3,
+    "activity_statement_id": "3.1",
+    "technique_tag": null,
+    "competency_tag": null,
+    "question_type": "situational",
+    "stem": "A product owner on an agile team spends much of their time eliciting stakeholder needs and prioritizing the backlog. Under the Business Analysis Standard, is this person performing business analysis?",
+    "options": [
+      "No — that description applies to people with 'analyst' in their title",
+      "No, product owners are barred from doing business analysis work",
+      "Yes, but not until the product owner earns an IIBA certification",
+      "Yes — the activity performed matches the definition of BA, regardless of title"
+    ],
+    "correct_index": 3,
+    "explanation": "Business analysis is defined by the work performed — eliciting needs and prioritizing them — not by holding an 'analyst' title, being barred by role, or requiring certification first.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "d3-006",
+    "domain_id": 3,
+    "activity_statement_id": "3.2",
+    "technique_tag": null,
+    "competency_tag": null,
+    "question_type": "definition",
+    "stem": "Why does the Business Analysis Standard avoid prescribing one 'correct' business analysis approach for every initiative?",
+    "options": [
+      "Because the BABOK Guide has not defined any approaches to choose from",
+      "Because approaches apply mainly to IT-related initiatives",
+      "Because the right approach depends on complexity, culture, and stakeholder needs",
+      "Because IIBA discontinued the concept of an 'approach'"
+    ],
+    "correct_index": 2,
+    "explanation": "The right BA approach is context-dependent, shaped by complexity, culture, and stakeholder needs — it isn't that approaches are undefined, IT-only, or no longer a valid concept.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "d3-007",
+    "domain_id": 3,
+    "activity_statement_id": "3.3",
+    "technique_tag": null,
+    "competency_tag": null,
+    "question_type": "situational",
+    "stem": "An analyst rolls out a new requirements sign-off process without accounting for the organization's existing approval hierarchy. What is the most likely result?",
+    "options": [
+      "No effect at all, since process design is independent of org structure",
+      "Friction or resistance, since a real organizational consideration was ignored",
+      "Immediate, automatic approval regardless of the existing hierarchy",
+      "The organization restructures itself to match the new process"
+    ],
+    "correct_index": 1,
+    "explanation": "Ignoring an existing governance and approval structure — a key organizational consideration — commonly creates friction and slows adoption; it doesn't disappear, guarantee approval, or trigger a restructure.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "d3-008",
+    "domain_id": 3,
+    "activity_statement_id": "3.4",
+    "technique_tag": null,
+    "competency_tag": null,
+    "question_type": "situational",
+    "stem": "A stakeholder says, 'The system must calculate shipping costs automatically.' A vendor later proposes a specific pricing algorithm and screen layout to accomplish this. How should each statement be labeled?",
+    "options": [
+      "Both statements are requirements at different stages of detail",
+      "Both statements are designs, just written by different people",
+      "The stakeholder's statement is a design; the vendor's is the requirement",
+      "The stakeholder's statement is the requirement; the vendor's proposal is the design"
+    ],
+    "correct_index": 3,
+    "explanation": "The stakeholder's stated need is the requirement (what); the vendor's specific algorithm and layout is the design (how) — reversing the two, or collapsing them into one category, misreads the distinction.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "d3-009",
+    "domain_id": 3,
+    "activity_statement_id": "3.1",
+    "technique_tag": null,
+    "competency_tag": null,
+    "question_type": "definition",
+    "stem": "An organization eliminates its formal 'Business Analyst' job title during a restructuring, redistributing elicitation and requirements work among product owners, developers, and project managers. What does this most accurately illustrate?",
+    "options": [
+      "The role's title changed, but the underlying BA discipline continues",
+      "Business analysis has effectively ended at the organization",
+      "The redistributed staff are now project managers, not analysts",
+      "The organization violated the Standard by removing the title"
+    ],
+    "correct_index": 0,
+    "explanation": "Business analysis is defined by the activities performed, not a specific title — when a title is retired, the practice typically persists under other roles. It hasn't ended, the staff aren't automatically relabeled PMs, and the Standard doesn't mandate that any specific title exist.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "d3-010",
+    "domain_id": 3,
+    "activity_statement_id": "3.2",
+    "technique_tag": null,
+    "competency_tag": null,
+    "question_type": "situational",
+    "stem": "A heavily regulated financial institution is weighing an agile approach against a traditional, heavily documented approach for a compliance-driven initiative. Which factor should weigh most heavily?",
+    "options": [
+      "Regulatory demands for documentation and audit trails",
+      "Whichever approach is currently trending in the industry",
+      "The analyst's personal familiarity with agile ceremonies",
+      "The number of team members currently available"
+    ],
+    "correct_index": 0,
+    "explanation": "For a compliance-driven initiative, regulatory documentation and traceability needs should weigh most heavily — industry trends, personal familiarity, and headcount are secondary to that constraint.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "d3-011",
+    "domain_id": 3,
+    "activity_statement_id": "3.3",
+    "technique_tag": null,
+    "competency_tag": null,
+    "question_type": "definition",
+    "stem": "Which best describes how organizational culture can affect business analysis work?",
+    "options": [
+      "It has no real bearing on how BA work should be conducted",
+      "It matters mainly for initiatives tied to human resources",
+      "It is fixed and cannot be factored into an analyst's approach",
+      "It shapes how stakeholders engage and how change is received"
+    ],
+    "correct_index": 3,
+    "explanation": "Culture influences stakeholder engagement, decision-making, and receptiveness to change — it isn't irrelevant, HR-specific, or a fixed constraint outside the analyst's consideration.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "d3-012",
+    "domain_id": 3,
+    "activity_statement_id": "3.4",
+    "technique_tag": null,
+    "competency_tag": null,
+    "question_type": "definition",
+    "stem": "How do requirements and designs typically evolve over the course of an initiative?",
+    "options": [
+      "Requirements are fixed at the outset; designs alone get refined",
+      "Both are refined iteratively as requirements stabilize and designs gain detail",
+      "Designs get finalized before any requirement exists",
+      "Neither requirements nor designs change once documented"
+    ],
+    "correct_index": 1,
+    "explanation": "Requirements and designs both typically evolve iteratively, with designs becoming more detailed as requirements stabilize — treating either as frozen from the start, or claiming design always precedes requirements, misstates the relationship.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "d3-013",
+    "domain_id": 3,
+    "activity_statement_id": "3.1",
+    "technique_tag": null,
+    "competency_tag": null,
+    "question_type": "situational",
+    "stem": "An IT manager occasionally elicits stakeholder input and documents requirements alongside their regular technical duties. How should this be understood?",
+    "options": [
+      "This isn't real business analysis since it isn't their primary role",
+      "This becomes valid once IIBA formally certifies the manager",
+      "This situation is prohibited by the Business Analysis Standard",
+      "The manager is performing BA activities as part of a blended role, which is common"
+    ],
+    "correct_index": 3,
+    "explanation": "Blended roles that combine BA activities with other duties are common and consistent with how responsibilities vary across organizations — the Standard neither restricts BA to primary-role holders nor requires certification to count.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "d3-014",
+    "domain_id": 3,
+    "activity_statement_id": "3.2",
+    "technique_tag": null,
+    "competency_tag": null,
+    "question_type": "definition",
+    "stem": "A team delivers using Scrum sprints, yet the business analyst produces a detailed, sign-off requirements package upfront to satisfy a regulatory reviewer before any sprint begins. What does this best illustrate?",
+    "options": [
+      "The team isn't really practicing Scrum, since agile forbids upfront documentation",
+      "The analyst is violating the Standard by working outside the sprint cadence",
+      "BA approach and delivery methodology are related but distinct, not locked together",
+      "Regulatory reviewers require organizations to abandon agile delivery"
+    ],
+    "correct_index": 2,
+    "explanation": "BA approach (how analysis work is structured — predictive vs. adaptive) and delivery methodology (Scrum, Waterfall, etc.) are related but separable; a regulator-driven need for upfront documentation doesn't mean the team has abandoned Scrum, broken the Standard, or that agile and regulation are incompatible.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "d3-015",
+    "domain_id": 3,
+    "activity_statement_id": "3.3",
+    "technique_tag": null,
+    "competency_tag": null,
+    "question_type": "situational",
+    "stem": "An analyst joins an organization where decisions are typically made through informal hallway conversations rather than documented approvals. What is the most appropriate response?",
+    "options": [
+      "Adapt the engagement approach while still capturing key decisions",
+      "Insist the organization adopt formal documented approvals immediately",
+      "Proceed exactly as done at the previous, more formal organization",
+      "Decline to work within an informal decision-making culture"
+    ],
+    "correct_index": 0,
+    "explanation": "Adapting to organizational context while still safeguarding critical decision capture is the sound response — demanding formal process, ignoring the culture, or refusing to engage are all poor fits.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "d3-016",
+    "domain_id": 3,
+    "activity_statement_id": "3.4",
+    "technique_tag": null,
+    "competency_tag": null,
+    "question_type": "situational",
+    "stem": "A requirement states, 'Users must reset a forgotten password.' During technical design, the team discovers the proposed emailed-link approach cannot meet a security policy, prompting the requirement to be revised to specify multi-factor verification. What does this scenario best illustrate?",
+    "options": [
+      "Design decisions cannot influence a requirement once it is documented",
+      "Design work can surface constraints that feed back into refining the requirement itself",
+      "The original requirement was invalid and should be discarded outright",
+      "Security policies operate independently of both requirements and designs"
+    ],
+    "correct_index": 1,
+    "explanation": "Requirements and designs can inform each other iteratively — a design constraint surfacing here appropriately triggers a requirement refinement, rather than being off-limits, invalidating the original requirement outright, or treating policy as disconnected from both.",
+    "difficulty": "hard"
+  },
+  {
+    "id": "d3-017",
+    "domain_id": 3,
+    "activity_statement_id": "3.1",
+    "technique_tag": null,
+    "competency_tag": null,
+    "question_type": "definition",
+    "stem": "Which best captures why understanding role variation matters for a foundational-level BA professional?",
+    "options": [
+      "It doesn't matter, since roles are standardized everywhere",
+      "It matters mainly to hiring managers filling open roles",
+      "It helps spot others doing BA-related work, aiding collaboration",
+      "It removes the need to learn any BA techniques at all"
+    ],
+    "correct_index": 2,
+    "explanation": "Recognizing that BA activities can be performed under many titles helps an analyst identify collaborators doing related work — role variation doesn't mean roles are standardized, isn't only an HR concern, and doesn't substitute for learning techniques.",
+    "difficulty": "medium"
+  },
+  {
+    "id": "d3-018",
+    "domain_id": 3,
+    "activity_statement_id": "3.2",
+    "technique_tag": null,
+    "competency_tag": null,
+    "question_type": "definition",
+    "stem": "Which best reflects a mature process for selecting a business analysis approach for a new initiative?",
+    "options": [
+      "Weighing complexity, risk, and stakeholder needs before choosing an approach",
+      "Defaulting to the same approach used on every past initiative",
+      "Letting whichever stakeholder is most vocal decide the approach",
+      "Skipping an explicit approach decision and improvising as needed"
+    ],
+    "correct_index": 0,
+    "explanation": "A mature approach-selection process weighs complexity, risk, stakeholder needs, and culture — defaulting by habit, deferring to the loudest voice, or skipping the decision altogether all bypass that assessment.",
+    "difficulty": "medium"
+  }
 ]
