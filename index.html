@@ -230,6 +230,8 @@
     color: #713f12;
     margin: 12px 0;
   }
+  .tip p { margin: 0 0 10px; }
+  .tip button { margin-right: 8px; }
 
   .tag-chip {
     display: inline-block;
@@ -820,6 +822,62 @@
     return lines.join("\n");
   }
 
+  // Inverse of buildNotesMarkdown: pulls activity-statement notes back out of an
+  // exported .md file. Returns Map<activity_statement_id, noteText>.
+  // A note ends at the NEXT "##"/"###" header, not at a blank line — notes may
+  // legitimately contain blank lines, so only a header is an unambiguous boundary.
+  function parseNotesMarkdown(text) {
+    const lines = (text || "").replace(/\r\n?/g, "\n").split("\n").map((l) => l.replace(/[ \t]+$/, ""));
+    const actHeaderRe = /^###\s+(\S+)\s+—\s+/;  // "### 9.4 — Statement text"
+    const anyHeaderRe = /^#{2,3}\s+/;           // stops note capture (domain or activity header)
+    const refBulletRe = /^-\s+_.*_$/;           // "- _BABOK Guide, 3.1, p.42_"
+    const parsed = new Map();
+
+    let i = 0;
+    while (i < lines.length) {
+      const m = lines[i].match(actHeaderRe);
+      if (!m) { i++; continue; }
+      const id = m[1];
+      i++;
+      while (i < lines.length && refBulletRe.test(lines[i])) i++;
+      if (i < lines.length && lines[i] === "") i++;
+
+      const noteLines = [];
+      while (i < lines.length && !anyHeaderRe.test(lines[i])) { noteLines.push(lines[i]); i++; }
+      while (noteLines.length && noteLines[noteLines.length - 1] === "") noteLines.pop();
+      while (noteLines.length && noteLines[0] === "") noteLines.shift();
+
+      const noteText = noteLines.join("\n").trim();
+      if (noteText && noteText !== "_(no notes yet)_") parsed.set(id, noteText);
+    }
+    return parsed;
+  }
+
+  // Drop ids that don't resolve against domains.json — hand-edited or stale files
+  // shouldn't block the rest of the import.
+  function validateParsedNotes(parsedMap) {
+    const valid = new Map();
+    let unrecognizedCount = 0;
+    parsedMap.forEach((noteText, id) => {
+      if (IDX.activityById.has(id)) valid.set(id, noteText);
+      else unrecognizedCount++;
+    });
+    return { valid, unrecognizedCount };
+  }
+
+  // "same" is split out from "conflict" so an identical re-import doesn't look
+  // like it would overwrite anything.
+  function diffImportedNotes(validMap) {
+    const diff = { fresh: [], conflict: [], same: [] };
+    validMap.forEach((noteText, id) => {
+      const existing = store.readingNotes[id] || "";
+      if (!existing) diff.fresh.push({ id, noteText });
+      else if (existing === noteText) diff.same.push({ id, noteText });
+      else diff.conflict.push({ id, noteText });
+    });
+    return diff;
+  }
+
   function renderStudyNotes(main) {
     const rp = DB.readingProgress;
     if (!rp || !Array.isArray(rp.domains)) {
@@ -873,7 +931,10 @@
         </select>
         <button class="btn secondary" id="notes-print">Print</button>
         <button class="btn secondary" id="notes-export">Export Markdown</button>
+        <button class="btn secondary" id="notes-import">Import Markdown</button>
+        <input type="file" id="notes-import-file" accept=".md,text/markdown" style="display:none">
       </div>
+      <div id="notes-import-panel" class="no-print"></div>
       <div id="study-notes-list"></div>
     `;
 
@@ -886,6 +947,101 @@
     $("notes-export").addEventListener("click", () => {
       const md = buildNotesMarkdown(currentDomains);
       downloadTextFile(`ecba-study-notes-${new Date().toISOString().slice(0, 10)}.md`, md);
+    });
+
+    // ----- Import Markdown (device-to-device note sync) -----
+    // pendingImport is page-local on purpose: the whole pick -> confirm -> apply
+    // flow lives inside one renderStudyNotes call, and navigating away should
+    // discard it (closure scope does that for free).
+    let pendingImport = null;
+
+    function clearImportPanel() {
+      pendingImport = null;
+      $("notes-import-panel").innerHTML = "";
+    }
+
+    function importNotice(html, btnLabel) {
+      $("notes-import-panel").innerHTML =
+        `<div class="tip"><p>${html}</p><button class="btn secondary" id="import-dismiss">${btnLabel}</button></div>`;
+      $("import-dismiss").addEventListener("click", clearImportPanel);
+    }
+
+    function renderImportError(message) {
+      pendingImport = null;
+      importNotice(escapeHtml(message), "Dismiss");
+    }
+
+    function plural(n) { return n === 1 ? "" : "s"; }
+
+    function handleImportFile(text) {
+      const { valid, unrecognizedCount } = validateParsedNotes(parseNotesMarkdown(text));
+      const diff = diffImportedNotes(valid);
+      const total = diff.fresh.length + diff.conflict.length + diff.same.length;
+      if (!total) {
+        pendingImport = null;
+        const ignored = unrecognizedCount ? ` (${unrecognizedCount} unrecognized id${plural(unrecognizedCount)} ignored)` : "";
+        importNotice(`No recognizable notes found in that file${ignored}.`, "Dismiss");
+        return;
+      }
+      pendingImport = { diff, unrecognizedCount };
+      renderImportPanel();
+    }
+
+    function renderImportPanel() {
+      const { diff, unrecognizedCount } = pendingImport;
+      const total = diff.fresh.length + diff.conflict.length + diff.same.length;
+      const parts = [`${diff.fresh.length} new`, `${diff.conflict.length} would overwrite existing notes`];
+      if (diff.same.length) parts.push(`${diff.same.length} already match`);
+      if (unrecognizedCount) parts.push(`${unrecognizedCount} unrecognized id${plural(unrecognizedCount)} ignored`);
+      $("notes-import-panel").innerHTML = `
+        <div class="tip">
+          <p>Found ${total} note${plural(total)} in that file &mdash; ${parts.join(", ")}.</p>
+          <label style="font-size:13px;display:flex;gap:6px;align-items:center;margin-bottom:10px;">
+            <input type="checkbox" id="import-overwrite" ${diff.conflict.length ? "" : "disabled"}>
+            Also overwrite existing notes (${diff.conflict.length})
+          </label>
+          <button class="btn" id="import-apply">Apply Import</button>
+          <button class="btn secondary" id="import-cancel">Cancel</button>
+        </div>`;
+      $("import-apply").addEventListener("click", applyPendingImport);
+      $("import-cancel").addEventListener("click", clearImportPanel);
+    }
+
+    function applyPendingImport() {
+      if (!pendingImport) return;
+      const { diff, unrecognizedCount } = pendingImport;
+      const overwrite = $("import-overwrite").checked;
+
+      diff.fresh.forEach((e) => setReadingNote(e.id, e.noteText));
+      diff.same.forEach((e) => setReadingNote(e.id, e.noteText));
+      if (overwrite) diff.conflict.forEach((e) => setReadingNote(e.id, e.noteText));
+
+      const imported = diff.fresh.length + diff.same.length + (overwrite ? diff.conflict.length : 0);
+      const skipped = overwrite ? 0 : diff.conflict.length;
+      pendingImport = null;
+      // renderList (not renderStudyNotes) so the filter <select> keeps its current
+      // value; currentDomains must be refreshed too since notes-export closes over it.
+      currentDomains = renderList($("notes-filter").value === "all");
+      importNotice(
+        `Imported ${imported} note${plural(imported)}` +
+        (skipped ? `, skipped ${skipped} existing` : "") +
+        (unrecognizedCount ? `, ignored ${unrecognizedCount} unrecognized id${plural(unrecognizedCount)}` : "") + ".",
+        "Close"
+      );
+    }
+
+    $("notes-import").addEventListener("click", () => $("notes-import-file").click());
+    $("notes-import-file").addEventListener("change", (e) => {
+      const file = e.target.files[0];
+      e.target.value = "";  // reset so re-picking the same filename fires change again
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = () => {
+        try { handleImportFile(String(reader.result || "")); }
+        catch (err) { renderImportError("Could not read that file."); }
+      };
+      reader.onerror = () => renderImportError("Could not read that file.");
+      reader.readAsText(file);
     });
   }
 
